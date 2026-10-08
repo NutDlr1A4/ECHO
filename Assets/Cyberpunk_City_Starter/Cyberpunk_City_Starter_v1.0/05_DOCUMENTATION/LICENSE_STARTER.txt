@@ -1,0 +1,35 @@
+BURCU SAK FREE STARTER ASSET LICENSE
+Cyberpunk City Starter Pack — Version 1.0
+Copyright © 2026 Burcu Sak. All rights reserved.
+
+1. LICENSE GRANT
+The user receives a non-exclusive, worldwide, royalty-free license to use the included
+Starter Pack artwork in personal, educational, prototype, game-jam, and commercial
+game or interactive projects.
+
+2. PERMITTED USE
+You may use the assets in commercial or non-commercial projects; modify, recolor,
+resize, crop, animate, or adapt them for a project; combine them with other assets;
+and use screenshots/video containing them to promote the resulting project.
+
+3. REDISTRIBUTION / RESALE PROHIBITED
+You may not resell, redistribute, share, upload, sublicense, or expose the original
+or substantially equivalent source assets as a standalone asset pack, sprite pack,
+template, public repository, downloadable collection, or competing marketplace product.
+
+4. COMPILED GAMES
+The assets may be distributed as part of a compiled or packaged game or interactive
+product. Do not intentionally provide the original PNG/GIF source files to end users
+as a standalone downloadable collection.
+
+5. ATTRIBUTION
+Attribution is appreciated but not required.
+Suggested credit: “Cyberpunk City Asset Pack by Burcu Sak”.
+
+6. OWNERSHIP
+Copyright and intellectual-property rights in the original artwork remain with Burcu Sak.
+This license grants usage rights only and does not transfer ownership.
+
+7. WARRANTY
+The assets are provided “AS IS” to the maximum extent permitted by applicable law,
+without warranty of compatibility with any specific engine, platform, or production pipeline.
