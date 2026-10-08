@@ -1,0 +1,3601 @@
+fileFormatVersion: 2
+guid: 438f8657f4b596843b96150a7324586a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4377969889278232266
+    second: Skyscraper-Buildings-pack_0
+  - first:
+      213: -8307426188902226571
+    second: Skyscraper-Buildings-pack_1
+  - first:
+      213: -2351308195430343378
+    second: Skyscraper-Buildings-pack_2
+  - first:
+      213: 5158526931614667176
+    second: Skyscraper-Buildings-pack_3
+  - first:
+      213: 568583726051651032
+    second: Skyscraper-Buildings-pack_4
+  - first:
+      213: 8431691254526797317
+    second: Skyscraper-Buildings-pack_5
+  - first:
+      213: -103110549627830772
+    second: Skyscraper-Buildings-pack_6
+  - first:
+      213: -4400590843825161579
+    second: Skyscraper-Buildings-pack_7
+  - first:
+      213: -3392807166922430196
+    second: Skyscraper-Buildings-pack_8
+  - first:
+      213: -6401974411180434319
+    second: Skyscraper-Buildings-pack_9
+  - first:
+      213: 7519217970751318862
+    second: Skyscraper-Buildings-pack_10
+  - first:
+      213: 5806565332520291094
+    second: Skyscraper-Buildings-pack_11
+  - first:
+      213: -8171931670648869741
+    second: Skyscraper-Buildings-pack_12
+  - first:
+      213: 5236858144275219416
+    second: Skyscraper-Buildings-pack_13
+  - first:
+      213: 6322487322724151621
+    second: Skyscraper-Buildings-pack_14
+  - first:
+      213: -6460879489866846466
+    second: Skyscraper-Buildings-pack_15
+  - first:
+      213: 5135310324287789751
+    second: Skyscraper-Buildings-pack_16
+  - first:
+      213: 7435553570208786353
+    second: Skyscraper-Buildings-pack_17
+  - first:
+      213: 6694746614917014360
+    second: Skyscraper-Buildings-pack_18
+  - first:
+      213: -9175990282730769974
+    second: Skyscraper-Buildings-pack_19
+  - first:
+      213: -5288720028311193199
+    second: Skyscraper-Buildings-pack_20
+  - first:
+      213: 305488255853358157
+    second: Skyscraper-Buildings-pack_21
+  - first:
+      213: -7713293318476201183
+    second: Skyscraper-Buildings-pack_22
+  - first:
+      213: -3692752546966107215
+    second: Skyscraper-Buildings-pack_23
+  - first:
+      213: -8184676966937161934
+    second: Skyscraper-Buildings-pack_24
+  - first:
+      213: -5036737233628716455
+    second: Skyscraper-Buildings-pack_25
+  - first:
+      213: -5435534164221223436
+    second: Skyscraper-Buildings-pack_26
+  - first:
+      213: -7132720772885927316
+    second: Skyscraper-Buildings-pack_27
+  - first:
+      213: 7592144935580503690
+    second: Skyscraper-Buildings-pack_28
+  - first:
+      213: 554374246762639271
+    second: Skyscraper-Buildings-pack_29
+  - first:
+      213: 4885382403915600586
+    second: Skyscraper-Buildings-pack_30
+  - first:
+      213: -4334551565401291052
+    second: Skyscraper-Buildings-pack_31
+  - first:
+      213: 8256062605844945436
+    second: Skyscraper-Buildings-pack_32
+  - first:
+      213: -5437883812950863152
+    second: Skyscraper-Buildings-pack_33
+  - first:
+      213: 7927732576359236924
+    second: Skyscraper-Buildings-pack_34
+  - first:
+      213: -4664744649194077207
+    second: Skyscraper-Buildings-pack_35
+  - first:
+      213: 4356396361822809008
+    second: Skyscraper-Buildings-pack_36
+  - first:
+      213: -7214480061341900947
+    second: Skyscraper-Buildings-pack_37
+  - first:
+      213: 4305861834187390961
+    second: Skyscraper-Buildings-pack_38
+  - first:
+      213: 1420524557329071639
+    second: Skyscraper-Buildings-pack_39
+  - first:
+      213: -8909411366994531868
+    second: Skyscraper-Buildings-pack_40
+  - first:
+      213: -1510113220304249911
+    second: Skyscraper-Buildings-pack_41
+  - first:
+      213: 5402028186672792922
+    second: Skyscraper-Buildings-pack_42
+  - first:
+      213: -4699295027323521267
+    second: Skyscraper-Buildings-pack_43
+  - first:
+      213: -580354331621819941
+    second: Skyscraper-Buildings-pack_44
+  - first:
+      213: 8173998400675231091
+    second: Skyscraper-Buildings-pack_45
+  - first:
+      213: 8024503544462279844
+    second: Skyscraper-Buildings-pack_46
+  - first:
+      213: 6992320192643709546
+    second: Skyscraper-Buildings-pack_47
+  - first:
+      213: -362112344699856204
+    second: Skyscraper-Buildings-pack_48
+  - first:
+      213: -5509876292392189576
+    second: Skyscraper-Buildings-pack_49
+  - first:
+      213: 6494742028337294316
+    second: Skyscraper-Buildings-pack_50
+  - first:
+      213: -8515465886863969887
+    second: Skyscraper-Buildings-pack_51
+  - first:
+      213: -9088396526468065097
+    second: Skyscraper-Buildings-pack_52
+  - first:
+      213: 352671985815787264
+    second: Skyscraper-Buildings-pack_53
+  - first:
+      213: -3177549615683827002
+    second: Skyscraper-Buildings-pack_54
+  - first:
+      213: -6638645557013036351
+    second: Skyscraper-Buildings-pack_55
+  - first:
+      213: 2252990275147275676
+    second: Skyscraper-Buildings-pack_56
+  - first:
+      213: -2359908332371558504
+    second: Skyscraper-Buildings-pack_57
+  - first:
+      213: -8719419513761229150
+    second: Skyscraper-Buildings-pack_58
+  - first:
+      213: -1947896387247951385
+    second: Skyscraper-Buildings-pack_59
+  - first:
+      213: 959472553794594323
+    second: Skyscraper-Buildings-pack_60
+  - first:
+      213: 7432435169320440734
+    second: Skyscraper-Buildings-pack_61
+  - first:
+      213: 3668487486195841349
+    second: Skyscraper-Buildings-pack_62
+  - first:
+      213: -8222050648223943946
+    second: Skyscraper-Buildings-pack_63
+  - first:
+      213: 8830032502134138586
+    second: Skyscraper-Buildings-pack_64
+  - first:
+      213: 3164920521261220136
+    second: Skyscraper-Buildings-pack_65
+  - first:
+      213: 4877811742809545431
+    second: Skyscraper-Buildings-pack_66
+  - first:
+      213: 534967144976896497
+    second: Skyscraper-Buildings-pack_67
+  - first:
+      213: 140867430192035577
+    second: Skyscraper-Buildings-pack_68
+  - first:
+      213: 640584757121236571
+    second: Skyscraper-Buildings-pack_69
+  - first:
+      213: -192053147130861978
+    second: Skyscraper-Buildings-pack_70
+  - first:
+      213: -5374441167426092828
+    second: Skyscraper-Buildings-pack_71
+  - first:
+      213: 7012292141824200160
+    second: Skyscraper-Buildings-pack_72
+  - first:
+      213: -854758961608377010
+    second: Skyscraper-Buildings-pack_73
+  - first:
+      213: 862770344379983262
+    second: Skyscraper-Buildings-pack_74
+  - first:
+      213: 5187991419812421195
+    second: Skyscraper-Buildings-pack_75
+  - first:
+      213: -3286360636060297828
+    second: Skyscraper-Buildings-pack_76
+  - first:
+      213: -4887266916862111859
+    second: Skyscraper-Buildings-pack_77
+  - first:
+      213: -4578973872448680184
+    second: Skyscraper-Buildings-pack_78
+  - first:
+      213: 2352051292699476245
+    second: Skyscraper-Buildings-pack_79
+  - first:
+      213: 7505101032707138642
+    second: Skyscraper-Buildings-pack_80
+  - first:
+      213: 3583647497151159088
+    second: Skyscraper-Buildings-pack_81
+  - first:
+      213: 5268053699034257509
+    second: Skyscraper-Buildings-pack_82
+  - first:
+      213: 7136700146261241947
+    second: Skyscraper-Buildings-pack_83
+  - first:
+      213: 3130557353484788348
+    second: Skyscraper-Buildings-pack_84
+  - first:
+      213: -3505172630579254382
+    second: Skyscraper-Buildings-pack_85
+  - first:
+      213: -7299058155196820731
+    second: Skyscraper-Buildings-pack_86
+  - first:
+      213: 9157080491764835982
+    second: Skyscraper-Buildings-pack_87
+  - first:
+      213: -3966261292438410263
+    second: Skyscraper-Buildings-pack_88
+  - first:
+      213: 7378029455439224207
+    second: Skyscraper-Buildings-pack_89
+  - first:
+      213: -7113936579842859546
+    second: Skyscraper-Buildings-pack_90
+  - first:
+      213: 6564766149530074084
+    second: Skyscraper-Buildings-pack_91
+  - first:
+      213: 4818922194382631584
+    second: Skyscraper-Buildings-pack_92
+  - first:
+      213: 7466983078952573072
+    second: Skyscraper-Buildings-pack_93
+  - first:
+      213: -3432842051326670925
+    second: Skyscraper-Buildings-pack_94
+  - first:
+      213: 2032846423352706840
+    second: Skyscraper-Buildings-pack_95
+  - first:
+      213: 1008227292612890523
+    second: Skyscraper-Buildings-pack_96
+  - first:
+      213: -6910711632757121528
+    second: Skyscraper-Buildings-pack_97
+  - first:
+      213: -2851674424770359160
+    second: Skyscraper-Buildings-pack_98
+  - first:
+      213: -5273815366868334826
+    second: Skyscraper-Buildings-pack_99
+  - first:
+      213: -6171738683719121726
+    second: Skyscraper-Buildings-pack_100
+  - first:
+      213: 4518676884373052283
+    second: Skyscraper-Buildings-pack_101
+  - first:
+      213: -3233334280765796078
+    second: Skyscraper-Buildings-pack_102
+  - first:
+      213: 2635492695652871205
+    second: Skyscraper-Buildings-pack_103
+  - first:
+      213: 1537342990030174387
+    second: Skyscraper-Buildings-pack_104
+  - first:
+      213: -3390637195771325423
+    second: Skyscraper-Buildings-pack_105
+  - first:
+      213: 3891850066569963132
+    second: Skyscraper-Buildings-pack_106
+  - first:
+      213: -3038950527685835003
+    second: Skyscraper-Buildings-pack_107
+  - first:
+      213: -4084343123583351412
+    second: Skyscraper-Buildings-pack_108
+  - first:
+      213: 3852430454985949092
+    second: Skyscraper-Buildings-pack_109
+  - first:
+      213: -3487031947301466608
+    second: Skyscraper-Buildings-pack_110
+  - first:
+      213: -150489523425738194
+    second: Skyscraper-Buildings-pack_111
+  - first:
+      213: 1265383298959419466
+    second: Skyscraper-Buildings-pack_112
+  - first:
+      213: -1199626441234782734
+    second: Skyscraper-Buildings-pack_113
+  - first:
+      213: 4731581668307411022
+    second: Skyscraper-Buildings-pack_114
+  - first:
+      213: -8788644459015742971
+    second: Skyscraper-Buildings-pack_115
+  - first:
+      213: -212142488684890861
+    second: Skyscraper-Buildings-pack_116
+  - first:
+      213: -7228002455234953723
+    second: Skyscraper-Buildings-pack_117
+  - first:
+      213: -2069154251249923928
+    second: Skyscraper-Buildings-pack_118
+  - first:
+      213: -8002001562365622482
+    second: Skyscraper-Buildings-pack_119
+  - first:
+      213: -7474447146507242407
+    second: Skyscraper-Buildings-pack_120
+  - first:
+      213: 991140041955048743
+    second: Skyscraper-Buildings-pack_121
+  - first:
+      213: -8913300486212950526
+    second: Skyscraper-Buildings-pack_122
+  - first:
+      213: -5763865594701340450
+    second: Skyscraper-Buildings-pack_123
+  - first:
+      213: 3284905032573102729
+    second: Skyscraper-Buildings-pack_124
+  - first:
+      213: 1205607226637797568
+    second: Skyscraper-Buildings-pack_125
+  - first:
+      213: 8827486574341733505
+    second: Skyscraper-Buildings-pack_126
+  - first:
+      213: -1203424247249779993
+    second: Skyscraper-Buildings-pack_127
+  - first:
+      213: -7698765880102425888
+    second: Skyscraper-Buildings-pack_128
+  - first:
+      213: -6562050244754002068
+    second: Skyscraper-Buildings-pack_129
+  - first:
+      213: -5634583683393191698
+    second: Skyscraper-Buildings-pack_130
+  - first:
+      213: -7037629006140127676
+    second: Skyscraper-Buildings-pack_131
+  - first:
+      213: 2374105826303326220
+    second: Skyscraper-Buildings-pack_132
+  - first:
+      213: 6880862094196531124
+    second: Skyscraper-Buildings-pack_133
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1201
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 639f638c4935e33c0800000000000000
+      internalID: -4377969889278232266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1201
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575a4b455e716bc80800000000000000
+      internalID: -8307426188902226571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1201
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2dd8ed67a97e5fd0800000000000000
+      internalID: -2351308195430343378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_3
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1221
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a19d2bc9e4c69740800000000000000
+      internalID: 5158526931614667176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1221
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd6068e2e304e700800000000000000
+      internalID: 568583726051651032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_5
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1201
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50666d1e582630570800000000000000
+      internalID: 8431691254526797317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_6
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1201
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e76dc508da19ef0800000000000000
+      internalID: -103110549627830772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_7
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 1201
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59af6ff51f5fde2c0800000000000000
+      internalID: -4400590843825161579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_8
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 1201
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0960388bd35ae0d0800000000000000
+      internalID: -3392807166922430196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_9
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 1221
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c1370313e9727a0800000000000000
+      internalID: -6401974411180434319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_10
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1221
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4bad57e7e0a95860800000000000000
+      internalID: 7519217970751318862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_11
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 1201
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b48f9c760159050800000000000000
+      internalID: 5806565332520291094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_12
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1201
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ca53a3177779e80800000000000000
+      internalID: -8171931670648869741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_13
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 1201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3c2a47cbe0da840800000000000000
+      internalID: 5236858144275219416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_14
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1201
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54132e7d8bcfdb750800000000000000
+      internalID: 6322487322724151621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_15
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1201
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efe21edc5585656a0800000000000000
+      internalID: -6460879489866846466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_16
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bad19a2889444740800000000000000
+      internalID: 5135310324287789751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_17
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1201
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b7aeaca394603760800000000000000
+      internalID: 7435553570208786353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_18
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853a063739488ec50800000000000000
+      internalID: 6694746614917014360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_19
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1756f447558a080800000000000000
+      internalID: -9175990282730769974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_20
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 1201
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1997404b721ba96b0800000000000000
+      internalID: -5288720028311193199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_21
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 1201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c613d33ff4d3400800000000000000
+      internalID: 305488255853358157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_22
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 1201
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12305d7f790e4f490800000000000000
+      internalID: -7713293318476201183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_23
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 1201
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb8aa2af15b0ccc0800000000000000
+      internalID: -3692752546966107215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_24
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f8360b9af2a6e80800000000000000
+      internalID: -8184676966937161934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_25
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 1201
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 952a39afb2ae91ab0800000000000000
+      internalID: -5036737233628716455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_26
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 1201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd1811f97a1194b0800000000000000
+      internalID: -5435534164221223436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_27
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6aa5127f3c730d90800000000000000
+      internalID: -7132720772885927316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_28
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1127
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e8e801897bc5960800000000000000
+      internalID: 7592144935580503690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_29
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1122
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af69e2b07881b700800000000000000
+      internalID: 554374246762639271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_30
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1127
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac25559996d5cc340800000000000000
+      internalID: 4885382403915600586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_31
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1127
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d684a3115498d3c0800000000000000
+      internalID: -4334551565401291052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_32
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1127
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a16c0923d639270800000000000000
+      internalID: 8256062605844945436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_33
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1127
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d29737bb71c884b0800000000000000
+      internalID: -5437883812950863152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_34
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1122
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c354f2876c6f40e60800000000000000
+      internalID: 7927732576359236924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_35
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1127
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e302e8d47f734fb0800000000000000
+      internalID: -4664744649194077207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_36
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1127
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bba04fe867057c30800000000000000
+      internalID: 4356396361822809008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_37
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 850
+        width: 62
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6fd390bb9401eb90800000000000000
+      internalID: -7214480061341900947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_38
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 850
+        width: 54
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffb6a6568e71cb30800000000000000
+      internalID: 4305861834187390961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_39
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 850
+        width: 71
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e71520f87b6b310800000000000000
+      internalID: 1420524557329071639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_40
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 850
+        width: 52
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9a678d0996b5480800000000000000
+      internalID: -8909411366994531868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_41
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 850
+        width: 53
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cbd42de6000b0be0800000000000000
+      internalID: -1510113220304249911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_42
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 850
+        width: 41
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55874db30cd7fa40800000000000000
+      internalID: 5402028186672792922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_43
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 850
+        width: 32
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d073f911210c8ceb0800000000000000
+      internalID: -4699295027323521267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_44
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 850
+        width: 41
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd972db6fca22f7f0800000000000000
+      internalID: -580354331621819941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_45
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 850
+        width: 36
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375bbdadc30ef6170800000000000000
+      internalID: 8173998400675231091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_46
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 850
+        width: 48
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a489824573cc5f60800000000000000
+      internalID: 8024503544462279844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_47
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 850
+        width: 38
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ab1561b26b90160800000000000000
+      internalID: 6992320192643709546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_48
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 850
+        width: 53
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba9165bdb489faf0800000000000000
+      internalID: -362112344699856204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_49
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 850
+        width: 53
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8710e9364bcf883b0800000000000000
+      internalID: -5509876292392189576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_50
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 850
+        width: 45
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceb28d2d675f12a50800000000000000
+      internalID: 6494742028337294316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_51
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 850
+        width: 43
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a1348c84ecf2d980800000000000000
+      internalID: -8515465886863969887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_52
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 850
+        width: 38
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b81af5f2878fd180800000000000000
+      internalID: -9088396526468065097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_53
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 850
+        width: 42
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00718c47d41f4e400800000000000000
+      internalID: 352671985815787264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_54
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 850
+        width: 51
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca8cfcb57317e3d0800000000000000
+      internalID: -3177549615683827002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_55
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 850
+        width: 96
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c24388f90bced3a0800000000000000
+      internalID: -6638645557013036351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_56
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 850
+        width: 63
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d1098e7ba344f10800000000000000
+      internalID: 2252990275147275676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_57
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 850
+        width: 106
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89f328200ebef3fd0800000000000000
+      internalID: -2359908332371558504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_58
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 578
+        width: 62
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a617a256266ef680800000000000000
+      internalID: -8719419513761229150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_59
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 578
+        width: 54
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1b1d26e8ea7f4e0800000000000000
+      internalID: -1947896387247951385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_60
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 578
+        width: 71
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 316e9a4443bb05d00800000000000000
+      internalID: 959472553794594323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_61
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 578
+        width: 52
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9317736860552760800000000000000
+      internalID: 7432435169320440734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_62
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 578
+        width: 53
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5493ba5aee519e230800000000000000
+      internalID: 3668487486195841349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_63
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 578
+        width: 41
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f2775b6f7865ed80800000000000000
+      internalID: -8222050648223943946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_64
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 578
+        width: 32
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6ebd4f6c39a8a70800000000000000
+      internalID: 8830032502134138586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_65
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 578
+        width: 41
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8218e14127e0ceb20800000000000000
+      internalID: 3164920521261220136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_66
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 578
+        width: 36
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da5463bfe771b340800000000000000
+      internalID: 4877811742809545431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_67
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 578
+        width: 48
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f15ad2b8c59c6700800000000000000
+      internalID: 534967144976896497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_68
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 578
+        width: 38
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6b4017e2674f100800000000000000
+      internalID: 140867430192035577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_69
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 578
+        width: 53
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ebdb05170d3e800800000000000000
+      internalID: 640584757121236571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_70
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 578
+        width: 53
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666e4432ea0b55df0800000000000000
+      internalID: -192053147130861978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_71
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 578
+        width: 45
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e00555bb362a65b0800000000000000
+      internalID: -5374441167426092828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_72
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 578
+        width: 43
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0edc1bedc8aa05160800000000000000
+      internalID: 7012292141824200160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_73
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 578
+        width: 38
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d30ccc0494324f0800000000000000
+      internalID: -854758961608377010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_74
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 578
+        width: 42
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95a28b9e0d29fb00800000000000000
+      internalID: 862770344379983262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_75
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 578
+        width: 51
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e91bb85b27ff740800000000000000
+      internalID: 5187991419812421195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_76
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 578
+        width: 96
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c959cc3d9608462d0800000000000000
+      internalID: -3286360636060297828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_77
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 578
+        width: 63
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f4ae902a0fc2cb0800000000000000
+      internalID: -4887266916862111859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_78
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 578
+        width: 106
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80fc6e006873470c0800000000000000
+      internalID: -4578973872448680184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_79
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 493
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 511c9d2603a24a020800000000000000
+      internalID: 2352051292699476245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_80
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 488
+        width: 33
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2542de120a9772860800000000000000
+      internalID: 7505101032707138642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_81
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 493
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b99e3696cabb130800000000000000
+      internalID: 3583647497151159088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_82
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 493
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5689e9c8de2eb1940800000000000000
+      internalID: 5268053699034257509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_83
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 493
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50316e98f6aa0360800000000000000
+      internalID: 7136700146261241947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_84
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 493
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c72a27b9359f17b20800000000000000
+      internalID: 3130557353484788348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_85
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 493
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29be6ed40102b5fc0800000000000000
+      internalID: -3505172630579254382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_86
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 493
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5035398a74984ba90800000000000000
+      internalID: -7299058155196820731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_87
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 493
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e866d43e03c741f70800000000000000
+      internalID: 9157080491764835982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_88
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 493
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eba3d16e5205f8c0800000000000000
+      internalID: -3966261292438410263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_89
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 493
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8dd2d103b6046660800000000000000
+      internalID: 7378029455439224207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_90
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 493
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed1fc33f58364d90800000000000000
+      internalID: -7113936579842859546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_91
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 493
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ebbf38080cba1b50800000000000000
+      internalID: 6564766149530074084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_92
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 493
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a23c6c343040e240800000000000000
+      internalID: 4818922194382631584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_93
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 493
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09812dc6c8d00a760800000000000000
+      internalID: 7466983078952573072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_94
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 493
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b786a0a7581c50d0800000000000000
+      internalID: -3432842051326670925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_95
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 488
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8178cd23d0f163c10800000000000000
+      internalID: 2032846423352706840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_96
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 493
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f8b0d7161fdfd00800000000000000
+      internalID: 1008227292612890523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_97
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 493
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e1a5072683810a0800000000000000
+      internalID: -6910711632757121528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_98
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 493
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8801f703831dc68d0800000000000000
+      internalID: -2851674424770359160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_99
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 493
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61701de9dd4afc6b0800000000000000
+      internalID: -5273815366868334826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_100
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 493
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c4826ecd54995aa0800000000000000
+      internalID: -6171738683719121726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_101
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 391
+        width: 622
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b13d37fa095be30800000000000000
+      internalID: 4518676884373052283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_102
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 391
+        width: 524
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2119cd24a93e023d0800000000000000
+      internalID: -3233334280765796078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_103
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 262
+        width: 602
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ca68ca4a6239420800000000000000
+      internalID: 2635492695652871205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_104
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 262
+        width: 548
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b87fa2ed4db55510800000000000000
+      internalID: 1537342990030174387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_105
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 64
+        width: 577
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114d2df4f6902f0d0800000000000000
+      internalID: -3390637195771325423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_106
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 5
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76abf00401a20630800000000000000
+      internalID: 3891850066569963132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_107
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 5
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507cc4b989a73d5d0800000000000000
+      internalID: -3038950527685835003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_108
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 5
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c854102a19f7157c0800000000000000
+      internalID: -4084343123583351412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_109
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af75577615967530800000000000000
+      internalID: 3852430454985949092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_110
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e48a44be29b9fc0800000000000000
+      internalID: -3487031947301466608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_111
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 5
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e228ac5639a59edf0800000000000000
+      internalID: -150489523425738194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_112
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 5
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a482037f76b8f8110800000000000000
+      internalID: 1265383298959419466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_113
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 5
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f5e80b8b121a5fe0800000000000000
+      internalID: -1199626441234782734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_114
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 5
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40a6355574f9a140800000000000000
+      internalID: 4731581668307411022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_115
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a5923cd66780680800000000000000
+      internalID: -8788644459015742971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_116
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 25
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3157b20d7815e0df0800000000000000
+      internalID: -212142488684890861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_117
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 5
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50eb114001af0bb90800000000000000
+      internalID: -7228002455234953723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_118
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 5
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a842ccdb23e843e0800000000000000
+      internalID: -2069154251249923928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_119
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 5
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e278317b9fd23f090800000000000000
+      internalID: -8002001562365622482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_120
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 5
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 954f00cebed654890800000000000000
+      internalID: -7474447146507242407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_121
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 5
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d756bed9c31cd00800000000000000
+      internalID: 991140041955048743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_122
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 5
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 206e5f6be689d4480800000000000000
+      internalID: -8913300486212950526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_123
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 5
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed02bb6a7c2a200b0800000000000000
+      internalID: -5763865594701340450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_124
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 5
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98aa96319b3569d20800000000000000
+      internalID: 3284905032573102729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_125
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 5
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8c362926d2bb010800000000000000
+      internalID: 1205607226637797568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_126
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 5
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c3b23f448818a70800000000000000
+      internalID: 8827486574341733505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_127
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 5
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2c59ce5049c4fe0800000000000000
+      internalID: -1203424247249779993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_128
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 5
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eae89bc83d782590800000000000000
+      internalID: -7698765880102425888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_129
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 5
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f2c23d11aeee4a0800000000000000
+      internalID: -6562050244754002068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_130
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 5
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee003264effedc1b0800000000000000
+      internalID: -5634583683393191698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_131
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 5
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4464804b4b1555e90800000000000000
+      internalID: -7037629006140127676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_132
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 5
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08bef3aba482f020800000000000000
+      internalID: 2374105826303326220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skyscraper-Buildings-pack_133
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 5
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bfd8094e9bbd7f50800000000000000
+      internalID: 6880862094196531124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Skyscraper-Buildings-pack_0: -4377969889278232266
+      Skyscraper-Buildings-pack_1: -8307426188902226571
+      Skyscraper-Buildings-pack_10: 7519217970751318862
+      Skyscraper-Buildings-pack_100: -6171738683719121726
+      Skyscraper-Buildings-pack_101: 4518676884373052283
+      Skyscraper-Buildings-pack_102: -3233334280765796078
+      Skyscraper-Buildings-pack_103: 2635492695652871205
+      Skyscraper-Buildings-pack_104: 1537342990030174387
+      Skyscraper-Buildings-pack_105: -3390637195771325423
+      Skyscraper-Buildings-pack_106: 3891850066569963132
+      Skyscraper-Buildings-pack_107: -3038950527685835003
+      Skyscraper-Buildings-pack_108: -4084343123583351412
+      Skyscraper-Buildings-pack_109: 3852430454985949092
+      Skyscraper-Buildings-pack_11: 5806565332520291094
+      Skyscraper-Buildings-pack_110: -3487031947301466608
+      Skyscraper-Buildings-pack_111: -150489523425738194
+      Skyscraper-Buildings-pack_112: 1265383298959419466
+      Skyscraper-Buildings-pack_113: -1199626441234782734
+      Skyscraper-Buildings-pack_114: 4731581668307411022
+      Skyscraper-Buildings-pack_115: -8788644459015742971
+      Skyscraper-Buildings-pack_116: -212142488684890861
+      Skyscraper-Buildings-pack_117: -7228002455234953723
+      Skyscraper-Buildings-pack_118: -2069154251249923928
+      Skyscraper-Buildings-pack_119: -8002001562365622482
+      Skyscraper-Buildings-pack_12: -8171931670648869741
+      Skyscraper-Buildings-pack_120: -7474447146507242407
+      Skyscraper-Buildings-pack_121: 991140041955048743
+      Skyscraper-Buildings-pack_122: -8913300486212950526
+      Skyscraper-Buildings-pack_123: -5763865594701340450
+      Skyscraper-Buildings-pack_124: 3284905032573102729
+      Skyscraper-Buildings-pack_125: 1205607226637797568
+      Skyscraper-Buildings-pack_126: 8827486574341733505
+      Skyscraper-Buildings-pack_127: -1203424247249779993
+      Skyscraper-Buildings-pack_128: -7698765880102425888
+      Skyscraper-Buildings-pack_129: -6562050244754002068
+      Skyscraper-Buildings-pack_13: 5236858144275219416
+      Skyscraper-Buildings-pack_130: -5634583683393191698
+      Skyscraper-Buildings-pack_131: -7037629006140127676
+      Skyscraper-Buildings-pack_132: 2374105826303326220
+      Skyscraper-Buildings-pack_133: 6880862094196531124
+      Skyscraper-Buildings-pack_14: 6322487322724151621
+      Skyscraper-Buildings-pack_15: -6460879489866846466
+      Skyscraper-Buildings-pack_16: 5135310324287789751
+      Skyscraper-Buildings-pack_17: 7435553570208786353
+      Skyscraper-Buildings-pack_18: 6694746614917014360
+      Skyscraper-Buildings-pack_19: -9175990282730769974
+      Skyscraper-Buildings-pack_2: -2351308195430343378
+      Skyscraper-Buildings-pack_20: -5288720028311193199
+      Skyscraper-Buildings-pack_21: 305488255853358157
+      Skyscraper-Buildings-pack_22: -7713293318476201183
+      Skyscraper-Buildings-pack_23: -3692752546966107215
+      Skyscraper-Buildings-pack_24: -8184676966937161934
+      Skyscraper-Buildings-pack_25: -5036737233628716455
+      Skyscraper-Buildings-pack_26: -5435534164221223436
+      Skyscraper-Buildings-pack_27: -7132720772885927316
+      Skyscraper-Buildings-pack_28: 7592144935580503690
+      Skyscraper-Buildings-pack_29: 554374246762639271
+      Skyscraper-Buildings-pack_3: 5158526931614667176
+      Skyscraper-Buildings-pack_30: 4885382403915600586
+      Skyscraper-Buildings-pack_31: -4334551565401291052
+      Skyscraper-Buildings-pack_32: 8256062605844945436
+      Skyscraper-Buildings-pack_33: -5437883812950863152
+      Skyscraper-Buildings-pack_34: 7927732576359236924
+      Skyscraper-Buildings-pack_35: -4664744649194077207
+      Skyscraper-Buildings-pack_36: 4356396361822809008
+      Skyscraper-Buildings-pack_37: -7214480061341900947
+      Skyscraper-Buildings-pack_38: 4305861834187390961
+      Skyscraper-Buildings-pack_39: 1420524557329071639
+      Skyscraper-Buildings-pack_4: 568583726051651032
+      Skyscraper-Buildings-pack_40: -8909411366994531868
+      Skyscraper-Buildings-pack_41: -1510113220304249911
+      Skyscraper-Buildings-pack_42: 5402028186672792922
+      Skyscraper-Buildings-pack_43: -4699295027323521267
+      Skyscraper-Buildings-pack_44: -580354331621819941
+      Skyscraper-Buildings-pack_45: 8173998400675231091
+      Skyscraper-Buildings-pack_46: 8024503544462279844
+      Skyscraper-Buildings-pack_47: 6992320192643709546
+      Skyscraper-Buildings-pack_48: -362112344699856204
+      Skyscraper-Buildings-pack_49: -5509876292392189576
+      Skyscraper-Buildings-pack_5: 8431691254526797317
+      Skyscraper-Buildings-pack_50: 6494742028337294316
+      Skyscraper-Buildings-pack_51: -8515465886863969887
+      Skyscraper-Buildings-pack_52: -9088396526468065097
+      Skyscraper-Buildings-pack_53: 352671985815787264
+      Skyscraper-Buildings-pack_54: -3177549615683827002
+      Skyscraper-Buildings-pack_55: -6638645557013036351
+      Skyscraper-Buildings-pack_56: 2252990275147275676
+      Skyscraper-Buildings-pack_57: -2359908332371558504
+      Skyscraper-Buildings-pack_58: -8719419513761229150
+      Skyscraper-Buildings-pack_59: -1947896387247951385
+      Skyscraper-Buildings-pack_6: -103110549627830772
+      Skyscraper-Buildings-pack_60: 959472553794594323
+      Skyscraper-Buildings-pack_61: 7432435169320440734
+      Skyscraper-Buildings-pack_62: 3668487486195841349
+      Skyscraper-Buildings-pack_63: -8222050648223943946
+      Skyscraper-Buildings-pack_64: 8830032502134138586
+      Skyscraper-Buildings-pack_65: 3164920521261220136
+      Skyscraper-Buildings-pack_66: 4877811742809545431
+      Skyscraper-Buildings-pack_67: 534967144976896497
+      Skyscraper-Buildings-pack_68: 140867430192035577
+      Skyscraper-Buildings-pack_69: 640584757121236571
+      Skyscraper-Buildings-pack_7: -4400590843825161579
+      Skyscraper-Buildings-pack_70: -192053147130861978
+      Skyscraper-Buildings-pack_71: -5374441167426092828
+      Skyscraper-Buildings-pack_72: 7012292141824200160
+      Skyscraper-Buildings-pack_73: -854758961608377010
+      Skyscraper-Buildings-pack_74: 862770344379983262
+      Skyscraper-Buildings-pack_75: 5187991419812421195
+      Skyscraper-Buildings-pack_76: -3286360636060297828
+      Skyscraper-Buildings-pack_77: -4887266916862111859
+      Skyscraper-Buildings-pack_78: -4578973872448680184
+      Skyscraper-Buildings-pack_79: 2352051292699476245
+      Skyscraper-Buildings-pack_8: -3392807166922430196
+      Skyscraper-Buildings-pack_80: 7505101032707138642
+      Skyscraper-Buildings-pack_81: 3583647497151159088
+      Skyscraper-Buildings-pack_82: 5268053699034257509
+      Skyscraper-Buildings-pack_83: 7136700146261241947
+      Skyscraper-Buildings-pack_84: 3130557353484788348
+      Skyscraper-Buildings-pack_85: -3505172630579254382
+      Skyscraper-Buildings-pack_86: -7299058155196820731
+      Skyscraper-Buildings-pack_87: 9157080491764835982
+      Skyscraper-Buildings-pack_88: -3966261292438410263
+      Skyscraper-Buildings-pack_89: 7378029455439224207
+      Skyscraper-Buildings-pack_9: -6401974411180434319
+      Skyscraper-Buildings-pack_90: -7113936579842859546
+      Skyscraper-Buildings-pack_91: 6564766149530074084
+      Skyscraper-Buildings-pack_92: 4818922194382631584
+      Skyscraper-Buildings-pack_93: 7466983078952573072
+      Skyscraper-Buildings-pack_94: -3432842051326670925
+      Skyscraper-Buildings-pack_95: 2032846423352706840
+      Skyscraper-Buildings-pack_96: 1008227292612890523
+      Skyscraper-Buildings-pack_97: -6910711632757121528
+      Skyscraper-Buildings-pack_98: -2851674424770359160
+      Skyscraper-Buildings-pack_99: -5273815366868334826
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
