@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 823ac4e88281713428d572a59ff78289
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212434
+  packageName: Pixel Gradient
+  packageVersion: 1.0.0
+  assetPath: Assets/PixelGradient/Sample/Settings/UniversalRenderPipelineAsset_Renderer.asset
+  uploadId: 479391

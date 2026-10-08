@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a78736694ed16614096efc342b2b7dd6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212434
+  packageName: Pixel Gradient
+  packageVersion: 1.0.0
+  assetPath: Assets/PixelGradient/Materials/PixelGradientUnlitMaterial.mat
+  uploadId: 479391

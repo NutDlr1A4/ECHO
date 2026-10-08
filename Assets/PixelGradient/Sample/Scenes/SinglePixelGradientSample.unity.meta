@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 17d0bd162b7f98a4f9414c7bca1aa725
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212434
+  packageName: Pixel Gradient
+  packageVersion: 1.0.0
+  assetPath: Assets/PixelGradient/Sample/Scenes/SinglePixelGradientSample.unity
+  uploadId: 479391

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 00426706730f48d469431d81644ff179
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212434
+  packageName: Pixel Gradient
+  packageVersion: 1.0.0
+  assetPath: Assets/PixelGradient/Sample/Data/TestPixelTextureData.asset
+  uploadId: 479391
