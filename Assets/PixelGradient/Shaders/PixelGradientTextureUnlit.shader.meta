@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 9ff670c0ddeec6242a1c476a375033f5
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212434
+  packageName: Pixel Gradient
+  packageVersion: 1.0.0
+  assetPath: Assets/PixelGradient/Shaders/PixelGradientTextureUnlit.shader
+  uploadId: 479391

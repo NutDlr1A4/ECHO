@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5ac03e287ae63a44891507fdc2b77374
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212434
+  packageName: Pixel Gradient
+  packageVersion: 1.0.0
+  assetPath: Assets/PixelGradient/Sample/Scenes/BlendPixelGradientSample.unity
+  uploadId: 479391

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6a9f74df922363c4b84f7ecb3adc45c6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 212434
+  packageName: Pixel Gradient
+  packageVersion: 1.0.0
+  assetPath: Assets/PixelGradient/Sample/Data/GradientsData.asset
+  uploadId: 479391
