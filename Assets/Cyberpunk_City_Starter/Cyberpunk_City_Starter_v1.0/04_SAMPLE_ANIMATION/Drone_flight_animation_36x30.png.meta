@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: b1a29a40a0b0d5e42a238d1159d11ced
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2554897498430980350
+    second: Drone_flight_animation_36x30_0
+  - first:
+      213: -6408185176292413362
+    second: Drone_flight_animation_36x30_1
+  - first:
+      213: -1788595652782733787
+    second: Drone_flight_animation_36x30_2
+  - first:
+      213: -3611733192680661019
+    second: Drone_flight_animation_36x30_3
+  - first:
+      213: 4642087403260132592
+    second: Drone_flight_animation_36x30_4
+  - first:
+      213: -412382889264987507
+    second: Drone_flight_animation_36x30_5
+  - first:
+      213: -809608308244861991
+    second: Drone_flight_animation_36x30_6
+  - first:
+      213: -6623555865700192497
+    second: Drone_flight_animation_36x30_7
+  - first:
+      213: -4585993072773614501
+    second: Drone_flight_animation_36x30_8
+  - first:
+      213: -1050625700167058975
+    second: Drone_flight_animation_36x30_9
+  - first:
+      213: -3149220014239092188
+    second: Drone_flight_animation_36x30_10
+  - first:
+      213: -6996656266443938905
+    second: Drone_flight_animation_36x30_11
+  - first:
+      213: -3457497636438029798
+    second: Drone_flight_animation_36x30_12
+  - first:
+      213: -1109397846586748214
+    second: Drone_flight_animation_36x30_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 8
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef043870db1d47320800000000000000
+      internalID: 2554897498430980350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 7
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40ba20c88d8117a0800000000000000
+      internalID: -6408185176292413362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 6
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 526c31deab1ad27e0800000000000000
+      internalID: -1788595652782733787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_3
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 5
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef18ca0ccb80edc0800000000000000
+      internalID: -3611733192680661019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_4
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 4
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fcb2aff5e10c6040800000000000000
+      internalID: 4642087403260132592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_5
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 3
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8249e572fbe64af0800000000000000
+      internalID: -412382889264987507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_6
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 2
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db2cdb7881b3c4f0800000000000000
+      internalID: -809608308244861991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_7
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 3
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f2cf288076414a0800000000000000
+      internalID: -6623555865700192497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_8
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 4
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b543de219974b50c0800000000000000
+      internalID: -4585993072773614501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_9
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 5
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e975adfd7d6b61f0800000000000000
+      internalID: -1050625700167058975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_10
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 6
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4227ab31519bb44d0800000000000000
+      internalID: -3149220014239092188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_11
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 6
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3291f0232e6ee90800000000000000
+      internalID: -6996656266443938905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_12
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 7
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1acb50e7308400d0800000000000000
+      internalID: -3457497636438029798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drone_flight_animation_36x30_13
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 8
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac21d9f4980aa90f0800000000000000
+      internalID: -1109397846586748214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Drone_flight_animation_36x30_0: 2554897498430980350
+      Drone_flight_animation_36x30_1: -6408185176292413362
+      Drone_flight_animation_36x30_10: -3149220014239092188
+      Drone_flight_animation_36x30_11: -6996656266443938905
+      Drone_flight_animation_36x30_12: -3457497636438029798
+      Drone_flight_animation_36x30_13: -1109397846586748214
+      Drone_flight_animation_36x30_2: -1788595652782733787
+      Drone_flight_animation_36x30_3: -3611733192680661019
+      Drone_flight_animation_36x30_4: 4642087403260132592
+      Drone_flight_animation_36x30_5: -412382889264987507
+      Drone_flight_animation_36x30_6: -809608308244861991
+      Drone_flight_animation_36x30_7: -6623555865700192497
+      Drone_flight_animation_36x30_8: -4585993072773614501
+      Drone_flight_animation_36x30_9: -1050625700167058975
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
