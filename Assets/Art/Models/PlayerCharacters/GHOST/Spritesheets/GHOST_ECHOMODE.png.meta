@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: a33f39605f66f3723aeade80f9048c75
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6233930124083285689
+    second: GHOST_ECHOMODE_0
+  - first:
+      213: -5359536201831359827
+    second: GHOST_ECHOMODE_1
+  - first:
+      213: -2374328242291742506
+    second: GHOST_ECHOMODE_2
+  - first:
+      213: 2181920172225232159
+    second: GHOST_ECHOMODE_3
+  - first:
+      213: 7717006540931291354
+    second: GHOST_ECHOMODE_4
+  - first:
+      213: -3358914942852062997
+    second: GHOST_ECHOMODE_5
+  - first:
+      213: -8718795822339214338
+    second: GHOST_ECHOMODE_6
+  - first:
+      213: 5479466139654443556
+    second: GHOST_ECHOMODE_7
+  - first:
+      213: -6803413837913192255
+    second: GHOST_ECHOMODE_8
+  - first:
+      213: -4244431214457977719
+    second: GHOST_ECHOMODE_9
+  - first:
+      213: 4703087244879597664
+    second: GHOST_ECHOMODE_10
+  - first:
+      213: -5146721436287555665
+    second: GHOST_ECHOMODE_11
+  - first:
+      213: 6143893770489351050
+    second: GHOST_ECHOMODE_12
+  - first:
+      213: -7585374065913896032
+    second: GHOST_ECHOMODE_13
+  - first:
+      213: 1355946404402724426
+    second: GHOST_ECHOMODE_14
+  - first:
+      213: 149249106467451870
+    second: GHOST_ECHOMODE_15
+  - first:
+      213: 3780201209716559847
+    second: GHOST_ECHOMODE_16
+  - first:
+      213: 3010834881572917133
+    second: GHOST_ECHOMODE_17
+  - first:
+      213: -6410113662258975061
+    second: GHOST_ECHOMODE_18
+  - first:
+      213: 6368800256845821481
+    second: GHOST_ECHOMODE_19
+  - first:
+      213: -2007184628137517256
+    second: GHOST_ECHOMODE_20
+  - first:
+      213: -4172797035905006788
+    second: GHOST_ECHOMODE_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be47984b6e538650800000000000000
+      internalID: 6233930124083285689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 0
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daadef0783a1f95b0800000000000000
+      internalID: -5359536201831359827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 0
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d8e50a1b01bc0fd0800000000000000
+      internalID: -2374328242291742506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 0
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d7eb916dcb74e10800000000000000
+      internalID: 2181920172225232159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_4
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad853910090581b60800000000000000
+      internalID: 7717006540931291354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_5
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 0
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be02d80e7acb261d0800000000000000
+      internalID: -3358914942852062997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_6
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3bf4cc46d900780800000000000000
+      internalID: -8718795822339214338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_7
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42252ec2c69fa0c40800000000000000
+      internalID: 5479466139654443556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_8
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c80533192b6591a0800000000000000
+      internalID: -6803413837913192255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_9
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98407a46c40c815c0800000000000000
+      internalID: -4244431214457977719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_10
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06018b26ee8b44140800000000000000
+      internalID: 4703087244879597664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_11
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 0
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa721384f1c2398b0800000000000000
+      internalID: -5146721436287555665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_12
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 0
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8bc0cf15de734550800000000000000
+      internalID: 6143893770489351050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_13
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 0
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3edb0e9765bb690800000000000000
+      internalID: -7585374065913896032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_14
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 0
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e74e8121a41d210800000000000000
+      internalID: 1355946404402724426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_15
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 0
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed37906854d321200800000000000000
+      internalID: 149249106467451870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_16
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 0
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef48acc8f8f57430800000000000000
+      internalID: 3780201209716559847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_17
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f42896f52a8c920800000000000000
+      internalID: 3010834881572917133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_18
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baeec2f1693ba07a0800000000000000
+      internalID: -6410113662258975061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_19
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92636ba1716826850800000000000000
+      internalID: 6368800256845821481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_20
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f1d39173c0524e0800000000000000
+      internalID: -2007184628137517256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GHOST_ECHOMODE_21
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 0
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33441b443f3716c0800000000000000
+      internalID: -4172797035905006788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GHOST_ECHOMODE_0: 6233930124083285689
+      GHOST_ECHOMODE_1: -5359536201831359827
+      GHOST_ECHOMODE_10: 4703087244879597664
+      GHOST_ECHOMODE_11: -5146721436287555665
+      GHOST_ECHOMODE_12: 6143893770489351050
+      GHOST_ECHOMODE_13: -7585374065913896032
+      GHOST_ECHOMODE_14: 1355946404402724426
+      GHOST_ECHOMODE_15: 149249106467451870
+      GHOST_ECHOMODE_16: 3780201209716559847
+      GHOST_ECHOMODE_17: 3010834881572917133
+      GHOST_ECHOMODE_18: -6410113662258975061
+      GHOST_ECHOMODE_19: 6368800256845821481
+      GHOST_ECHOMODE_2: -2374328242291742506
+      GHOST_ECHOMODE_20: -2007184628137517256
+      GHOST_ECHOMODE_21: -4172797035905006788
+      GHOST_ECHOMODE_3: 2181920172225232159
+      GHOST_ECHOMODE_4: 7717006540931291354
+      GHOST_ECHOMODE_5: -3358914942852062997
+      GHOST_ECHOMODE_6: -8718795822339214338
+      GHOST_ECHOMODE_7: 5479466139654443556
+      GHOST_ECHOMODE_8: -6803413837913192255
+      GHOST_ECHOMODE_9: -4244431214457977719
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
