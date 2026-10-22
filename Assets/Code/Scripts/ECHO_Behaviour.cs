@@ -1,19 +1,20 @@
 using System.Collections;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class ECHOBehaviour : MonoBehaviour
 {
-    [SerializeField] private GameObject previous_node;
-    [SerializeField] private GameObject current_node;
+    [SerializeField] private GameObject initial_node;
+    private GameObject previous_node;
+    private GameObject current_node;
 
     [SerializeField] private float move_speed = 30f;
-    
-    [SerializeField] private float move_buffer_time = 0.2f;
-    private GameObject queued_node;
 
-    private float move_duration;
-    private float move_progress;
+    [SerializeField] private float move_buffer_time = 0.2f;
+    private float last_buffer_time = 0.0f;
+    private GameObject queued_node;
 
     private bool on_node;
 
@@ -34,6 +35,14 @@ public class ECHOBehaviour : MonoBehaviour
         controls.Player.Move.performed -= OnMove;
         controls.Player.Move.canceled -= OnMove;
         controls.Disable();
+    }
+
+    private float DistToTarget() {
+        return (current_node.transform.position - gameObject.transform.position).magnitude;
+    }
+
+    private bool DoInputBuffer() {
+        return DistToTarget() <= (move_speed * move_buffer_time); 
     }
 
     private GameObject GetNodeFromMovementInput(Vector2 move_input) {
@@ -62,8 +71,9 @@ public class ECHOBehaviour : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
 
         if (!on_node) {
-            if (move_duration - move_progress <= move_buffer_time) {
+            if (DoInputBuffer()) {
                 queued_node = GetNodeFromMovementInput(moveInput);
+                last_buffer_time = 0.0f;
                 Debug.Log("Buffered input!");
             }
             else {
@@ -86,39 +96,42 @@ public class ECHOBehaviour : MonoBehaviour
 
         previous_node = current_node;
         current_node = new_node;
-
-        move_duration = (current_node.transform.position - previous_node.transform.position).magnitude / move_speed;
-        move_progress = 0.0f;
         on_node = false;
 
         return true;
     }
 
     void Start() {
-        gameObject.transform.position = current_node.transform.position;
+        gameObject.transform.position = initial_node.transform.position;
+        current_node = initial_node;
         on_node = true;
     }
 
     void Update() {
-        if (on_node) return;
+        if (on_node) {
+            gameObject.transform.position = current_node.transform.position;
+            return;
+        }
 
-        gameObject.transform.position = Vector2.Lerp(
-            current_node.transform.position,
-            previous_node.transform.position,
-            (move_duration - move_progress) / move_duration
-        );
+        last_buffer_time += Time.deltaTime;
+        
+        Vector2 delta = current_node.transform.position - gameObject.transform.position;
+        Vector2 move_distance = delta.normalized * move_speed * Time.deltaTime;
 
-        move_progress += Time.deltaTime;
-        if (move_progress > move_duration) {
-            move_progress = move_duration;
+        if (move_distance.sqrMagnitude >= delta.sqrMagnitude) {
+            Debug.Log("Arrived at destination!");
 
             gameObject.transform.position = current_node.transform.position;
             on_node = true;
 
-            if (queued_node != null) {
+            if (last_buffer_time <= move_buffer_time) {
+                Debug.Log("Moving to the buffered node");
                 TryMoveTo(queued_node);
-                queued_node = null;
             }
+            queued_node = null;
+        }
+        else {
+            gameObject.transform.position += (Vector3)move_distance;
         }
     }
 }
