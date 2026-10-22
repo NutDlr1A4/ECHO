@@ -76,9 +76,6 @@ public class ECHOBehaviour : MonoBehaviour
                 last_buffer_time = 0.0f;
                 Debug.Log("Buffered input!");
             }
-            else {
-                Debug.Log("Can't move: Is already moving!");
-            }
             return;
         }
 
@@ -119,13 +116,10 @@ public class ECHOBehaviour : MonoBehaviour
         Vector2 move_distance = delta.normalized * move_speed * Time.deltaTime;
 
         if (move_distance.sqrMagnitude >= delta.sqrMagnitude) {
-            Debug.Log("Arrived at destination!");
-
             gameObject.transform.position = current_node.transform.position;
             on_node = true;
 
             if (last_buffer_time <= move_buffer_time) {
-                Debug.Log("Moving to the buffered node");
                 TryMoveTo(queued_node);
             }
             queued_node = null;
