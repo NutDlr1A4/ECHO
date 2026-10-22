@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -72,7 +72,7 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 2
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -87,7 +87,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   asepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 2
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 639282691860347589
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -141,7 +141,191 @@ ScriptedImporter:
       height: 240
     spriteID: e6d95b74c0f90624fa64d1dbb16ac649
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -117, y: -73}
+      - {x: -118, y: -18}
+      - {x: -121, y: -17}
+      - {x: -125, y: -16}
+      - {x: -121, y: -14}
+      - {x: -117.26666, y: -6}
+      - {x: -105, y: -4}
+      - {x: -88.25, y: -6}
+      - {x: -83, y: -10}
+      - {x: -77, y: -10}
+      - {x: -75, y: -8}
+      - {x: -75, y: 5}
+      - {x: -73, y: 2}
+      - {x: -75, y: -6}
+      - {x: -74, y: -11}
+      - {x: -104, y: -11}
+      - {x: -106, y: -13}
+      - {x: -106, y: -19}
+      - {x: -104, y: -21}
+      - {x: -72, y: -21}
+      - {x: -69, y: -20}
+      - {x: -72, y: -22}
+      - {x: -74, y: -24}
+      - {x: -74, y: -56}
+      - {x: -72, y: -58}
+      - {x: 24, y: -58}
+      - {x: 42, y: -44}
+      - {x: 54, y: -88}
+      - {x: 56, y: -90}
+      - {x: 104, y: -90}
+      - {x: 106, y: -88}
+      - {x: 195, y: -98}
+      - {x: 200, y: -56}
+      - {x: 200, y: 25}
+      - {x: 155.89108, y: 23.039597}
+      - {x: 167, y: 25}
+      - {x: 169, y: 27}
+      - {x: 200, y: 69}
+      - {x: 200, y: 120}
+      - {x: -200, y: 120}
+      - {x: -200, y: -120}
+      - {x: -150, y: -120}
+    - outline:
+      - {x: 123, y: 75}
+      - {x: 123, y: 85}
+      - {x: 133, y: 85}
+      - {x: 133, y: 75}
+    - outline:
+      - {x: 24, y: 40}
+      - {x: 24, y: 53}
+      - {x: 25, y: 53}
+      - {x: 28, y: 56}
+      - {x: 28, y: 59}
+      - {x: 32, y: 65}
+      - {x: 37, y: 68}
+      - {x: 39, y: 68}
+      - {x: 40, y: 69}
+      - {x: 69, y: 69}
+      - {x: 70, y: 51}
+      - {x: 65, y: 56}
+      - {x: 31, y: 56}
+      - {x: 24, y: 49}
+      - {x: 25, y: 39}
+    - outline:
+      - {x: 4, y: 59}
+      - {x: -5, y: 59}
+      - {x: -5, y: 68}
+    - outline:
+      - {x: 40, y: 24}
+      - {x: 40, y: 40}
+      - {x: 56, y: 40}
+      - {x: 56, y: 24}
+    - outline:
+      - {x: -112, y: 33}
+      - {x: -114, y: 33}
+      - {x: -115, y: 36}
+      - {x: -114, y: 35}
+      - {x: -110, y: 35}
+      - {x: -110, y: 31}
+    - outline:
+      - {x: 24, y: 24}
+      - {x: 25, y: 25}
+      - {x: 25, y: 23}
+    - outline:
+      - {x: -133, y: 24}
+      - {x: -132, y: 23}
+      - {x: -129, y: 24}
+      - {x: -133, y: 20}
+    - outline:
+      - {x: -24, y: 11}
+      - {x: -24, y: 23}
+      - {x: -25, y: 24}
+      - {x: -22, y: 23}
+      - {x: -21, y: 22}
+      - {x: -21, y: 11}
+    - outline:
+      - {x: 150, y: 22}
+      - {x: 154.85715, y: 22.857147}
+      - {x: 153, y: 21}
+    - outline:
+      - {x: 59, y: 8}
+      - {x: 58, y: 9}
+      - {x: 65, y: 8}
+      - {x: 72, y: 15}
+      - {x: 71, y: 22}
+      - {x: 72, y: 21}
+      - {x: 85, y: 21}
+      - {x: 85, y: 11}
+      - {x: 71, y: 11}
+      - {x: 59, y: -1}
+    - outline:
+      - {x: -39, y: 21}
+      - {x: -40, y: 11}
+      - {x: -48.899994, y: 10.110001}
+    - outline:
+      - {x: -107, y: 16}
+      - {x: -107, y: 19}
+      - {x: -106, y: 8}
+      - {x: -104, y: 6}
+      - {x: -111.66667, y: 6}
+    - outline:
+      - {x: 26, y: 10}
+      - {x: 27, y: 11}
+      - {x: 26, y: 13}
+      - {x: 29, y: 10}
+    - outline:
+      - {x: -28, y: -4}
+      - {x: -28, y: 1}
+      - {x: -20, y: 1}
+      - {x: -20, y: -4}
+    - outline:
+      - {x: -59, y: -4}
+      - {x: -59, y: 1}
+      - {x: -52, y: 1}
+      - {x: -52, y: -4}
+    - outline:
+      - {x: -11, y: -4}
+      - {x: -11, y: 1}
+      - {x: -4, y: 1}
+      - {x: -4, y: -4}
+    - outline:
+      - {x: -109, y: -20}
+      - {x: -109, y: -17}
+      - {x: -110, y: -8}
+      - {x: -113, y: -8}
+      - {x: -115, y: -8}
+      - {x: -115, y: -24}
+      - {x: -112, y: -24}
+      - {x: -109, y: -24}
+    - outline:
+      - {x: -11, y: -21}
+      - {x: -11, y: -13}
+      - {x: -4, y: -13}
+      - {x: -4, y: -21}
+    - outline:
+      - {x: -28, y: -21}
+      - {x: -28, y: -13}
+      - {x: -20, y: -13}
+      - {x: -20, y: -21}
+    - outline:
+      - {x: -59, y: -21}
+      - {x: -59, y: -13}
+      - {x: -52, y: -13}
+      - {x: -52, y: -21}
+    - outline:
+      - {x: -77, y: -64}
+      - {x: -77, y: -32}
+      - {x: -80, y: -29}
+      - {x: -112, y: -29}
+      - {x: -115, y: -32}
+      - {x: -115, y: -64}
+      - {x: -112, y: -67}
+      - {x: -80, y: -67}
+    - outline:
+      - {x: -109, y: -61}
+      - {x: -109, y: -35}
+      - {x: -83, y: -35}
+      - {x: -83, y: -61}
+    - outline:
+      - {x: -109, y: -12}
+      - {x: -109, y: -12}
+      - {x: -109, y: -8}
+      - {x: -109, y: -15}
     vertices: []
     spritePhysicsOutline: []
     indices: 
@@ -149,21 +333,42 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
-  tileSetImportData: []
+  tileSetImportData:
+  - name: Layer 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 400
+      height: 240
+    spriteID: 1bf2806e214201f469a39ea09e4a168b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1660445297
+      value0: 4287466680
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Buildings
-    layerFlags: 0
+    name: Layer 1
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Buildings
+    - name: Layer 1
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -171,13 +376,37 @@ ScriptedImporter:
         y: 0
         width: 400
         height: 240
-      spriteId: e6d95b74c0f90624fa64d1dbb16ac649
+      spriteId: 1bf2806e214201f469a39ea09e4a168b
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   tileSets: []
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
