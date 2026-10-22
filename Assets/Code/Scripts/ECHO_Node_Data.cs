@@ -18,7 +18,7 @@ public class ECHO_Node_Data : MonoBehaviour
     } 
     public GameObject GetNodeRight() {
         return right;
-    } 
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {

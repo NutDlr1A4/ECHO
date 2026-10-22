@@ -1,5 +1,13 @@
 fileFormatVersion: 2
 guid: a44b0831dbe1d974fb4f844b73910a80
+AssetOrigin:
+  serializedVersion: 1
+  productId: 356466
+  packageName: FREE Pixel Art - Vending Machines Pack
+  packageVersion: 1.0
+  assetPath: Assets/karsiori/Pixel Art Vending Machines Pack/Machine 2/Vending Machine
+    2.3 (No Glass).png
+  uploadId: 849492
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -141,11 +149,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 356466
-  packageName: FREE Pixel Art - Vending Machines Pack
-  packageVersion: 1.0
-  assetPath: Assets/karsiori/Pixel Art Vending Machines Pack/Machine 2/Vending Machine
-    2.3 (No Glass).png
-  uploadId: 849492

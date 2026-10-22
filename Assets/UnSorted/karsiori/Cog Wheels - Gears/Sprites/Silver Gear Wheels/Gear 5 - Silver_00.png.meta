@@ -1,5 +1,13 @@
 fileFormatVersion: 2
 guid: 5d6e7c88e153cc3458147c43c41c3a01
+AssetOrigin:
+  serializedVersion: 1
+  productId: 356470
+  packageName: Pixel Art - Gear Wheels Pack - Animated
+  packageVersion: 1.0
+  assetPath: Assets/karsiori/Cog Wheels - Gears/Sprites/Silver Gear Wheels/Gear 5
+    - Silver_00.png
+  uploadId: 849496
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -141,11 +149,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 356470
-  packageName: Pixel Art - Gear Wheels Pack - Animated
-  packageVersion: 1.0
-  assetPath: Assets/karsiori/Cog Wheels - Gears/Sprites/Silver Gear Wheels/Gear 5
-    - Silver_00.png
-  uploadId: 849496

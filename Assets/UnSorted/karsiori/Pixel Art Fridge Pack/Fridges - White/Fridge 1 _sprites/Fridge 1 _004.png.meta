@@ -1,5 +1,13 @@
 fileFormatVersion: 2
 guid: 59a2485b83016b9408106620d2cb3ada
+AssetOrigin:
+  serializedVersion: 1
+  productId: 356474
+  packageName: Pixel Art - Fridge Pack - Animated
+  packageVersion: 1.0
+  assetPath: Assets/karsiori/Pixel Art Fridge Pack/Fridges - White/Fridge 1 _sprites/Fridge
+    1 _004.png
+  uploadId: 849498
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -141,11 +149,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 356474
-  packageName: Pixel Art - Fridge Pack - Animated
-  packageVersion: 1.0
-  assetPath: Assets/karsiori/Pixel Art Fridge Pack/Fridges - White/Fridge 1 _sprites/Fridge
-    1 _004.png
-  uploadId: 849498

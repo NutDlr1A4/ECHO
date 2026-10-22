@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 8e9d127b8b70b4c4d983aa753297f12b
+AssetOrigin:
+  serializedVersion: 1
+  productId: 389432
+  packageName: 2D Pixel RPG Chacracter, 7+ Animations
+  packageVersion: 1.0.0
+  assetPath: Assets/Packet/WustiCode.PixelChacracter/Character Draw Weapon Animation.png
+  uploadId: 942492
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -271,10 +278,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 389432
-  packageName: 2D Pixel RPG Chacracter, 7+ Animations
-  packageVersion: 1.0.0
-  assetPath: Assets/Packet/WustiCode.PixelChacracter/Character Draw Weapon Animation.png
-  uploadId: 942492

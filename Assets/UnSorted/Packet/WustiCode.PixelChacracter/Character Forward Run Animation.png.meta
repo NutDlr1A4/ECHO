@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 6ee9a4a9f9d61bd40885ed67e69d45b7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 389432
+  packageName: 2D Pixel RPG Chacracter, 7+ Animations
+  packageVersion: 1.0.0
+  assetPath: Assets/Packet/WustiCode.PixelChacracter/Character Forward Run Animation.png
+  uploadId: 942492
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -271,10 +278,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 389432
-  packageName: 2D Pixel RPG Chacracter, 7+ Animations
-  packageVersion: 1.0.0
-  assetPath: Assets/Packet/WustiCode.PixelChacracter/Character Forward Run Animation.png
-  uploadId: 942492
