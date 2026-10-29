@@ -70,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,12 +136,12 @@ TextureImporter:
       name: GHOST_DEATH_0
       rect:
         serializedVersion: 2
-        x: 26
+        x: 15
         y: 0
-        width: 22
-        height: 43
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,12 +158,12 @@ TextureImporter:
       name: GHOST_DEATH_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 85
         y: 0
-        width: 22
-        height: 43
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,12 +180,12 @@ TextureImporter:
       name: GHOST_DEATH_2
       rect:
         serializedVersion: 2
-        x: 170
+        x: 159
         y: 0
-        width: 22
-        height: 43
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: GHOST_DEATH_3
       rect:
         serializedVersion: 2
-        x: 243
+        x: 232
         y: 0
-        width: 22
-        height: 43
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: GHOST_DEATH_4
       rect:
         serializedVersion: 2
-        x: 306
+        x: 298
         y: 0
-        width: 31
-        height: 42
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: GHOST_DEATH_5
       rect:
         serializedVersion: 2
-        x: 380
+        x: 371
         y: 0
-        width: 32
-        height: 39
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: GHOST_DEATH_6
       rect:
         serializedVersion: 2
-        x: 453
+        x: 444
         y: 0
-        width: 31
-        height: 37
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -290,12 +290,12 @@ TextureImporter:
       name: GHOST_DEATH_7
       rect:
         serializedVersion: 2
-        x: 524
+        x: 517
         y: 0
-        width: 40
-        height: 35
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -315,9 +315,9 @@ TextureImporter:
         x: 593
         y: 0
         width: 48
-        height: 30
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,12 +334,12 @@ TextureImporter:
       name: GHOST_DEATH_9
       rect:
         serializedVersion: 2
-        x: 663
+        x: 662
         y: 0
-        width: 46
-        height: 13
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -356,12 +356,12 @@ TextureImporter:
       name: GHOST_DEATH_10
       rect:
         serializedVersion: 2
-        x: 735
+        x: 734
         y: 0
-        width: 47
-        height: 13
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: GHOST_DEATH_11
       rect:
         serializedVersion: 2
-        x: 807
+        x: 806
         y: 0
         width: 48
-        height: 13
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: eba8da2d7fec7280daf189763c61e8d7
     internalID: 0
     vertices: []
     indices: 
@@ -408,12 +408,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       GHOST_DEATH_0: -4978599902116851915
       GHOST_DEATH_1: 153767071608192274
       GHOST_DEATH_10: -6159882161207141337
       GHOST_DEATH_11: -2675612031077990159
+      GHOST_DEATH_12: -74635375
+      GHOST_DEATH_13: 1348345649
+      GHOST_DEATH_14: 1266151893
+      GHOST_DEATH_15: 1406728762
       GHOST_DEATH_2: 2195158880860087262
       GHOST_DEATH_3: 4327066704882613200
       GHOST_DEATH_4: -1978100328647258733
