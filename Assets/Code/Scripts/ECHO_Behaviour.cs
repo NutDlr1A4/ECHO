@@ -105,25 +105,27 @@ public class ECHOBehaviour : MonoBehaviour
     void Update() {
         if (on_node) {
             gameObject.transform.position = current_node.transform.position;
-            return;
-        }
-
-        last_buffer_time += Time.deltaTime;
-        
-        Vector2 delta = current_node.transform.position - gameObject.transform.position;
-        Vector2 move_distance = delta.normalized * move_speed * Time.deltaTime;
-
-        if (move_distance.sqrMagnitude >= delta.sqrMagnitude) {
-            gameObject.transform.position = current_node.transform.position;
-            on_node = true;
-
-            if (last_buffer_time <= move_buffer_time) {
-                TryMoveTo(queued_node);
-            }
-            queued_node = null;
         }
         else {
-            gameObject.transform.position += (Vector3)move_distance;
+            last_buffer_time += Time.deltaTime;
+        
+            Vector2 delta = current_node.transform.position - gameObject.transform.position;
+            Vector2 move_distance = delta.normalized * move_speed * Time.deltaTime;
+
+            if (move_distance.sqrMagnitude >= delta.sqrMagnitude) {
+                gameObject.transform.position = current_node.transform.position;
+                on_node = true;
+
+                if (last_buffer_time <= move_buffer_time) {
+                    TryMoveTo(queued_node);
+                }
+                queued_node = null;
+            }
+            else {
+                gameObject.transform.position += (Vector3)move_distance;
+            }
         }
+
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -1);
     }
 }

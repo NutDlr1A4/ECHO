@@ -24,5 +24,7 @@ public class EchoNodeConnection : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Euler(0f, 0f, angle);
         
         gameObject.transform.localScale = new Vector3(direction.magnitude, 1, 1);
+
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 1);
     }
 }
