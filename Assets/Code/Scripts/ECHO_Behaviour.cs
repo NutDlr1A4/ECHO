@@ -1,13 +1,11 @@
-using System.Collections;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class ECHOBehaviour : MonoBehaviour
 {
+    [SerializeField] private EchoNodeManager node_man;
+
     [SerializeField] private GameObject initial_node;
-    private GameObject previous_node;
     private GameObject current_node;
 
     [SerializeField] private float move_speed = 30f;
@@ -46,23 +44,24 @@ public class ECHOBehaviour : MonoBehaviour
     }
 
     private GameObject GetNodeFromMovementInput(Vector2 move_input) {
-        ECHO_Node_Data node_data = current_node.GetComponent<ECHO_Node_Data>();
-
+        ConnectionPoint dir;
         if (move_input.y > 0.0f) {
-            return node_data.GetNodeUp();
+            dir = ConnectionPoint.TOP;
         }
         else if (move_input.y < 0.0f) {
-            return node_data.GetNodeDown();
+            dir = ConnectionPoint.BOTTOM;
         }
         else if (move_input.x < 0.0f) {
-            return node_data.GetNodeLeft();
+            dir = ConnectionPoint.LEFT;;
         }
         else if (move_input.x > 0.0f) {
-            return node_data.GetNodeRight();
+            dir = ConnectionPoint.RIGHT;
         }
         else {
             return null;
         }
+
+        return node_man.GetConnectedNode(current_node, dir);
     }
 
     private void OnMove(InputAction.CallbackContext context) {
@@ -91,7 +90,6 @@ public class ECHOBehaviour : MonoBehaviour
 
         Debug.Log("Moving to" + new_node.name);
 
-        previous_node = current_node;
         current_node = new_node;
         on_node = false;
 
