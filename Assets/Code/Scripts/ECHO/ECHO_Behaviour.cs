@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +20,9 @@ public class ECHOBehaviour : MonoBehaviour
 
     private Vector2 moveInput;
     private InputSystem_Actions controls;
+
+    [SerializeField] private GameObject arrow_prefab;
+    private Dictionary<ConnectionPoint, GameObject> arrows = new();
 
     private void Awake() {
         controls = new InputSystem_Actions();
@@ -93,13 +98,44 @@ public class ECHOBehaviour : MonoBehaviour
         current_node = new_node;
         on_node = false;
 
+        UnsetArrows();
+
         return true;
+    }
+
+    private void SetArrows() {
+        foreach (KeyValuePair<ConnectionPoint, GameObject> item in arrows) {
+            var component = item.Value.GetComponent<MovementArrow>();
+            component.node_at = current_node;
+            component.node_point_at = node_man.GetConnectedNode(current_node, item.Key);
+
+            if (component.node_point_at != null) {
+                component.SetNewPos();
+                item.Value.SetActive(true);
+            }
+        }
+    }
+
+    private void UnsetArrows() {
+        foreach (KeyValuePair<ConnectionPoint, GameObject> item in arrows) {
+            item.Value.SetActive(false);
+
+            var component = item.Value.GetComponent<MovementArrow>();
+            component.node_point_at = null;
+        }
     }
 
     void Start() {
         gameObject.transform.position = initial_node.transform.position;
         current_node = initial_node;
         on_node = true;
+
+
+        foreach (ConnectionPoint key in System.Enum.GetValues(typeof(ConnectionPoint))) {
+            arrows.Add(key, Instantiate(arrow_prefab));
+        }
+
+        SetArrows();
     }
 
     void Update() {
@@ -118,8 +154,11 @@ public class ECHOBehaviour : MonoBehaviour
 
                 if (last_buffer_time <= move_buffer_time) {
                     TryMoveTo(queued_node);
+                    queued_node = null;
                 }
-                queued_node = null;
+                else {
+                    SetArrows();
+                }
             }
             else {
                 gameObject.transform.position += (Vector3)move_distance;

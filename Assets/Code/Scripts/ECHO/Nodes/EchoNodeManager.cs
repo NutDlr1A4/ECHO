@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public enum ConnectionPoint {
@@ -46,7 +47,7 @@ public class EchoNodeManager : MonoBehaviour
         }
 
         return null;
-    } 
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
