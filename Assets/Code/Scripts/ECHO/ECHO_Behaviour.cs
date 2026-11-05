@@ -130,9 +130,8 @@ public class ECHOBehaviour : MonoBehaviour
         current_node = initial_node;
         on_node = true;
 
-
         foreach (ConnectionPoint key in System.Enum.GetValues(typeof(ConnectionPoint))) {
-            arrows.Add(key, Instantiate(arrow_prefab));
+            arrows.Add(key, Instantiate(arrow_prefab, gameObject.transform));
         }
 
         SetArrows();
@@ -153,7 +152,7 @@ public class ECHOBehaviour : MonoBehaviour
                 on_node = true;
 
                 if (last_buffer_time <= move_buffer_time) {
-                    TryMoveTo(queued_node);
+                    if (!TryMoveTo(queued_node)) SetArrows();
                     queued_node = null;
                 }
                 else {
