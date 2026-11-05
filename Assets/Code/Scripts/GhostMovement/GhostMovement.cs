@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 
 public class GhostMovement : MonoBehaviour
 {
@@ -20,6 +21,39 @@ public class GhostMovement : MonoBehaviour
     private Vector2 standingOffset = new Vector2(0f, -0.08f);
     private Vector2 crouchingSize = new Vector2(1.05f, 1.30f);
     private Vector2 crouchingOffset = new Vector2(0f, -0.345f);
+    [SerializeField] private Light2D eyeLight;
+
+    // SFX:
+    [Header("Footstep Audio")]
+    [SerializeField] private AudioSource footstepSource;
+    [SerializeField] private AudioClip footstepClip;
+
+    [Header("Footstep Settings")]
+    [SerializeField, Range(0f, 1f)] private float walkVolume = 0.5f;
+    [SerializeField, Range(0f, 1f)] private float runVolume = 0.7f;
+    [SerializeField] private float minPitch = 0.95f;
+    [SerializeField] private float maxPitch = 1.05f;
+
+    [Header("Crouch Audio")]
+    [SerializeField] private AudioClip crouchClip;
+    [SerializeField, Range(0f, 1f)] private float crouchVolume = 0.5f;
+
+    [Header("Death Audio")]
+    [SerializeField] private AudioClip deathHitClip;
+    [SerializeField] private AudioClip deathFallClip;
+
+    [SerializeField, Range(0f, 1f)] private float deathHitVolume = 0.7f;
+    [SerializeField, Range(0f, 1f)] private float deathFallVolume = 0.6f;
+
+    [Header("E.C.H.O Audio")]
+    [SerializeField] private AudioClip echoEnterClip;
+    [SerializeField] private AudioClip echoExitClip;
+
+    [SerializeField, Range(0f, 1f)] private float echoVolume = 0.6f;
+
+    [Header("Interaction Audio")]
+    [SerializeField] private AudioClip interactClip;
+    [SerializeField, Range(0f, 1f)] private float interactVolume = 0.4f;
 
     void Awake()
     {
@@ -27,11 +61,64 @@ public class GhostMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        eyeLight.enabled = true;
     }
 
     public void FinishInteraction()
     {
         isInteracting = false;
+    }
+
+    public void PlayFootstep()
+    {
+        if (isDead || isEchoMode || isCrouching || isInteracting)
+            return;
+
+        if (footstepSource == null || footstepClip == null)
+            return;
+
+        if (horizontalInput == 0f)
+            return;
+
+        footstepSource.pitch = Random.Range(minPitch, maxPitch);
+
+        float volume = isRunning ? runVolume : walkVolume;
+
+        footstepSource.PlayOneShot(footstepClip, volume);
+    }
+
+    public void PlayCrouchSound()
+    {
+        if (isDead || isEchoMode) return;
+        if (footstepSource == null || crouchClip == null) return;
+
+        footstepSource.pitch = Random.Range(0.95f, 1.05f);
+        footstepSource.PlayOneShot(crouchClip, crouchVolume);
+    }
+
+    public void PlayDeathHit()
+    {
+        if (footstepSource == null || deathHitClip == null) return;
+
+        footstepSource.pitch = 1f;
+        footstepSource.PlayOneShot(deathHitClip, deathHitVolume);
+    }
+
+    public void PlayDeathFall()
+    {
+        if (footstepSource == null || deathFallClip == null) return;
+
+        footstepSource.pitch = 1f;
+        footstepSource.PlayOneShot(deathFallClip, deathFallVolume);
+    }
+
+    public void PlayInteractSound()
+    {
+        if (isDead || isEchoMode) return;
+        if (footstepSource == null || interactClip == null) return;
+
+        footstepSource.pitch = 1f;
+        footstepSource.PlayOneShot(interactClip, interactVolume);
     }
 
     public void Die()
@@ -40,6 +127,7 @@ public class GhostMovement : MonoBehaviour
             return;
 
         isDead = true;
+        eyeLight.enabled = false;
         isInteracting = false;
         isEchoMode = false;
 
@@ -63,6 +151,14 @@ public class GhostMovement : MonoBehaviour
             return;
 
         isEchoMode = true;
+
+        if (footstepSource != null && echoEnterClip != null)
+        {
+            footstepSource.pitch = 1f;
+            footstepSource.PlayOneShot(echoEnterClip, echoVolume);
+        }
+
+        eyeLight.enabled = false;
         isInteracting = false;
 
         horizontalInput = 0f;
@@ -88,7 +184,29 @@ public class GhostMovement : MonoBehaviour
 
         isEchoMode = false;
 
+        if (footstepSource != null && echoExitClip != null)
+        {
+            footstepSource.pitch = 1f;
+            footstepSource.PlayOneShot(echoExitClip, echoVolume);
+        }
+
+        eyeLight.enabled = true;
+
         animator.SetBool("IsEchoMode", false);
+    }
+
+    void LateUpdate()
+    {
+        if (eyeLight != null)
+        {
+            Vector3 lightPosition = eyeLight.transform.localPosition;
+
+            lightPosition.x = spriteRenderer.flipX
+                ? -Mathf.Abs(lightPosition.x)
+                : Mathf.Abs(lightPosition.x);
+
+            eyeLight.transform.localPosition = lightPosition;
+        }
     }
 
     void Update()
