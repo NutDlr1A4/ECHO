@@ -1,56 +1,74 @@
-using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    [SerializeField] public float speed = 5f;
-    [SerializeField] public float waypointSize = 0.1f;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float turnDelay = 2f;
+    [SerializeField] private float waypointSize = 0.1f;
+
     public GameObject pointA;
     public GameObject pointB;
+
     private Rigidbody2D rb;
-    private Animator anim;
-    //private Transform currentPoint;
-    private Vector2 pointAPos;
-    private Vector2 pointBPos;
+
+    private Animator animator;
+
+    private Vector2 pointAPosition;
+    private Vector2 pointBPosition;
     private Vector2 currentTarget;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        pointAPos = pointA.transform.position;
-        pointBPos = pointB.transform.position;
-        currentTarget = pointBPos;
-        anim.SetBool("isRunning", true);
+        animator = GetComponent<Animator>();
+        animator.SetBool("isRunning", true);
+
+        pointAPosition = pointA.transform.position;
+        pointBPosition = pointB.transform.position;
+        currentTarget = pointBPosition;
+        
     }
 
     private void Update()
     {
-        Vector2 position = rb.position;
-        //Vector2 direction = currentTarget.position - transform.position;
-        Vector2 direction = (currentTarget - position).normalized;
+        Vector2 direction = (currentTarget - rb.position).normalized;
 
-        direction = direction.normalized;
         rb.linearVelocity = direction * speed;
 
-        Vector3 scale = transform.localScale;
-        scale.x = Mathf.Abs(scale.x) * Mathf.Sign(direction.x);
+        float stoppingDistance = waypointSize + speed * Time.fixedDeltaTime;
 
-        if (Vector2.Distance(transform.position, currentTarget.position) < waypointSize)
+        if (Vector2.Distance(rb.position, currentTarget) <= stoppingDistance)
         {
-            if (currentTarget == pointB.transform)
-            {
-                currentTarget = pointA.transform;
-                Debug.Log("Current target is point A");
-            }
-            else
-            {
-                currentTarget = pointB.transform;
-                Debug.Log("Current target is point B");
-            }
-            Flip();
+            rb.linearVelocity = Vector2.zero;
+            animator.SetBool("isRunning", false);
+            Invoke(nameof(TurnAround), turnDelay);
+            enabled = false;
         }
     }
+
+    private void TurnAround()
+    {
+        if (currentTarget == pointBPosition)
+        {
+            currentTarget = pointAPosition;
+        }
+        else
+        {
+            currentTarget = pointBPosition;
+        }
+
+        Flip();
+        animator.SetBool("isRunning", true);
+        enabled = true;
+    }
+
+    public void StopPatrol()
+    {
+        CancelInvoke(nameof(TurnAround));
+        rb.linearVelocity = Vector2.zero;
+        enabled = false;
+    }
+
     private void Flip()
     {
         Vector3 scale = transform.localScale;

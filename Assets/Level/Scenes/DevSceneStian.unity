@@ -520,11 +520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3989513655386457040, guid: d03ede9513ee370f4947452cc3ff5262, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.14
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 3989513655386457040, guid: d03ede9513ee370f4947452cc3ff5262, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 3989513655386457040, guid: d03ede9513ee370f4947452cc3ff5262, type: 3}
       propertyPath: m_LocalPosition.z
@@ -738,7 +738,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.87656444, y: 2.0000682}
+    oldSize: {x: 0.87568223, y: 2.0000837}
     newSize: {x: 0.87656444, y: 2.0000682}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -786,6 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
   speed: 5
+  turnDelay: 2
   waypointSize: 1
   pointA: {fileID: 606657608}
   pointB: {fileID: 605517163}
