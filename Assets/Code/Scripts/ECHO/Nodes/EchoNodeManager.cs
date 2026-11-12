@@ -14,6 +14,14 @@ public class EchoNodeManager : MonoBehaviour
     [SerializeField] private Transform connections_parent;
     [SerializeField] private GameObject connection_prefab;
 
+    [Serializable] public class ConnectionPair {
+        public GameObject node_1;
+        public ConnectionPoint connection_point_1;
+        public GameObject node_2;
+        public ConnectionPoint connection_point_2;
+    };
+    [SerializeField] private List<ConnectionPair> initial_connections = new();
+
     public void ConnectNodes(GameObject node1, ConnectionPoint con1, GameObject node2, ConnectionPoint con2) {
         GameObject new_connection = Instantiate(connection_prefab, connections_parent);
         new_connection.GetComponent<EchoNodeConnection>().Initialize(node1, node2);
@@ -51,54 +59,14 @@ public class EchoNodeManager : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-        ConnectNodes(
-            GameObject.Find("/MiscNodes/Node_LeftBottom"),
-            ConnectionPoint.RIGHT,
-            GameObject.Find("/MiscNodes/Node_MiddleBottom"),
-            ConnectionPoint.LEFT
-        );
-
-        ConnectNodes(
-            GameObject.Find("/MiscNodes/Node_MiddleBottom"),
-            ConnectionPoint.RIGHT,
-            GameObject.Find("/MiscNodes/Node_RightBottom"),
-            ConnectionPoint.LEFT
-        );
-
-        ConnectNodes(
-            GameObject.Find("/MiscNodes/Node_MiddleBottom"),
-            ConnectionPoint.TOP,
-            GameObject.Find("/MiscNodes/Node_MiddleTop"),
-            ConnectionPoint.BOTTOM
-        );
-
-        ConnectNodes(
-            GameObject.Find("/MiscNodes/Node_MiddleTop"),
-            ConnectionPoint.LEFT,
-            GameObject.Find("/MiscNodes/Node_LeftTop"),
-            ConnectionPoint.RIGHT
-        );
-
-        ConnectNodes(
-            GameObject.Find("/MiscNodes/Node_RightBottom"),
-            ConnectionPoint.TOP,
-            GameObject.Find("/MiscNodes/Node_RightTop"),
-            ConnectionPoint.BOTTOM
-        );
-
-        ConnectNodes(
-            GameObject.Find("/MiscNodes/Node_LeftBottom"),
-            ConnectionPoint.TOP,
-            GameObject.Find("/MiscNodes/Node_LeftTop"),
-            ConnectionPoint.BOTTOM
-        );
-
-        RemoveConnection(
-            GameObject.Find("/MiscNodes/Node_LeftBottom"),
-            ConnectionPoint.TOP,
-            GameObject.Find("/MiscNodes/Node_LeftTop"),
-            ConnectionPoint.BOTTOM
-        );
+        foreach(ConnectionPair conpair in initial_connections) {
+            ConnectNodes(
+                conpair.node_1,
+                conpair.connection_point_1,
+                conpair.node_2,
+                conpair.connection_point_2
+            );
+        }
     }
 
     // Update is called once per frame
