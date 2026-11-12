@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   node_man: {fileID: 0}
   initial_node: {fileID: 0}
   move_speed: 30
-  move_buffer_time: 0.2
+  input_buffer_time: 0.2
   arrow_prefab: {fileID: 8979769481323528503, guid: 113cf52ce7d76332686c01b7e9db7467, type: 3}
 --- !u!50 &8781873018723559122
 Rigidbody2D:
