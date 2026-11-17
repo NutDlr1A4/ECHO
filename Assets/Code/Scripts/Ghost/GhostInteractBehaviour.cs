@@ -33,8 +33,6 @@ public class GhostInteractBehaviour : MonoBehaviour
         }
 
         if (new_interact_target != current_interact_target) {
-            Debug.Log("New interact target!");
-
             if (current_interact_target != null) {
                 current_interact_target.GetComponent<IInteractable>()?.OnInteractTargetExit();
             }
