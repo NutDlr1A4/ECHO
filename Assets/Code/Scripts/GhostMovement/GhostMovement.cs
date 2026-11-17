@@ -211,7 +211,7 @@ public class GhostMovement : MonoBehaviour
 
     void Update()
     {
-        if (isDead)
+        if (isDead || PauseMenu.IsPaused)
             return;
 
         if (isEchoMode)
