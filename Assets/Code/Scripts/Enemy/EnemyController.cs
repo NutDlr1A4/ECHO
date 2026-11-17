@@ -15,12 +15,16 @@ public class EnemyController : MonoBehaviour
         isHacked,
     }
 
+    [SerializeField] private bool standGuard = false;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float turnDelay = 2f;
     [SerializeField] private float waypointSize = 0.1f;
 
     [SerializeField] private Transform PathStart;
     [SerializeField] private Transform PathEnd;
+
+    [SerializeField] private GameObject Bullet;
+    [SerializeField] private Transform BulletOrigin;
 
     [SerializeField] private bool debugMode = true;
 
@@ -33,12 +37,19 @@ public class EnemyController : MonoBehaviour
     private Vector2 patrolReturnTarget;
 
     private enemyState currentState;
+    private bool isAgressive = false;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         enemyAnimation = GetComponent<EnemyAnimation>();
+
+        if (standGuard)
+        {
+            ChangeState(enemyState.idle);
+            return;
+        }
 
 
         if (PathEnd == null || PathStart == null)
@@ -117,8 +128,7 @@ public class EnemyController : MonoBehaviour
                 break;
             case enemyState.investigate:
                 //Investigate logic would go here
-                Debug.Log("Enemy is investigating!");
-                Invstigate();
+                Investigate();
                 break;
             case enemyState.interact:
                 //Interact logic would go here
@@ -151,8 +161,25 @@ public class EnemyController : MonoBehaviour
             Invoke(nameof(TurnAround), turnDelay);
         }
     }
+    void Attack()
+    {
+        if (Bullet == null || BulletOrigin == null)
+        {
+            Debug.LogError("Bullet or BulletOrigin is not assigned.");
+            return;
+        }
+        GameObject newBullet = Instantiate(Bullet, BulletOrigin.position, BulletOrigin.rotation);
+        newBullet.SetActive(true);
+        newBullet.GetComponent<BulletBehavior>().ShootTarget(currentTarget);
+    }
 
-    void Invstigate()
+    public void InvestigatePosition(Vector2 position)
+    {
+        patrolReturnTarget = currentTarget;
+        currentTarget = position;
+        ChangeState(enemyState.investigate);
+    }
+    void Investigate()
     {
         enemyAnimation.PlayRun();
         Vector2 direction =
@@ -162,7 +189,10 @@ public class EnemyController : MonoBehaviour
             direction.x * speed,
             rb.linearVelocity.y
         );
-
+        isAgressive = true;
+        enemyAnimation.isHostile(true);
+        Attack();
+        
     }
     private void TurnAround()
     {
@@ -190,12 +220,7 @@ public class EnemyController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         enabled = false;
     }
-    public void InvestigatePosition(Vector2 position)
-    {
-        patrolReturnTarget = currentTarget;
-        currentTarget = position;
-        ChangeState(enemyState.investigate);
-    }
+   
     public void Die()
     {
         ChangeState(enemyState.dead);

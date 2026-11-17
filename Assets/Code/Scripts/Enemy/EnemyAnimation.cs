@@ -14,6 +14,11 @@ public class EnemyAnimation : MonoBehaviour
         }
     }
 
+    public void isHostile(bool hostile)
+    {
+        if (animator.GetBool("isHostile") != hostile)
+        animator.SetBool("isHostile", hostile);
+    }
     public void PlayIdle()
     {
         animator.SetBool("isRunning", false);
