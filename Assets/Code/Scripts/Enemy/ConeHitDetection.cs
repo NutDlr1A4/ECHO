@@ -1,33 +1,41 @@
+using System;
 using UnityEngine;
 
 public class EnemyDetectionCone : MonoBehaviour
 {
-    private EnemyController enemyController;
+    private Transform playerTransform = null;
+    private EnemyAgro enemyAgro;
     private void Awake()
     {
-        enemyController =
-            transform.root.GetComponentInChildren<EnemyController>(true);
-        if (enemyController == null)
+        enemyAgro = transform.root.GetComponentInChildren<EnemyAgro>(true);
+        if (enemyAgro == null)
         {
-            Debug.LogError("EnemyController not found in parent.");
+            Debug.LogError("EnemyAgro not found in parent.");
         }
     }
+
+    private void Update()
+    {
+        if(playerTransform != null)
+        {
+            enemyAgro.updateSuspision(playerTransform);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // TODO: Add trigger event
-            Debug.Log("Player entered the enemy's detection cone!");
-            enemyController.InvestigatePosition(other.transform.position);
+            playerTransform = other.transform;
+            //Debug.Log("Player entered the enemy's detection cone!");
         }
-        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            //TODO: Add trigger for deagro
+            playerTransform = null;
             Debug.Log("Player left the enemy's detection cone!");
         }
     }
