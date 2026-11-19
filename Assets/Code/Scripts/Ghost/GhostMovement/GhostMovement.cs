@@ -4,6 +4,8 @@ using UnityEngine.Rendering.Universal;
 
 public class GhostMovement : MonoBehaviour
 {
+    private InputSystem_Actions controls;
+
     public float moveSpeed = 3f;
     public float runSpeed = 5f;
     private float horizontalInput;
@@ -57,6 +59,9 @@ public class GhostMovement : MonoBehaviour
 
     void Awake()
     {
+        controls = new InputSystem_Actions();
+        controls.Enable();
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -214,64 +219,46 @@ public class GhostMovement : MonoBehaviour
         if (isDead || PauseMenu.IsPaused)
             return;
 
-        if (isEchoMode)
-        {
-            if (Keyboard.current != null &&
-                Keyboard.current.eKey.wasPressedThisFrame)
-            {
-                ExitEchoMode();
-            }
-
-            return;
-        }
-
         horizontalInput = 0f;
         isRunning = false;
 
-        if (Keyboard.current != null)
+        Vector2 movement_input = controls.Player.Move.ReadValue<Vector2>();
+
+        if (controls.Player.KYS.WasPressedThisFrame())
         {
-            if (Keyboard.current.kKey.wasPressedThisFrame)
-            {
-                Die();
-                return;
-            }
-            
-            isCrouching = Keyboard.current.sKey.isPressed;
+            Die();
+            return;
+        }
+        
+        isCrouching = movement_input.y < 0;
 
-            if (Keyboard.current.eKey.wasPressedThisFrame)
-            {
-                EnterEchoMode();
-                return;
-            }
+        if (movement_input.x < 0)
+            horizontalInput -= 1f;
 
-            if (Keyboard.current.aKey.isPressed)
-                horizontalInput -= 1f;
+        if (movement_input.x > 0)
+            horizontalInput += 1f;
 
-            if (Keyboard.current.dKey.isPressed)
-                horizontalInput += 1f;
+        isRunning = controls.Player.Sprint.IsPressed()
+        && horizontalInput != 0f
+        && !isCrouching;
 
-            isRunning = Keyboard.current.leftShiftKey.isPressed
-            && horizontalInput != 0f
-            && !isCrouching;
+        if (isCrouching)
+        {
+            capsuleCollider.size = crouchingSize;
+            capsuleCollider.offset = crouchingOffset;
+        }
+        else
+        {
+            capsuleCollider.size = standingSize;
+            capsuleCollider.offset = standingOffset;
+        }
 
-            if (isCrouching)
-            {
-                capsuleCollider.size = crouchingSize;
-                capsuleCollider.offset = crouchingOffset;
-            }
-            else
-            {
-                capsuleCollider.size = standingSize;
-                capsuleCollider.offset = standingOffset;
-            }
-
-            if (Keyboard.current.spaceKey.wasPressedThisFrame
-            && !isCrouching
-            && !isInteracting)
-            {
-                isInteracting = true;
-                animator.SetTrigger("Interact");
-            }
+        if (controls.Player.Interact.WasPressedThisFrame()
+        && !isCrouching
+        && !isInteracting)
+        {
+            isInteracting = true;
+            animator.SetTrigger("Interact");
         }
 
         // Update Animator parameters based on player input

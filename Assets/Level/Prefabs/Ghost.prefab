@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7774730746442640509}
   - component: {fileID: 4371594901209934029}
   - component: {fileID: 6378505654521804189}
+  - component: {fileID: -3308841432790884285}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -312,6 +313,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3308841432790884285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286816240903467086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb4617ada34d674eaf3e085cd74906c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostInteractBehaviour
+  max_interact_distance: 2
+  current_interact_target: {fileID: 0}
 --- !u!1001 &8773993064079043127
 PrefabInstance:
   m_ObjectHideFlags: 0
