@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class AudioSettings : MonoBehaviour
 {
-    private float masterVolume = 1f;
-    private bool isMuted = false;
+    private static float masterVolume = 1f;
+    private static bool isMuted = false;
 
     public void SetMasterVolume(float volume)
     {
