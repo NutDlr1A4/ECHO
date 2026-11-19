@@ -4,6 +4,7 @@ using UnityEngine;
 public class TerminalInteraction : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject mode_man;
+    [SerializeField] private GameObject int_text;
 
     public bool OnInteract() {
         GameObject my_node = gameObject.transform.Find("Node").gameObject;
@@ -11,8 +12,14 @@ public class TerminalInteraction : MonoBehaviour, IInteractable
         return true;
     }
 
-    public void OnInteractTargetEnter() {}
-    public void OnInteractTargetExit() {}
+    public void OnInteractTargetEnter()
+    {
+        int_text.SetActive(true);
+    }
+    public void OnInteractTargetExit()
+    {
+        int_text.SetActive(false);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
