@@ -124,6 +124,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3989513655386457040, guid: d03ede9513ee370f4947452cc3ff5262, type: 3}
   m_PrefabInstance: {fileID: 1631158380}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1287706086 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6378505654521804189, guid: d03ede9513ee370f4947452cc3ff5262, type: 3}
+  m_PrefabInstance: {fileID: 1631158380}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631158380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,7 +334,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 10
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -2277,10 +2282,46 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[150].second.m_TileSpriteIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 854145783056489963, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 987543677131736442, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: doorAudioSource
+      value: 
+      objectReference: {fileID: 1287706086}
+    - target: {fileID: 1169381825711595588, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: doorAudioSource
+      value: 
+      objectReference: {fileID: 1287706086}
+    - target: {fileID: 3917987660635347492, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635310719368265167, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
     - target: {fileID: 5919099090013772069, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
       propertyPath: m_Name
       value: Level2
       objectReference: {fileID: 0}
+    - target: {fileID: 6607657002953719904, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: doorAudioSource
+      value: 
+      objectReference: {fileID: 1287706086}
+    - target: {fileID: 6763810312023562481, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006378808945988301, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365330554081740719, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
+      propertyPath: doorAudioSource
+      value: 
+      objectReference: {fileID: 1287706086}
     - target: {fileID: 8793819502728524219, guid: 9f22cb4fd6c9e9342b7c3d1be918b20f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -59.91617
