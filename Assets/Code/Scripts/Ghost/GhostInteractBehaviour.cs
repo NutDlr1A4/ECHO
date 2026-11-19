@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GhostInteractBehaviour : MonoBehaviour
 {
+    [SerializeField] private GameObject mode_man;
+
     private InputSystem_Actions controls;
     [SerializeField] private float max_interact_distance = 2.0f;
     [SerializeField] private GameObject current_interact_target = null;
@@ -53,6 +55,11 @@ public class GhostInteractBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (mode_man.GetComponent<ModeManager>().IsInECHOMode()) {
+            current_interact_target = null;
+            return;
+        }
+
         FindNewInteractTarget();
 
         if (controls.Player.Interact.WasPressedThisFrame()) {

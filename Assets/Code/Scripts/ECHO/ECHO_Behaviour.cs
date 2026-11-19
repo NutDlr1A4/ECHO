@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class ECHOBehaviour : MonoBehaviour
 {
+    [SerializeField] private GameObject mode_man;
+
     [SerializeField] private EchoNodeManager node_man;
 
     [SerializeField] private GameObject initial_node;
@@ -37,6 +39,12 @@ public class ECHOBehaviour : MonoBehaviour
 
     private void OnDisable() {
         controls.Disable();
+    }
+
+    public void SetNewNode(GameObject new_node) {
+        current_node = new_node;
+        on_node = true;
+        queued_node = null;
     }
 
     private float DistToTarget() {
@@ -142,6 +150,11 @@ public class ECHOBehaviour : MonoBehaviour
     }
 
     void Update() {
+        if (controls.Player.ECHO.WasPressedThisFrame()) {
+            mode_man.GetComponent<ModeManager>().ExitECHOMode();
+            return;
+        }
+
         if (controls.Player.Interact.WasPressedThisFrame()) {
             OnInteract();
         }

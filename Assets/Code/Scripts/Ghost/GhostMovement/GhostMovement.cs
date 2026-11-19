@@ -219,16 +219,6 @@ public class GhostMovement : MonoBehaviour
         if (isDead)
             return;
 
-        if (isEchoMode)
-        {
-            if (controls.Player.ECHO.WasPressedThisFrame())
-            {
-                ExitEchoMode();
-            }
-
-            return;
-        }
-
         horizontalInput = 0f;
         isRunning = false;
 
@@ -241,12 +231,6 @@ public class GhostMovement : MonoBehaviour
         }
         
         isCrouching = movement_input.y < 0;
-
-        if (controls.Player.ECHO.WasPressedThisFrame())
-        {
-            EnterEchoMode();
-            return;
-        }
 
         if (movement_input.x < 0)
             horizontalInput -= 1f;
