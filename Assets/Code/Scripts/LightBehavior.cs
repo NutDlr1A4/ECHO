@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class LightInteraction : MonoBehaviour, IHackable
 {
-    public void OnHack() {
+    public bool OnHack() {
         GameObject my_light = gameObject.transform.Find("Light_2D").gameObject;
         my_light.SetActive(!my_light.activeSelf);
+        return true;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

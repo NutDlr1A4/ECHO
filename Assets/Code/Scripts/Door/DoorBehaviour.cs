@@ -5,15 +5,19 @@ using UnityEngine;
 public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
 {
     [SerializeField] private bool open = false;
+    [SerializeField] private bool interactable = false;
+    [SerializeField] private bool hackable = true;
 
     private Animator animator;
 
-    public void OnHack() {
-        OnInteract();
+    public bool OnHack() {
+        if (hackable) Toggle();
+        return hackable;
     }
 
-    public void OnInteract() {
-        Toggle();
+    public bool OnInteract() {
+        if (interactable) Toggle();
+        return interactable;
     }
 
     public void OnInteractTargetEnter() {}
@@ -45,8 +49,8 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
         animator = GetComponent<Animator>();
     }
 
-    void Start() {
-        
+    void Start()  {
+        SetState(open);
     }
 
     void Update()

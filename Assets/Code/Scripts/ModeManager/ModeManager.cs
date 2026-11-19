@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ModeManager : MonoBehaviour
 {
-    [SerializeField] private new GameObject camera;
+    [SerializeField] private GameObject smooth_camera;
     [SerializeField] private GameObject Ghost;
     [SerializeField] private GameObject ECHO;
 
@@ -32,7 +32,8 @@ public class ModeManager : MonoBehaviour
         ECHO.GetComponent<ECHOBehaviour>().SetNewNode(start_node);
         ECHO.SetActive(true);
 
-        camera.GetComponent<Camera_Movement>().SetToFollow(ECHO);
+        smooth_camera.transform.position = Ghost.transform.position;
+        smooth_camera.GetComponent<Camera_Movement>().SetToFollow(ECHO);
 
         in_echo_mode = true;
     }
@@ -52,7 +53,7 @@ public class ModeManager : MonoBehaviour
 
         ECHO.SetActive(false);
 
-        camera.GetComponent<Camera_Movement>().SetToFollow(Ghost);
+        smooth_camera.GetComponent<Camera_Movement>().SetToFollow(Ghost);
 
         in_echo_mode = false;
     }
