@@ -9,26 +9,35 @@ public class EnemyController : MonoBehaviour
         patrol,
         chase,
         attack,
-        dead
+        dead,
+        investigate,
+        interact,
+        isHacked,
     }
 
+    [SerializeField] private bool standGuard = false;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float turnDelay = 2f;
     [SerializeField] private float waypointSize = 0.1f;
 
-    private Transform pointA;
-    private Transform pointB;
-    //private Transform facing;
+    [SerializeField] private Transform PathStart;
+    [SerializeField] private Transform PathEnd;
+
+    [SerializeField] private GameObject Bullet;
+    [SerializeField] private Transform BulletOrigin;
+
+    [SerializeField] private bool debugMode = true;
 
     private Rigidbody2D rb;
     private EnemyAnimation enemyAnimation;
 
-
-    private Vector2 pointAPosition;
-    private Vector2 pointBPosition;
+    private Vector2 PathStartPosition;
+    private Vector2 PathEndPosition;
     private Vector2 currentTarget;
+    private Vector2 patrolReturnTarget;
 
     private enemyState currentState;
+    private bool isAgressive = false;
 
 
     void Start()
@@ -36,21 +45,24 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemyAnimation = GetComponent<EnemyAnimation>();
 
+        if (standGuard)
+        {
+            ChangeState(enemyState.idle);
+            return;
+        }
 
-        pointB = transform.Find("Sub-entities/Path Start");
-        pointA = transform.Find("Sub-entities/Path End");
 
-        if (pointA == null || pointB == null)
+        if (PathEnd == null || PathStart == null)
         {
             Debug.LogError("Path Start or Path End was not found.");
             enabled = false;
             return;
         }
 
-        pointAPosition = pointA.position;
-        pointBPosition = pointB.position;
+        PathEndPosition = PathEnd.position;
+        PathStartPosition = PathStart.position;
 
-        currentTarget = pointBPosition;
+        currentTarget = PathStartPosition;
 
         ChangeState(enemyState.patrol);
     }
@@ -64,7 +76,7 @@ public class EnemyController : MonoBehaviour
                 ChangeState(enemyState.idle);
                 break;
             case enemyState.patrol:
-                Patrol();
+                ChangeState(enemyState.patrol);
                 break;
             case enemyState.chase:
                 // Chase logic would go here
@@ -74,6 +86,13 @@ public class EnemyController : MonoBehaviour
                 break;
             case enemyState.dead:
                 // Dead logic would go here
+                break;
+            case enemyState.investigate:
+                // Investigate logic would go here
+                ChangeState(enemyState.investigate);
+                break;
+            case enemyState.interact:
+                // Interact logic would go here
                 break;
         }
     }
@@ -91,6 +110,7 @@ public class EnemyController : MonoBehaviour
 
             case enemyState.patrol:
                 enemyAnimation.PlayRun();
+                Patrol();
                 break;
 
             case enemyState.chase:
@@ -106,11 +126,17 @@ public class EnemyController : MonoBehaviour
                 rb.linearVelocity = Vector2.zero;
                 enemyAnimation.PlayDeath();
                 break;
+            case enemyState.investigate:
+                //Investigate logic would go here
+                Investigate();
+                break;
+            case enemyState.interact:
+                //Interact logic would go here
+                break;
         }
     }
     void Patrol()
     {
-        enemyAnimation.PlayRun();
         Vector2 direction =
        (currentTarget - rb.position).normalized;
 
@@ -135,18 +161,51 @@ public class EnemyController : MonoBehaviour
             Invoke(nameof(TurnAround), turnDelay);
         }
     }
+    void Attack()
+    {
+        if (Bullet == null || BulletOrigin == null)
+        {
+            Debug.LogError("Bullet or BulletOrigin is not assigned.");
+            return;
+        }
+        GameObject newBullet = Instantiate(Bullet, BulletOrigin.position, BulletOrigin.rotation);
+        newBullet.SetActive(true);
+        newBullet.GetComponent<BulletBehavior>().ShootTarget(currentTarget);
+    }
+
+    public void InvestigatePosition(Vector2 position)
+    {
+        patrolReturnTarget = currentTarget;
+        currentTarget = position;
+        ChangeState(enemyState.investigate);
+    }
+    void Investigate()
+    {
+        enemyAnimation.PlayRun();
+        Vector2 direction =
+       (currentTarget - rb.position).normalized;
+
+        rb.linearVelocity = new Vector2(
+            direction.x * speed,
+            rb.linearVelocity.y
+        );
+        isAgressive = true;
+        enemyAnimation.isHostile(true);
+        Attack();
+        
+    }
     private void TurnAround()
     {
         if (currentState != enemyState.idle)
             return;
 
-        if (currentTarget == pointBPosition)
+        if (currentTarget == PathStartPosition)
         {
-            currentTarget = pointAPosition;
+            currentTarget = PathEndPosition;
         }
         else
         {
-            currentTarget = pointBPosition;
+            currentTarget = PathStartPosition;
         }
 
         Vector2 scale = transform.localScale;
@@ -161,7 +220,7 @@ public class EnemyController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         enabled = false;
     }
-
+   
     public void Die()
     {
         ChangeState(enemyState.dead);

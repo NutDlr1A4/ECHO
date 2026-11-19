@@ -201,21 +201,21 @@ MonoBehaviour:
   eyeLight: {fileID: 877637443509341753}
   footstepSource: {fileID: 6378505654521804189}
   footstepClip: {fileID: 8300000, guid: b3d6fc0190f4a16f880e03f1d5798168, type: 3}
-  walkVolume: 0.1
-  runVolume: 0.2
+  walkVolume: 0.5
+  runVolume: 0.6
   minPitch: 0.93
   maxPitch: 1.03
   crouchClip: {fileID: 8300000, guid: edae17d3548c5b02ca9371fcc97ed0b2, type: 3}
-  crouchVolume: 0.6
+  crouchVolume: 1
   deathHitClip: {fileID: 8300000, guid: bcc8d3610cf31e8329197323daa4ac43, type: 3}
   deathFallClip: {fileID: 8300000, guid: 4a117e66f8b3e2f5bbda5b7af5ed9084, type: 3}
-  deathHitVolume: 0.2
-  deathFallVolume: 0.3
+  deathHitVolume: 0.3
+  deathFallVolume: 0.6
   echoEnterClip: {fileID: 8300000, guid: a5235b5f6d43a960da8ab573cccd946a, type: 3}
   echoExitClip: {fileID: 8300000, guid: dbd023af9aaa9dd2fb17d27caea7a6f2, type: 3}
-  echoVolume: 0.1
+  echoVolume: 0.06
   interactClip: {fileID: 8300000, guid: e2ee586c76e026cfb9dc0b8aacf780db, type: 3}
-  interactVolume: 0.4
+  interactVolume: 1
 --- !u!82 &6378505654521804189
 AudioSource:
   m_ObjectHideFlags: 0
