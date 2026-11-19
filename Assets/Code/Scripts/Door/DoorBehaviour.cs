@@ -62,11 +62,13 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
 
     void Awake()
     {
+        Debug.Log(gameObject + ": " + open);
         animator = GetComponent<Animator>();
+        animator.SetBool("IsOpen", open);
     }
 
     void Start()  {
-        SetState(open);
+        
     }
 
     void Update()

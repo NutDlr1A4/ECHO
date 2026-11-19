@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ECHO_HackParticle
   start_intensity: 10
   end_intensitiy: 0
-  target_lifetime_ms: 500
+  target_lifetime_ms: 1000
 --- !u!1001 &2067236501829507246
 PrefabInstance:
   m_ObjectHideFlags: 0
