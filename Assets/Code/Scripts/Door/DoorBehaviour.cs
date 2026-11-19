@@ -6,8 +6,10 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
 {
     [SerializeField] private bool open = false;
 
+    private Animator animator;
+
     public void OnHack() {
-        Toggle();
+        OnInteract();
     }
 
     public void OnInteract() {
@@ -18,18 +20,30 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
     public void OnInteractTargetExit() {}
 
     public void Toggle() {
-        open = !open;
+        SetState(!open);
     }
 
     public void Open() { 
-        open = true;
+        SetState(true);
     }
 
     public void Close() {
-        open = false;
+        SetState(false);
     }
 
     public bool IsOpen() { return open; }
+
+    private void SetState(bool state) {
+        if (state != open) {
+            animator.SetBool("IsOpen", !animator.GetBool("IsOpen"));
+        }
+        open = state; // This? State? Hit the road dude
+    }
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Start() {
         
@@ -37,14 +51,6 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
 
     void Update()
     {
-        // Update the shit needed to open/close it (hitboxes and sprites)
-
-        GameObject rect_open = gameObject.transform.Find("RectOpen").gameObject;
-        GameObject rect_closed = gameObject.transform.Find("RectClosed").gameObject;
-
-        rect_open.SetActive(open);
-        rect_open.GetComponent<BoxCollider2D>().gameObject.SetActive(open);
-        rect_closed.SetActive(!open);
-        rect_closed.GetComponent<BoxCollider2D>().gameObject.SetActive(!open);
+        
     }
 }
