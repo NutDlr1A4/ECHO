@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
     [SerializeField] private bool interactable = false;
     [SerializeField] private bool hackable = true;
 
+    [SerializeField] private GameObject label;
+
     private Animator animator;
 
     public bool OnHack() {
@@ -16,12 +19,25 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
     }
 
     public bool OnInteract() {
-        if (interactable) Toggle();
+        if (interactable) {
+            Toggle();
+        }
+        else {
+            label.GetComponent<TextMeshProUGUI>().SetText("It won't move...");
+            label.SetActive(true);
+        }
         return interactable;
     }
 
-    public void OnInteractTargetEnter() {}
-    public void OnInteractTargetExit() {}
+    public void OnInteractTargetEnter() {
+        if (interactable) {
+            label.GetComponent<TextMeshProUGUI>().SetText("Open door (Space)");
+            label.SetActive(true);
+        }
+    }
+    public void OnInteractTargetExit() {
+        label.SetActive(false);
+    }
 
     public void Toggle() {
         SetState(!open);
