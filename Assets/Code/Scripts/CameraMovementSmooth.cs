@@ -4,10 +4,10 @@ using UnityEngine;
 public class Camera_Movement : MonoBehaviour
 {
     [SerializeField] private GameObject object_followed;
-    [SerializeField] private float speed = 0.97f;
+    [SerializeField] private float easing_factor = 0.97f; // 0: no movement, 1: instant movement
     [SerializeField] private float z_distance = 10.0f;
 
-    public void SetFollow(GameObject new_object) {
+    public void SetToFollow(GameObject new_object) {
         object_followed = new_object;
     }
 
@@ -36,7 +36,7 @@ public class Camera_Movement : MonoBehaviour
 
         // OKAY OKAY I know this looks janky, but when multiplying each frame you can't just multiply delta time.
         // You gotta multiply it by some fuckass exponent instead
-        Vector3 new_pos = gameObject.transform.position + delta * math.pow(speed, 1.0f / Time.deltaTime);
+        Vector3 new_pos = gameObject.transform.position + delta * math.pow(easing_factor, 1.0f / Time.deltaTime);
 
         Set2DPos(new_pos);
     }
