@@ -42,7 +42,7 @@ public class Camera_Movement : MonoBehaviour
 
         // OKAY OKAY I know this looks janky, but when multiplying each frame you can't just multiply delta time.
         // You gotta multiply it by some fuckass exponent instead
-        Vector3 new_pos = gameObject.transform.position + delta * math.pow(easing_factor, 1.0f / Time.deltaTime);
+        Vector3 new_pos = gameObject.transform.position + delta * (1.0f - math.pow(1.0f - easing_factor, Time.deltaTime));
 
         Set2DPos(new_pos);
     }
