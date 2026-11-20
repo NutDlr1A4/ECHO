@@ -11,7 +11,7 @@ public class BulletBehavior : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+    
     public void ShootTarget(Vector2 targetPosition)
     {
         Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
