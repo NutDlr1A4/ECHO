@@ -23,7 +23,11 @@ public class EnemyAnimation : MonoBehaviour
     {
         animator.SetBool("isRunning", false);
     }
-
+    public void PlayAttack()
+    {
+        animator.SetBool("isRunning", false);
+        animator.SetTrigger("isHostile");
+    }
     public void PlayRun()
     {
         animator.SetBool("isRunning", true);

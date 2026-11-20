@@ -1,4 +1,5 @@
 using UnityEngine;
+using static EnemyController;
 
 public class EnemyAgro : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class EnemyAgro : MonoBehaviour
     [SerializeField] private Transform detectionFill;
     private float detectionProgress = 0f;
     private EnemyController enemyController;
-    private Transform target = null;
+    private Collider2D targetCollider = null;
     private bool isDetecting = false;
     private void Awake()
     {
@@ -19,13 +20,18 @@ public class EnemyAgro : MonoBehaviour
         {
             Debug.LogError("EnemyController not found in parent.");
         }
+        detectionFill.localScale = new Vector3(
+            0,
+            1f,
+            1f
+        );
     }
 
     private void Update()
     {
-        if (target == null && detectionProgress == 0f) { return; }
+        if (targetCollider == null && detectionProgress == 0f) { return; }
 
-        if (target == null)
+        if (targetCollider == null)
         {
             UpdateDetectionProgress(-Time.deltaTime);
             return;
@@ -33,24 +39,24 @@ public class EnemyAgro : MonoBehaviour
 
         if (Time.time - lastDetectionTime > detectionTimeout)
         {
-            target = null;
+            targetCollider = null;
             isDetecting = false;
             Debug.Log("Detection timeout reached. Resetting target.");
             return;
         }
 
     }
-    public void updateSuspision(Transform newtarget)
+    public void updateSuspisionCollider2d(Collider2D newCollider)
     {
-        if (newtarget == null)
+        if (newCollider == null)
         {
             return;
         }
         lastDetectionTime = Time.time;
-        target = newtarget;
+        targetCollider = newCollider;
         float distance = Vector2.Distance(
             enemyController.transform.position,
-            target.position
+            targetCollider.transform.position
         );
         float distanceModifier = DetectionSpeed / (distance + 0.1f);
 
@@ -65,10 +71,28 @@ public class EnemyAgro : MonoBehaviour
             1f,
             1f
         );
-        if(detectionProgress >= 1f && !isDetecting)
+        if (detectionProgress <= 0f && isDetecting)
         {
+            Debug.Log("Enemy has lost track of the player!");
+            enemyController.ChangeState(enemyState.regular);
+            isDetecting = false;
+        }
+        else if(detectionProgress <= 0.3f && !isDetecting)
+        {
+            Debug.Log("Detection at 30%!");
+            enemyController.LookPosition(targetCollider.transform.position);
+        }
+        else if (detectionProgress <= 0.6f && !isDetecting)
+        {
+            Debug.Log("Detection at 60%!");
+            enemyController.InvestigatePosition(targetCollider.transform.position);
+        }
+        else if(detectionProgress >= 1f && !isDetecting)
+        {
+            Debug.Log("Enemy has fully detected the player!");
             isDetecting = true;
-            enemyController.InvestigatePosition(target.position);
+            enemyController.ChangeState(enemyState.attack);
         }
     }
+    
 }

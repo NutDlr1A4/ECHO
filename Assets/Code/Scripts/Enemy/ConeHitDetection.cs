@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyDetectionCone : MonoBehaviour
 {
-    private Transform playerTransform = null;
+    private Collider2D seenObject = null;
     private EnemyAgro enemyAgro;
     private void Awake()
     {
@@ -16,18 +16,22 @@ public class EnemyDetectionCone : MonoBehaviour
 
     private void Update()
     {
-        if(playerTransform != null)
+        if(seenObject != null)
         {
-            enemyAgro.updateSuspision(playerTransform);
+            enemyAgro.updateSuspisionCollider2d(seenObject);
         }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other == seenObject)
         {
-            playerTransform = other.transform;
-            //Debug.Log("Player entered the enemy's detection cone!");
+            return;
+        }
+        else if (other.CompareTag("Player"))
+        {
+            seenObject = other;
+            Debug.Log("Player detected in the enemy's detection cone!");
         }
     }
 
@@ -35,7 +39,7 @@ public class EnemyDetectionCone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerTransform = null;
+            seenObject = null;
             Debug.Log("Player left the enemy's detection cone!");
         }
     }
