@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour, IInteractable
+public class EnemyController : MonoBehaviour
 {
     [SerializeField] private bool standGuard = false;
     [SerializeField] private float speed = 5f;
@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour, IInteractable
     [SerializeField] private bool debugMode = true;
 
     private float defultFacingDirection;
-    
+
 
     private Rigidbody2D rb;
     private EnemyAnimation enemyAnimation;
@@ -77,14 +77,14 @@ public class EnemyController : MonoBehaviour, IInteractable
         ChangeState(enemyState.patrol);
     }
 
-    
+
     void Update()
     {
-        if(!isAlive)
+        if (!isAlive)
         {
             return;
         }
-        
+
         switch (currentState)
         {
             case enemyState.idle:
@@ -127,7 +127,7 @@ public class EnemyController : MonoBehaviour, IInteractable
         currentState = newState;
         CancelInvoke();
     }
-   
+
     void Patrol()
     {
         Vector2 direction =
@@ -176,8 +176,6 @@ public class EnemyController : MonoBehaviour, IInteractable
     }
     void Attack()
     {
-        Debug.Log(burstDelay);
-        Debug.Log(attackDelay);
         for (int i = 0; i < 3; i++)
         {
             Invoke(nameof(Shoot), burstDelay * i);
@@ -226,38 +224,23 @@ public class EnemyController : MonoBehaviour, IInteractable
     }
     public void BecomeHostile()
     {
-        if(isHostile)
+        if (isHostile)
         {
             return;
         }
         isHostile = true;
         ChangeState(enemyState.chase);
     }
-    
+
     public void StopPatrol()
     {
         CancelInvoke(nameof(TurnAround));
         rb.linearVelocity = Vector2.zero;
         enabled = false;
     }
-   
+
     public void Die()
     {
         ChangeState(enemyState.dead);
-    }
-
-    void IInteractable.OnInteractTargetEnter()
-    {
-        
-    }
-
-    void IInteractable.OnInteractTargetExit()
-    {
-        
-    }
-
-    void IInteractable.OnInteract()
-    {
-        Die();
     }
 }

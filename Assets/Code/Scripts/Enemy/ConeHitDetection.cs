@@ -16,10 +16,11 @@ public class EnemyDetectionCone : MonoBehaviour
 
     private void Update()
     {
-        if(seenObject != null)
-        {
-            enemyAgro.updateSuspisionCollider2d(seenObject);
-        }
+        enemyAgro.updateSuspisionCollider2d(seenObject);
+        //if(seenObject != null)
+        //{
+        //    enemyAgro.updateSuspisionCollider2d(seenObject);
+        //}
     }
 
     private void OnTriggerStay2D(Collider2D other)

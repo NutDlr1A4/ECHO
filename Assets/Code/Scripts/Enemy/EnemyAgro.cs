@@ -5,13 +5,13 @@ public class EnemyAgro : MonoBehaviour
 {
     [SerializeField] private float DetectionSpeed = 5f;
     [SerializeField] private float detectionTimeout = 2f;
-    private float lastDetectionTime = 0f;
-
     [SerializeField] private Transform detectionFill;
-    private float detectionProgress = 0f;
     private EnemyController enemyController;
     private Collider2D targetCollider = null;
-    private bool isDetecting = false;
+    private Transform lastKnowLocation = null;
+    private float detectionProgress = 0f;
+    private float lastDetectionTime = 0f;
+    private bool isDetected = false;
     private void Awake()
     {
         enemyController =
@@ -29,36 +29,49 @@ public class EnemyAgro : MonoBehaviour
 
     private void Update()
     {
-        if (targetCollider == null && detectionProgress == 0f) { return; }
-
-        if (targetCollider == null)
+        if (detectionProgress >= 0 && Time.time - lastDetectionTime > detectionTimeout)
         {
+            return;
+        }
+
+        if (lastKnowLocation == null) { return; }
+        else if (targetCollider == null)
+        { 
             UpdateDetectionProgress(-Time.deltaTime);
             return;
         }
-
-        if (Time.time - lastDetectionTime > detectionTimeout)
+        else if (lastKnowLocation != null)
         {
-            targetCollider = null;
-            isDetecting = false;
-            Debug.Log("Detection timeout reached. Resetting target.");
-            return;
+            DetectionCalculation();
         }
-
+        else
+        {
+            Debug.LogWarning("Unknown state in EnemyAgro.Update.");
+        }
     }
     public void updateSuspisionCollider2d(Collider2D newCollider)
     {
         if (newCollider == null)
         {
+            targetCollider = null;
             return;
         }
+        lastKnowLocation = newCollider.transform;
         lastDetectionTime = Time.time;
         targetCollider = newCollider;
+        
+    }
+    private void DetectionCalculation()
+    {
         float distance = Vector2.Distance(
             enemyController.transform.position,
-            targetCollider.transform.position
+            lastKnowLocation.position
         );
-        float distanceModifier = DetectionSpeed / (distance + 0.1f);
+        distance += 0.001f;
+        Debug.Log($"Distance to player: {distance}");
+        Debug.Log($"Detection speed: {DetectionSpeed}");
+
+        float distanceModifier = Mathf.Pow(DetectionSpeed / (distance * 0.5f), 2);
 
         UpdateDetectionProgress(Time.deltaTime * distanceModifier);
     }
@@ -71,26 +84,26 @@ public class EnemyAgro : MonoBehaviour
             1f,
             1f
         );
-        if (detectionProgress <= 0f && isDetecting)
+        if (detectionProgress <= 0.1f && isDetected)
         {
             Debug.Log("Enemy has lost track of the player!");
             enemyController.ChangeState(enemyState.regular);
-            isDetecting = false;
+            isDetected = false;
         }
-        else if(detectionProgress <= 0.3f && !isDetecting)
+        else if(detectionProgress <= 0.3f && !isDetected)
         {
             Debug.Log("Detection at 30%!");
-            enemyController.LookPosition(targetCollider.transform.position);
+            enemyController.LookPosition(lastKnowLocation.position);
         }
-        else if (detectionProgress <= 0.6f && !isDetecting)
+        else if (detectionProgress <= 0.6f && !isDetected)
         {
             Debug.Log("Detection at 60%!");
-            enemyController.InvestigatePosition(targetCollider.transform.position);
+            enemyController.InvestigatePosition(lastKnowLocation.position);
         }
-        else if(detectionProgress >= 1f && !isDetecting)
+        else if(detectionProgress >= 1f && !isDetected)
         {
             Debug.Log("Enemy has fully detected the player!");
-            isDetecting = true;
+            isDetected = true;
             enemyController.ChangeState(enemyState.attack);
         }
     }
