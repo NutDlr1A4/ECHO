@@ -1,9 +1,10 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 using static EnemyController;
 
 public class EnemyAgro : MonoBehaviour
 {
-    [SerializeField] private float DetectionSpeed = 5f;
+    [SerializeField] private float DetectionSpeed = 1f;
     [SerializeField] private float detectionTimeout = 2f;
     [SerializeField] private Transform detectionFill;
     private EnemyController enemyController;
@@ -11,9 +12,14 @@ public class EnemyAgro : MonoBehaviour
     private Transform lastKnowLocation = null;
     private float detectionProgress = 0f;
     private float lastDetectionTime = 0f;
-    private bool isDetected = false;
+    float visionConeLength;
+    private bool isHostile = false;
     private void Awake()
     {
+        if(DetectionSpeed == 0f)
+        {
+            DetectionSpeed = 0.00001f;
+        }
         enemyController =
             transform.root.GetComponentInChildren<EnemyController>(true);
         if (enemyController == null)
@@ -25,19 +31,18 @@ public class EnemyAgro : MonoBehaviour
             1f,
             1f
         );
+        visionConeLength = GetComponentInChildren<PolygonCollider2D>().bounds.size.x;
     }
 
     private void Update()
     {
-        if (detectionProgress >= 0 && Time.time - lastDetectionTime > detectionTimeout)
-        {
-            return;
-        }
-
         if (lastKnowLocation == null) { return; }
         else if (targetCollider == null)
         { 
-            UpdateDetectionProgress(-Time.deltaTime);
+            if(Time.time - lastDetectionTime > detectionTimeout)
+            {
+                UpdateDetectionProgress(-Time.deltaTime);
+            }   
             return;
         }
         else if (lastKnowLocation != null)
@@ -67,12 +72,9 @@ public class EnemyAgro : MonoBehaviour
             enemyController.transform.position,
             lastKnowLocation.position
         );
-        distance += 0.001f;
-        Debug.Log($"Distance to player: {distance}");
-        Debug.Log($"Detection speed: {DetectionSpeed}");
-
-        float distanceModifier = Mathf.Pow(DetectionSpeed / (distance * 0.5f), 2);
-
+        distance *= 1/visionConeLength;
+        float distanceModifier = Mathf.Exp(-distance/DetectionSpeed);
+        Debug.Log($"DistanceModifier speed: {distanceModifier}");
         UpdateDetectionProgress(Time.deltaTime * distanceModifier);
     }
     private void UpdateDetectionProgress(float amount)
@@ -84,26 +86,27 @@ public class EnemyAgro : MonoBehaviour
             1f,
             1f
         );
-        if (detectionProgress <= 0.1f && isDetected)
+        if (detectionProgress == 0f)
         {
             Debug.Log("Enemy has lost track of the player!");
+            isHostile = false;
+            lastKnowLocation = null;
             enemyController.ChangeState(enemyState.regular);
-            isDetected = false;
         }
-        else if(detectionProgress <= 0.3f && !isDetected)
+        else if(detectionProgress <= 0.5f && !isHostile)
         {
-            Debug.Log("Detection at 30%!");
+            Debug.Log("Detection at 30%, enemy is looking!");
             enemyController.LookPosition(lastKnowLocation.position);
         }
-        else if (detectionProgress <= 0.6f && !isDetected)
+        else if (detectionProgress <= 0.99f && !isHostile)
         {
-            Debug.Log("Detection at 60%!");
+            Debug.Log("Detection at 60%, enemy is investigating!");
             enemyController.InvestigatePosition(lastKnowLocation.position);
         }
-        else if(detectionProgress >= 1f && !isDetected)
+        else if(detectionProgress >= 1f && !isHostile)
         {
-            Debug.Log("Enemy has fully detected the player!");
-            isDetected = true;
+            Debug.Log("Enemy has fully detected the player, ennemy is hostile!");
+            isHostile = true;
             enemyController.ChangeState(enemyState.attack);
         }
     }

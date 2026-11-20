@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EnemyController : MonoBehaviour
 {
@@ -77,7 +78,6 @@ public class EnemyController : MonoBehaviour
         ChangeState(enemyState.patrol);
     }
 
-
     void Update()
     {
         if (!isAlive)
@@ -95,6 +95,9 @@ public class EnemyController : MonoBehaviour
                 enemyAnimation.PlayRun();
                 Patrol();
                 break;
+            case enemyState.look:
+                LookAtCurrentTarget();
+                break;
             case enemyState.chase:
                 // Chase logic would go here
                 break;
@@ -110,7 +113,7 @@ public class EnemyController : MonoBehaviour
                 isAlive = false;
                 break;
             case enemyState.investigate:
-                // Investigate logic would go here
+                GoToCurrentTarget();
                 break;
             case enemyState.interact:
                 // Interact logic would go here
@@ -154,6 +157,18 @@ public class EnemyController : MonoBehaviour
             Invoke(nameof(TurnAround), turnDelay);
         }
     }
+    void GoToCurrentTarget()
+    {
+        LookAtCurrentTarget();
+        Vector2 direction =
+       (currentTarget - rb.position).normalized;
+
+        rb.linearVelocity = new Vector2(
+            direction.x * speed,
+            rb.linearVelocity.y
+        );
+
+    }
     private void TurnAround()
     {
         if (currentState != enemyState.idle)
@@ -174,11 +189,26 @@ public class EnemyController : MonoBehaviour
 
         ChangeState(enemyState.patrol);
     }
+    void LookAtCurrentTarget()
+    {
+        Vector3 scale = transform.localScale;
+
+        if (currentTarget.x > transform.position.x)
+        {
+            scale.x = Mathf.Abs(scale.x);   // Face right
+        }
+        else
+        {
+            scale.x = -Mathf.Abs(scale.x);  // Face left
+        }
+        transform.localScale = scale;
+    }
     void Attack()
     {
         for (int i = 0; i < 3; i++)
         {
             Invoke(nameof(Shoot), burstDelay * i);
+            Debug.Log("PEW");
         }
     }
 
