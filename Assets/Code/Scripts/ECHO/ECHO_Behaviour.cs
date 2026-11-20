@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class ECHOBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject mode_man;
+    [SerializeField] private GameObject ghost;
 
     [SerializeField] private EchoNodeManager node_man;
 
@@ -34,6 +35,7 @@ public class ECHOBehaviour : MonoBehaviour
     }
 
     private void OnEnable() {
+        gameObject.transform.position = ghost.transform.position;
         controls.Enable();
     }
 
@@ -138,15 +140,19 @@ public class ECHOBehaviour : MonoBehaviour
     }
 
     void Start() {
-        gameObject.transform.position = initial_node.transform.position;
-        current_node = initial_node;
-        on_node = true;
+        gameObject.transform.position = ghost.transform.position;
+
+        if (initial_node != null) {
+            gameObject.transform.position = initial_node.transform.position;
+            current_node = initial_node;
+            on_node = true;   
+        }
 
         foreach (ConnectionPoint key in System.Enum.GetValues(typeof(ConnectionPoint))) {
             arrows.Add(key, Instantiate(arrow_prefab, gameObject.transform));
         }
 
-        SetArrows();
+        if (initial_node != null) SetArrows();
     }
 
     void Update() {
