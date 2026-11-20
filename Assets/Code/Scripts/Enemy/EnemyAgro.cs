@@ -1,16 +1,17 @@
 using UnityEngine;
+using static EnemyController;
 
 public class EnemyAgro : MonoBehaviour
 {
     [SerializeField] private float DetectionSpeed = 5f;
     [SerializeField] private float detectionTimeout = 2f;
-    private float lastDetectionTime = 0f;
-
     [SerializeField] private Transform detectionFill;
-    private float detectionProgress = 0f;
     private EnemyController enemyController;
-    private Transform target = null;
-    private bool isDetecting = false;
+    private Collider2D targetCollider = null;
+    private Transform lastKnowLocation = null;
+    private float detectionProgress = 0f;
+    private float lastDetectionTime = 0f;
+    private bool isDetected = false;
     private void Awake()
     {
         enemyController =
@@ -19,40 +20,58 @@ public class EnemyAgro : MonoBehaviour
         {
             Debug.LogError("EnemyController not found in parent.");
         }
+        detectionFill.localScale = new Vector3(
+            0,
+            1f,
+            1f
+        );
     }
 
     private void Update()
     {
-        if (target == null && detectionProgress == 0f) { return; }
-
-        if (target == null)
+        if (detectionProgress >= 0 && Time.time - lastDetectionTime > detectionTimeout)
         {
+            return;
+        }
+
+        if (lastKnowLocation == null) { return; }
+        else if (targetCollider == null)
+        { 
             UpdateDetectionProgress(-Time.deltaTime);
             return;
         }
-
-        if (Time.time - lastDetectionTime > detectionTimeout)
+        else if (lastKnowLocation != null)
         {
-            target = null;
-            isDetecting = false;
-            Debug.Log("Detection timeout reached. Resetting target.");
-            return;
+            DetectionCalculation();
         }
-
+        else
+        {
+            Debug.LogWarning("Unknown state in EnemyAgro.Update.");
+        }
     }
-    public void updateSuspision(Transform newtarget)
+    public void updateSuspisionCollider2d(Collider2D newCollider)
     {
-        if (newtarget == null)
+        if (newCollider == null)
         {
+            targetCollider = null;
             return;
         }
+        lastKnowLocation = newCollider.transform;
         lastDetectionTime = Time.time;
-        target = newtarget;
+        targetCollider = newCollider;
+        
+    }
+    private void DetectionCalculation()
+    {
         float distance = Vector2.Distance(
             enemyController.transform.position,
-            target.position
+            lastKnowLocation.position
         );
-        float distanceModifier = DetectionSpeed / (distance + 0.1f);
+        distance += 0.001f;
+        Debug.Log($"Distance to player: {distance}");
+        Debug.Log($"Detection speed: {DetectionSpeed}");
+
+        float distanceModifier = Mathf.Pow(DetectionSpeed / (distance * 0.5f), 2);
 
         UpdateDetectionProgress(Time.deltaTime * distanceModifier);
     }
@@ -65,10 +84,28 @@ public class EnemyAgro : MonoBehaviour
             1f,
             1f
         );
-        if(detectionProgress >= 1f && !isDetecting)
+        if (detectionProgress <= 0.1f && isDetected)
         {
-            isDetecting = true;
-            enemyController.InvestigatePosition(target.position);
+            Debug.Log("Enemy has lost track of the player!");
+            enemyController.ChangeState(enemyState.regular);
+            isDetected = false;
+        }
+        else if(detectionProgress <= 0.3f && !isDetected)
+        {
+            Debug.Log("Detection at 30%!");
+            enemyController.LookPosition(lastKnowLocation.position);
+        }
+        else if (detectionProgress <= 0.6f && !isDetected)
+        {
+            Debug.Log("Detection at 60%!");
+            enemyController.InvestigatePosition(lastKnowLocation.position);
+        }
+        else if(detectionProgress >= 1f && !isDetected)
+        {
+            Debug.Log("Enemy has fully detected the player!");
+            isDetected = true;
+            enemyController.ChangeState(enemyState.attack);
         }
     }
+    
 }
