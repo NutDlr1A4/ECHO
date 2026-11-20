@@ -1,4 +1,5 @@
 public interface IHackable
 {
-    void OnHack();
+    // Returns true if hack was successfull, false otherwise
+    bool OnHack();
 }

@@ -56,6 +56,9 @@ public class GhostInteractBehaviour : MonoBehaviour
     void Update()
     {
         if (mode_man.GetComponent<ModeManager>().IsInECHOMode()) {
+            if (current_interact_target != null) {
+                current_interact_target.GetComponent<IInteractable>()?.OnInteractTargetExit();
+            }
             current_interact_target = null;
             return;
         }

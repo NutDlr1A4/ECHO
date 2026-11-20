@@ -1,50 +1,78 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
 {
     [SerializeField] private bool open = false;
+    [SerializeField] private bool interactable = false;
+    [SerializeField] private bool hackable = true;
 
-    public void OnHack() {
-        Toggle();
+    [SerializeField] private GameObject label;
+
+    private Animator animator;
+
+    public bool OnHack() {
+        if (hackable) Toggle();
+        return hackable;
     }
 
-    public void OnInteract() {
-        Toggle();
+    public bool OnInteract() {
+        if (interactable) {
+            Toggle();
+        }
+        else {
+            label.GetComponent<TextMeshProUGUI>().SetText("It won't move...");
+            label.SetActive(true);
+        }
+        return interactable;
     }
 
-    public void OnInteractTargetEnter() {}
-    public void OnInteractTargetExit() {}
+    public void OnInteractTargetEnter() {
+        if (interactable) {
+            label.GetComponent<TextMeshProUGUI>().SetText("Open door (Space)");
+            label.SetActive(true);
+        }
+    }
+    public void OnInteractTargetExit() {
+        label.SetActive(false);
+    }
 
     public void Toggle() {
-        open = !open;
+        SetState(!open);
     }
 
     public void Open() { 
-        open = true;
+        SetState(true);
     }
 
     public void Close() {
-        open = false;
+        SetState(false);
     }
 
     public bool IsOpen() { return open; }
 
-    void Start() {
+    private void SetState(bool state) {
+        if (state != open) {
+            animator.SetBool("IsOpen", !animator.GetBool("IsOpen"));
+        }
+        open = state; // This? State? Hit the road dude
+    }
+
+    void Awake()
+    {
+        Debug.Log(gameObject + ": " + open);
+        animator = GetComponent<Animator>();
+        animator.SetBool("IsOpen", open);
+    }
+
+    void Start()  {
         
     }
 
     void Update()
     {
-        // Update the shit needed to open/close it (hitboxes and sprites)
-
-        GameObject rect_open = gameObject.transform.Find("RectOpen").gameObject;
-        GameObject rect_closed = gameObject.transform.Find("RectClosed").gameObject;
-
-        rect_open.SetActive(open);
-        rect_open.GetComponent<BoxCollider2D>().gameObject.SetActive(open);
-        rect_closed.SetActive(!open);
-        rect_closed.GetComponent<BoxCollider2D>().gameObject.SetActive(!open);
+        
     }
 }

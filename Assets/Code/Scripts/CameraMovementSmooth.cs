@@ -6,6 +6,7 @@ public class Camera_Movement : MonoBehaviour
     [SerializeField] private GameObject object_followed;
     [SerializeField] private float easing_factor = 0.97f; // 0: no movement, 1: instant movement
     [SerializeField] private float z_distance = 10.0f;
+    [SerializeField] private float snap_distance = 2.0f;
 
     public void SetToFollow(GameObject new_object) {
         object_followed = new_object;
@@ -33,6 +34,11 @@ public class Camera_Movement : MonoBehaviour
     // TODO: It's still kinda jittery? This might just be regular lag, but should look into it.
     void LateUpdate() {
         Vector3 delta = object_followed.transform.position - gameObject.transform.position;
+
+        if (delta.sqrMagnitude <= snap_distance * snap_distance) {
+            Set2DPos(object_followed.transform.position);
+            return;
+        }
 
         // OKAY OKAY I know this looks janky, but when multiplying each frame you can't just multiply delta time.
         // You gotta multiply it by some fuckass exponent instead

@@ -14,10 +14,10 @@ public class EchoNode : MonoBehaviour
         var hackable = GetComponentInParent<IHackable>();
 
         if (hackable != null) {
-            GameObject effect = Instantiate(hack_effect_prefab);
-            effect.transform.position = gameObject.transform.position;
-            
-            hackable.OnHack();
+            if (hackable.OnHack()) {
+                GameObject effect = Instantiate(hack_effect_prefab);
+                effect.transform.position = gameObject.transform.position;
+            }
         }
     }
 
