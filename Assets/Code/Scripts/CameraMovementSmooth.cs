@@ -31,7 +31,6 @@ public class Camera_Movement : MonoBehaviour
     }
 
     // Uses LateUpdate() to avoid jittering
-    // TODO: It's still kinda jittery? This might just be regular lag, but should look into it.
     void LateUpdate() {
         Vector3 delta = object_followed.transform.position - gameObject.transform.position;
 
