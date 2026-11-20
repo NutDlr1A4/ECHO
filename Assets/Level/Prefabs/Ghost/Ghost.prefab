@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -3308841432790884285}
   m_Layer: 0
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,8 +84,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 977101411
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7488444758565417498, guid: 3393af777889ef81f9389ebde1dbf26c, type: 3}
@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4617ada34d674eaf3e085cd74906c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostInteractBehaviour
+  mode_man: {fileID: 0}
   max_interact_distance: 2
   current_interact_target: {fileID: 0}
 --- !u!1001 &8773993064079043127
