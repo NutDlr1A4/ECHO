@@ -1070,6 +1070,7 @@ MonoBehaviour:
   resumeButton: {fileID: 1945647041497347206}
   settingsButton: {fileID: 883262887150476818}
   masterVolumeSlider: {fileID: 2514753353105364020}
+  mainMenu: MainMenu
 --- !u!114 &8370094566403879601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,6 +2008,34 @@ PrefabInstance:
     - target: {fileID: 1466580230628884903, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
       propertyPath: m_Name
       value: MainMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330641006206543947, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330641006206543947, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330641006206543947, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1334141086329076818}
+    - target: {fileID: 6330641006206543947, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330641006206543947, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330641006206543947, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330641006206543947, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7388455128900955295, guid: 8e6baa898c7691b7fa1c4d74c4ff2ae2, type: 3}
       propertyPath: m_Text

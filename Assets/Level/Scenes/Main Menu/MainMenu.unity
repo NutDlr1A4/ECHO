@@ -3055,7 +3055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3710b9d71943d909c8d281d2bc2f99ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  firstLevel: SampleScene
+  firstLevel: Stage1
   mainButtons: {fileID: 1089337899}
   settingsPanel: {fileID: 2076419464}
   settingsButton: {fileID: 1858635880}
