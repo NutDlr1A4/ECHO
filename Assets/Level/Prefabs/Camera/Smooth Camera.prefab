@@ -151,5 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Camera_Movement
   object_followed: {fileID: 0}
-  easing_factor: 0.97
+  easing_factor: 0.95
   z_distance: 10
+  snap_distance: 2
