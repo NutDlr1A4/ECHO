@@ -1,6 +1,7 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject resumeButton;
     [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject masterVolumeSlider;
+
+    [SerializeField] private string mainMenu;
 
     public static bool IsPaused { get; private set; }
 
@@ -82,6 +85,12 @@ public class PauseMenu : MonoBehaviour
         pausePanel.SetActive(true);
 
         SelectUIElement(settingsButton);
+    }
+
+    public void ExitToMenu()
+    {
+        Time.timeScale = previousTimeScale;
+        SceneManager.LoadScene(mainMenu);
     }
 
     private void SelectUIElement(GameObject element)

@@ -198,4 +198,10 @@ public class ECHOBehaviour : MonoBehaviour
 
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -1);
     }
+
+    private void OnDestroy()
+    {
+        controls.Player.Disable();
+        controls.UI.Disable();
+    }
 }

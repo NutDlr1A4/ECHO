@@ -298,4 +298,10 @@ public class GhostMovement : MonoBehaviour
             );
         }
     }
+
+    private void OnDestroy()
+    {
+        controls.Player.Disable();
+        controls.UI.Disable();
+    }
 }
