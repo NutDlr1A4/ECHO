@@ -16,10 +16,19 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float turnDelay = 2f;
     [SerializeField] private float waypointSize = 0.1f;
 
+<<<<<<< Updated upstream
     private Transform pointA;
     private Transform pointB;
     //private Transform facing;
 
+=======
+    [SerializeField] private Transform PathStart;
+    [SerializeField] private Transform PathEnd;
+
+    [SerializeField] private GameObject Bullet;
+    [SerializeField] private Transform BulletOrigin;
+    private float defultFacingDirection;
+>>>>>>> Stashed changes
     private Rigidbody2D rb;
     private EnemyAnimation enemyAnimation;
 
@@ -27,7 +36,28 @@ public class EnemyController : MonoBehaviour
     private Vector2 pointAPosition;
     private Vector2 pointBPosition;
     private Vector2 currentTarget;
+<<<<<<< Updated upstream
 
+=======
+    private Vector2 patrolReturnTarget;
+    private bool isHostile = false;
+    private bool isAlive = true;
+    public enum enemyState
+    {
+        idle,
+        patrol,
+        look,
+        investigate,
+        chase,
+        attack,
+        interact,
+        isHacked,
+        dead,
+        regular,
+    }
+    private enemyState defultState;
+    private enemyState previousState;
+>>>>>>> Stashed changes
     private enemyState currentState;
 
 
@@ -81,6 +111,15 @@ public class EnemyController : MonoBehaviour
     public void ChangeState(enemyState newState)
     {
         currentState = newState;
+<<<<<<< Updated upstream
+=======
+        CancelInvoke();
+    }
+    void StandStill()
+    {
+
+    }
+>>>>>>> Stashed changes
 
         switch (currentState)
         {
@@ -155,6 +194,82 @@ public class EnemyController : MonoBehaviour
 
         ChangeState(enemyState.patrol);
     }
+<<<<<<< Updated upstream
+=======
+    void LookAtCurrentTarget()
+    {
+        Vector3 scale = transform.localScale;
+
+        if (currentTarget.x > transform.position.x)
+        {
+            scale.x = Mathf.Abs(scale.x);   // Face right
+        }
+        else
+        {
+            scale.x = -Mathf.Abs(scale.x);  // Face left
+        }
+        transform.localScale = scale;
+    }
+    void Attack()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Invoke(nameof(Shoot), burstDelay * i);
+            Debug.Log("PEW");
+        }
+    }
+
+    void Shoot()
+    {
+        if (Bullet == null || BulletOrigin == null)
+        {
+            Debug.LogError("Bullet or BulletOrigin is not assigned.");
+            return;
+        }
+        GameObject newBullet = Instantiate(Bullet, BulletOrigin.position, BulletOrigin.rotation);
+        newBullet.SetActive(true);
+        newBullet.GetComponent<BulletBehavior>().ShootTarget(currentTarget,transform.parent);
+    }
+
+    public void InvestigatePosition(Vector2 position)
+    {
+        patrolReturnTarget = currentTarget;
+        currentTarget = position;
+        ChangeState(enemyState.investigate);
+    }
+    public void LookPosition(Vector2 position)
+    {
+        patrolReturnTarget = currentTarget;
+        currentTarget = position;
+        ChangeState(enemyState.look);
+    }
+    void Investigate()
+    {
+        enemyAnimation.PlayRun();
+        Vector2 direction =
+       (currentTarget - rb.position).normalized;
+
+        rb.linearVelocity = new Vector2(
+            direction.x * speed,
+            rb.linearVelocity.y
+        );
+        isHostile = true;
+        enemyAnimation.isHostile(true);
+        previousState = currentState;
+        ChangeState(enemyState.attack);
+
+    }
+    public void BecomeHostile()
+    {
+        if (isHostile)
+        {
+            return;
+        }
+        isHostile = true;
+        ChangeState(enemyState.chase);
+    }
+
+>>>>>>> Stashed changes
     public void StopPatrol()
     {
         CancelInvoke(nameof(TurnAround));
