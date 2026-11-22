@@ -28,6 +28,7 @@ public class EchoNode : MonoBehaviour
         public float light_intensity;
     };
 
+    // This could be a serialized field and be configurable from there but I'm lazy lol sue me
     private static readonly Dictionary<NodeState, VisualsInfo> visuals_info_dict = new(){
         { NodeState.CONTROLED, new VisualsInfo{ 
             node_color = new Color(0f, 1f, 1f), 
@@ -47,7 +48,7 @@ public class EchoNode : MonoBehaviour
         { NodeState.HOSTILE, new VisualsInfo{ 
             node_color = new Color(1f, 0f, 0f), 
             light_color = new Color(1f, 0f, 0f), 
-            light_intensity = 15.0f }
+            light_intensity = 10.0f }
         }
     };
 
