@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8039216, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EchoNode
   connection: {fileID: 0}
   hack_effect_prefab: {fileID: 5586401833731965244, guid: cbe4f35c0a5940414a082f0bd4d5ab92, type: 3}
+  state: 1
 --- !u!1001 &3153901414407957207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_Color.g
-      value: 0.27777767
+      value: 0.8039216
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_Color.r
@@ -185,11 +186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: 'm_ApplyToSortingLayers.Array.data[0]'
-      value: 2099421165
+      value: 180406213
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: 'm_ApplyToSortingLayers.Array.data[1]'
-      value: 180406213
+      value: 2099421165
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

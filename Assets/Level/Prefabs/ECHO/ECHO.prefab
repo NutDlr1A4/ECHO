@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingOrder: 30
   m_MaskInteraction: 0
   m_Sprite: {fileID: -150251912951371770, guid: 9367d588da1c5464da9f8069280614ea, type: 3}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abc8edd053151dbfb11e83ec917d554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ECHOBehaviour
+  mode_man: {fileID: 0}
+  ghost: {fileID: 0}
   node_man: {fileID: 0}
   initial_node: {fileID: 0}
   move_speed: 30
@@ -219,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_Color.g
-      value: 0.27699566
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_Color.r
@@ -239,11 +241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: 'm_ApplyToSortingLayers.Array.data[0]'
-      value: 2099421165
+      value: 180406213
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: 'm_ApplyToSortingLayers.Array.data[1]'
-      value: 180406213
+      value: 2099421165
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: 'm_ApplyToSortingLayers.Array.data[2]'

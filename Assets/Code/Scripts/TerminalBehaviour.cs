@@ -6,8 +6,11 @@ public class TerminalInteraction : MonoBehaviour, IInteractable
     [SerializeField] private GameObject mode_man;
     [SerializeField] private GameObject int_text;
 
+    private GameObject my_node;
+
     public bool OnInteract() {
-        GameObject my_node = gameObject.transform.Find("Node").gameObject;
+        my_node = gameObject.transform.Find("Node").gameObject;
+        my_node.GetComponent<EchoNode>().SetState(NodeState.CONTROLED);
         mode_man.GetComponent<ModeManager>().EnterECHOMode(my_node);
         return true;
     }
