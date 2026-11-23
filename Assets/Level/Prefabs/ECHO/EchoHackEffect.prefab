@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21ee38fb0a1565da892b35d2bc016b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ECHO_HackParticle
-  start_intensity: 10
+  start_intensity: 20
   end_intensitiy: 0
-  target_lifetime_ms: 1000
+  target_lifetime_ms: 500
 --- !u!1001 &2067236501829507246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8497873232271565838, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size

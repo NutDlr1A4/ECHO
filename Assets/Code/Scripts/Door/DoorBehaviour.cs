@@ -12,6 +12,7 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
     [SerializeField] private GameObject label;
 
     private Animator animator;
+    private EchoNode my_node;
 
     public bool OnHack() {
         if (hackable) Toggle();
@@ -58,12 +59,20 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
             animator.SetBool("IsOpen", !animator.GetBool("IsOpen"));
         }
         open = state; // This? State? Hit the road dude
+
+        if (open) {
+            my_node.SetState(NodeState.NEUTRAL_INACTIVE);
+        }
+        else {
+            my_node.SetState(NodeState.NEUTRAL_ACTIVE);
+        }
     }
 
     void Awake()
     {
         animator = GetComponent<Animator>();
-        animator.SetBool("IsOpen", open);
+        my_node = gameObject.transform.Find("Node").GetComponent<EchoNode>();
+        SetState(open);
     }
 
     void Start()  {
