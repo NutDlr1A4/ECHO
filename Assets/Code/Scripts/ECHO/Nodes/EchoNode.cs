@@ -52,9 +52,9 @@ public class EchoNode : MonoBehaviour
             light_intensity = 10.0f }
         },
         { NodeState.SPECIAL, new VisualsInfo{ 
-            node_color = new Color(1f, 1f, 0f), 
-            light_color = new Color(1f, 1f, 0f), 
-            light_intensity = 10.0f }
+            node_color = new Color(1f, 0.5f, 0f), 
+            light_color = new Color(1f, 0.5f, 0f), 
+            light_intensity = 2.0f }
         }
     };
 
