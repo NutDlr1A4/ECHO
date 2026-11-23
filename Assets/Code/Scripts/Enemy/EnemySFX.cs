@@ -45,13 +45,13 @@ public class EnemySFX : MonoBehaviour
 
     public void PlaySoundShoot()
     {
-        audioSource.PlayOneShot(shootSound);
+        audioSource.PlayOneShot(shootSound,2f);
     }
 
     public void PlaySoundWalk()
     {
         audioSource.PlayOneShot(
-            walkSoundArr[walkSoundArrIndexTracker]);
+            walkSoundArr[walkSoundArrIndexTracker],2);
         walkSoundArrIndexTracker =
             (walkSoundArrIndexTracker + 1)
             % walkSoundArr.Length;
@@ -64,5 +64,6 @@ public class EnemySFX : MonoBehaviour
     public void PlaySoundAlert()
     {
         audioSource.PlayOneShot(alertSound);
+        Debug.Log("AlertSound");
     }
 }
