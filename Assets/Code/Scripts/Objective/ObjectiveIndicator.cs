@@ -16,6 +16,6 @@ public class ObjectiveIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        triangle.transform.position = transform.position + new Vector3(0, math.sin(Time.timeSinceLevelLoad * math.PI * float_rate) * float_offset, 0);
+        triangle.transform.position = transform.position + new Vector3(0, (1f + math.sin(Time.timeSinceLevelLoad * math.PI * float_rate) * float_offset * 2f)/2f, 0);
     }
 }
