@@ -1,30 +1,60 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class BulletBehavior : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    [SerializeField] private int lifetime = 3;
-    private Rigidbody2D rb;
+    [SerializeField] private float lifetime = 3f;
 
-    void Awake()
+    private Rigidbody2D rb;
+    private Transform enemyRoot;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    
-    public void ShootTarget(Vector2 targetPosition)
+
+    public void ShootTarget(Vector2 targetPosition, Transform owner)
     {
-        Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+        enemyRoot = owner;
+
+        Vector2 direction =
+            (targetPosition - rb.position).normalized;
+
         rb.linearVelocity = direction * speed;
+
         Destroy(gameObject, lifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (enemyRoot != null &&
+            other.transform.IsChildOf(enemyRoot))
+        {
+            return;
+        }
+
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<GhostMovement>().Die();
-            Destroy(gameObject);
+            GhostMovement player =
+                other.GetComponentInParent<GhostMovement>();
+
+            if (player != null)
+            {
+                player.Die();
+                EnemyController enemyController =
+                    enemyRoot.GetComponentInChildren<EnemyController>(true);
+
+                if (enemyController != null)
+                {
+                    enemyController.VictoryTrigger();
+                }
+                else
+                {
+                    Debug.Log("No dance :-(");
+                }
+            }
         }
+
+        Destroy(gameObject);
     }
 }

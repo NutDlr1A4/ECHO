@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float attackDelay = 1f;
     [SerializeField] private float burstDelay = 0.01f;
 
-    [SerializeField] private float waypointSize = 0.1f;
+    [SerializeField] private float waypointSize = 0.5f;
 
     [SerializeField] private Transform PathStart;
     [SerializeField] private Transform PathEnd;
@@ -17,25 +17,31 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject Bullet;
     [SerializeField] private Transform BulletOrigin;
 
-    [SerializeField] private bool debugMode = true;
+    //[SerializeField] private bool debugMode = true;
 
     private float defultFacingDirection;
 
 
     private Rigidbody2D rb;
     private EnemyAnimation enemyAnimation;
+    private SpriteRenderer spriteRenderer;
 
     private Vector2 PathStartPosition;
     private Vector2 PathEndPosition;
     private Vector2 currentTarget;
     private Vector2 patrolReturnTarget;
+
+    private float jumpForce = 0.5f;
+    private float stuckTimer;
+
     private bool isHostile = false;
-    private bool isReady = true;
+    private bool isMoving = false;
     private bool isAlive = true;
     public enum enemyState
     {
         idle,
         patrol,
+        guard,
         look,
         investigate,
         chase,
@@ -43,6 +49,7 @@ public class EnemyController : MonoBehaviour
         interact,
         isHacked,
         dead,
+        victory,
         regular,
     }
     private enemyState defultState;
@@ -52,30 +59,32 @@ public class EnemyController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         enemyAnimation = GetComponent<EnemyAnimation>();
-        defultFacingDirection = transform.localScale.x;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+        currentTarget = PathStart.position;
+        LookAtCurrentTarget();
         if (standGuard)
         {
-            defultState = enemyState.idle;
-            ChangeState(enemyState.idle);
+            defultState = enemyState.guard;
             PathStartPosition = transform.position;
-            return;
+           
         }
-
-        defultState = enemyState.patrol;
-        if (PathEnd == null || PathStart == null)
+        else
         {
-            Debug.LogError("Path Start or Path End was not found.");
-            enabled = false;
-            return;
+            defultState = enemyState.patrol;
+            if (PathEnd == null || PathStart == null)
+            {
+                Debug.LogError("Path Start or Path End was not found.");
+                enabled = false;
+                return;
+            }
+            PathEndPosition = PathEnd.position;
+            PathStartPosition = PathStart.position;
         }
-
-        PathEndPosition = PathEnd.position;
-        PathStartPosition = PathStart.position;
-
         currentTarget = PathStartPosition;
-
-        ChangeState(enemyState.patrol);
+        LookAtCurrentTarget();
+        defultFacingDirection = transform.localScale.x;
+        ChangeState(defultState);
     }
 
     void Update()
@@ -84,22 +93,30 @@ public class EnemyController : MonoBehaviour
         {
             return;
         }
+        if (isMoving)
+        {
+            CheckIfStuck();
+        }
 
         switch (currentState)
         {
             case enemyState.idle:
-                rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
-                enemyAnimation.PlayIdle();
+                StopWalk();
                 break;
             case enemyState.patrol:
-                enemyAnimation.PlayRun();
-                Patrol();
+                if (!IsInvoking(nameof(ChangePatrolTarget)))
+                {
+                    Patrol();
+                }
+                break;
+            case enemyState.guard:
+                StandGuard();
                 break;
             case enemyState.look:
                 LookAtCurrentTarget();
                 break;
             case enemyState.chase:
-                // Chase logic would go here
+                ChaseBehavior();
                 break;
             case enemyState.attack:
                 if (!IsInvoking(nameof(Attack)))
@@ -108,9 +125,7 @@ public class EnemyController : MonoBehaviour
                 }
                 break;
             case enemyState.dead:
-                rb.linearVelocity = Vector2.zero;
-                enemyAnimation.PlayDeath();
-                isAlive = false;
+                DeathBehavior();
                 break;
             case enemyState.investigate:
                 GoToCurrentTarget();
@@ -120,59 +135,70 @@ public class EnemyController : MonoBehaviour
                 break;
             case enemyState.regular:
                 previousState = currentState;
+                UpdateCurrentTarget(PathStartPosition);
+                GoToCurrentTarget();
                 ChangeState(defultState);
+                break;
+            case enemyState.victory:
+                if (!IsInvoking(nameof(VictoryDance))){
+                    Invoke(nameof(VictoryDance), 0.25f);
+                }
                 break;
         }
     }
 
     public void ChangeState(enemyState newState)
     {
-        currentState = newState;
-        CancelInvoke();
-    }
-
-    void Patrol()
-    {
-        Vector2 direction =
-       (currentTarget - rb.position).normalized;
-
-        rb.linearVelocity = new Vector2(
-            direction.x * speed,
-            rb.linearVelocity.y
-        );
-
-        float stoppingDistance =
-            waypointSize + speed * Time.fixedDeltaTime;
-
-        if (Mathf.Abs(rb.position.x - currentTarget.x)
-            <= stoppingDistance)
+        if (isAlive)
         {
-            rb.linearVelocity = new Vector2(
-                0f,
-                rb.linearVelocity.y
-            );
-
-            ChangeState(enemyState.idle);
-
-            Invoke(nameof(TurnAround), turnDelay);
+            currentState = newState;
+            CancelInvoke();
         }
     }
-    void GoToCurrentTarget()
+    void StandGuard()
     {
-        LookAtCurrentTarget();
-        Vector2 direction =
-       (currentTarget - rb.position).normalized;
-
-        rb.linearVelocity = new Vector2(
-            direction.x * speed,
-            rb.linearVelocity.y
+        float distance = Vector2.Distance(
+            transform.position,
+            currentTarget
         );
-
+        float stoppingDistance =
+            waypointSize + speed * Time.fixedDeltaTime;
+        if (distance > stoppingDistance)
+        {
+            GoToCurrentTarget();
+        }
+        else if(transform.localScale.x !=
+            defultFacingDirection)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = defultFacingDirection;
+            transform.localScale = scale;
+        }
+        else
+        {
+            StopWalk();
+        }
     }
-    private void TurnAround()
+    void Patrol()
     {
-        if (currentState != enemyState.idle)
-            return;
+        float distance = Vector2.Distance(
+            transform.position,
+            currentTarget
+        );
+        float stoppingDistance =
+            waypointSize + speed * Time.fixedDeltaTime;
+        if (distance > stoppingDistance)
+        {
+            GoToCurrentTarget();
+        }
+        else
+        {
+            StopWalk();
+            Invoke(nameof(ChangePatrolTarget), turnDelay);
+        }
+    }
+    void ChangePatrolTarget()
+    {
 
         if (currentTarget == PathStartPosition)
         {
@@ -182,13 +208,27 @@ public class EnemyController : MonoBehaviour
         {
             currentTarget = PathStartPosition;
         }
-
-        Vector2 scale = transform.localScale;
-        scale.x *= -1f;
-        transform.localScale = scale;
-
-        ChangeState(enemyState.patrol);
     }
+    void StopWalk()
+    {
+        enemyAnimation.PlayIdle();
+        rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        isMoving = false;
+    }
+    void GoToCurrentTarget()
+    {
+        isMoving = true;
+        LookAtCurrentTarget();
+        enemyAnimation.PlayRun();
+        Vector2 direction =
+       (currentTarget - rb.position).normalized;
+
+        rb.linearVelocity = new Vector2(
+            direction.x * speed,
+            rb.linearVelocity.y
+        );
+    }
+
     void LookAtCurrentTarget()
     {
         Vector3 scale = transform.localScale;
@@ -203,8 +243,23 @@ public class EnemyController : MonoBehaviour
         }
         transform.localScale = scale;
     }
+    void ChaseBehavior()
+    {
+        float distance = Vector2.Distance(
+            transform.position,
+            currentTarget);
+        if (distance >= 12f)
+        {
+            GoToCurrentTarget();
+        }
+        else if (!IsInvoking(nameof(Attack)))
+        {
+            Invoke(nameof(Attack), attackDelay);
+        }
+    }
     void Attack()
     {
+        StopWalk();
         for (int i = 0; i < 3; i++)
         {
             Invoke(nameof(Shoot), burstDelay * i);
@@ -219,9 +274,91 @@ public class EnemyController : MonoBehaviour
             Debug.LogError("Bullet or BulletOrigin is not assigned.");
             return;
         }
+        LookAtCurrentTarget();
         GameObject newBullet = Instantiate(Bullet, BulletOrigin.position, BulletOrigin.rotation);
         newBullet.SetActive(true);
-        newBullet.GetComponent<BulletBehavior>().ShootTarget(currentTarget);
+        newBullet.GetComponent<BulletBehavior>().ShootTarget(currentTarget, transform.parent);
+    }
+
+    //Giga scuffed solution incoming, ALARM ALARM
+    private int fallStep;
+    private int fallSteps;
+    private int fallRotates;
+    private float fallHeight;
+    void DeathBehavior()
+    {
+        isAlive = false;
+        rb.linearVelocity = Vector2.zero;
+        spriteRenderer.color = Color.gray;
+        GameObject detectionBar = transform.Find("Visuals/DetectionBar").gameObject;
+        GameObject detectionFill = transform.Find("Visuals/DetectionFill").gameObject;
+        detectionBar.SetActive(false);
+        detectionFill.SetActive(false);
+
+        //BoxCollider2D hitbox = GetComponent<BoxCollider2D>();
+        CapsuleCollider2D hitbox = GetComponent<CapsuleCollider2D>();
+        fallHeight = hitbox.bounds.size.y / 2f;
+        rb.gravityScale = 0f;
+        hitbox.enabled = false;
+        enemyAnimation.PlayDeath();
+
+        fallStep = 0;
+        fallSteps = 10;
+        fallRotates = 90 / fallSteps;
+        fallHeight = fallHeight / fallSteps;
+
+        DeathFall();
+    }
+
+    void DeathFall()
+    {
+        transform.position += Vector3.down * fallHeight;
+        transform.Rotate(0f, 0f, fallRotates);
+
+        fallStep++;
+
+        if (fallStep < fallSteps)
+        {
+            Invoke(nameof(DeathFall), 0.05f);
+        }
+    }
+    private bool danceFlip;
+    void VictoryDance()
+    {
+        spriteRenderer.color = Color.gray;
+        GameObject detectionBar = transform.Find("Visuals/DetectionBar").gameObject;
+        GameObject detectionFill = transform.Find("Visuals/DetectionFill").gameObject;
+        detectionBar.SetActive(false);
+        detectionFill.SetActive(false);
+        rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        enemyAnimation.PlayRun();
+
+        danceFlip = !danceFlip;
+
+        if (danceFlip)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 15f);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, -15f);
+        }
+
+        if (Random.Range(0, 5) == 0)
+        {
+            transform.Rotate(0f, 0f, 360f);
+        }
+
+        spriteRenderer.color = new Color(
+            Random.value,
+            Random.value,
+            Random.value
+        );
+    }
+    public void VictoryTrigger()
+    {
+        Debug.Log("Enemy Victory");
+        ChangeState(enemyState.victory);
     }
 
     public void InvestigatePosition(Vector2 position)
@@ -236,41 +373,62 @@ public class EnemyController : MonoBehaviour
         currentTarget = position;
         ChangeState(enemyState.look);
     }
-    void Investigate()
+    public void UpdateCurrentTarget(Vector2 newTarget)
     {
-        enemyAnimation.PlayRun();
-        Vector2 direction =
-       (currentTarget - rb.position).normalized;
-
-        rb.linearVelocity = new Vector2(
-            direction.x * speed,
-            rb.linearVelocity.y
-        );
-        isHostile = true;
-        enemyAnimation.isHostile(true);
-        previousState = currentState;
-        ChangeState(enemyState.attack);
-
+        currentTarget = newTarget;
     }
     public void BecomeHostile()
     {
         if (isHostile)
         {
+            Debug.Log("BecomeHostile() Failed");
             return;
         }
+        Debug.Log("BecomeHostile() Sucsess");
         isHostile = true;
+        LookAtCurrentTarget();
         ChangeState(enemyState.chase);
     }
-
-    public void StopPatrol()
+    public void LoseHostile()
     {
-        CancelInvoke(nameof(TurnAround));
-        rb.linearVelocity = Vector2.zero;
-        enabled = false;
+        if (!isHostile)
+        {
+            return;
+        }
+        isHostile = false;
+        ChangeState(enemyState.regular);
     }
+    public bool IsHostile()
+    {
+        return isHostile;
+    }
+
 
     public void Die()
     {
         ChangeState(enemyState.dead);
+    }
+
+    private void CheckIfStuck()
+    {
+        if (Mathf.Abs(rb.linearVelocity.x) < 0.1f)
+        {
+            stuckTimer += Time.fixedDeltaTime;
+
+            if (stuckTimer >= 1f)
+            {
+                Debug.Log("UnStick jump triggerd");
+                rb.linearVelocity = new Vector2(
+                    rb.linearVelocity.x,
+                    jumpForce
+                );
+
+                stuckTimer = 0f;
+            }
+        }
+        else
+        {
+            stuckTimer = 0f;
+        }
     }
 }
