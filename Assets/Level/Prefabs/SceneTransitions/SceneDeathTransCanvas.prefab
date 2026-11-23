@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8742616613384883560}
   - component: {fileID: 2274776638164323596}
   m_Layer: 5
-  m_Name: SceneTransitionCanvas
+  m_Name: SceneDeathTransCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
