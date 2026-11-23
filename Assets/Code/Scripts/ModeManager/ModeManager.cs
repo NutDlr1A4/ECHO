@@ -8,8 +8,30 @@ public class ModeManager : MonoBehaviour
     [SerializeField] private GameObject Ghost;
     [SerializeField] private GameObject ECHO;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource echo_move_audio_source;
+    [SerializeField] private AudioSource echo_hack_audio_source;
+    [SerializeField] private AudioClip echo_move_sound;
+    [SerializeField] private AudioClip echo_hack_success_sound;
+    [SerializeField] private AudioClip echo_hack_fail_sound;
+
     private bool in_echo_mode = false;
     private GameObject used_terminal_node;
+
+    // Plays sounds here so they don't get interupted if exiting ECHO
+    // THis should maybe be moved into its own "sound manager", but I'm lazy
+    public void PlaySound(string sound_name) {
+        if (sound_name == "echo_move") {
+            echo_move_audio_source.pitch = Random.Range(0.95f, 1.05f);
+            echo_move_audio_source.PlayOneShot(echo_move_sound);
+        }
+        else if (sound_name == "echo_hack_success") {
+            echo_hack_audio_source.PlayOneShot(echo_hack_success_sound);
+        }
+        else if (sound_name == "echo_hack_fail") {
+            echo_hack_audio_source.PlayOneShot(echo_hack_fail_sound);
+        }
+    }
 
     private EchoNode[] FindAllNodesComponents() {
         return FindObjectsByType<EchoNode>(
