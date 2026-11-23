@@ -5,6 +5,10 @@ public class ObjectiveTerminal : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject label;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audio_source;
+    [SerializeField] private AudioClip hack_sound;
+
     private bool hacked = false;
 
     public bool OnInteract()
@@ -12,6 +16,8 @@ public class ObjectiveTerminal : MonoBehaviour, IInteractable
         if (!hacked) {
             label.GetComponent<TextMeshProUGUI>().SetText("I'm in!");
             transform.Find("Indicator").GetComponent<ObjectiveIndicator>().gameObject.SetActive(false);
+            audio_source.PlayOneShot(hack_sound);
+            hacked = true;
 
             // Set victory condition to true here!
 
