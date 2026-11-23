@@ -640,6 +640,7 @@ GameObject:
   - component: {fileID: 98073138899770430}
   - component: {fileID: 2097313292464384156}
   - component: {fileID: 3917335014115954857}
+  - component: {fileID: 2131585778180376619}
   - component: {fileID: 8822931654192501197}
   - component: {fileID: 3091759217781096140}
   - component: {fileID: 4240399998796376904}
@@ -702,7 +703,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5438952500444421625}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -741,6 +742,43 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.4577012}
   m_EdgeRadius: 0
+--- !u!70 &2131585778180376619
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5438952500444421625}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.01174593, y: -0.1233333}
+  m_Size: {x: 0.85238045, y: 1.7399988}
+  m_Direction: 0
 --- !u!114 &8822931654192501197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,12 +791,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4df4a1a29bc5fb44b69d4068503cf50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  standGuard: 1
+  standGuard: 0
   speed: 5
   turnDelay: 2
   attackDelay: 1
   burstDelay: 0.1
-  waypointSize: 0.1
+  waypointSize: 0.5
   PathStart: {fileID: 3585624270104815779}
   PathEnd: {fileID: 4234572423974137835}
   Bullet: {fileID: 5857750383753165059}
@@ -1180,7 +1218,7 @@ Transform:
   m_GameObject: {fileID: 7653196269745227168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
