@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -89,8 +88,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitToMenu()
     {
-        Time.timeScale = previousTimeScale;
-        SceneManager.LoadScene(mainMenu);
+        IsPaused = false;
+        SceneLoader.Instance.LoadScene(mainMenu);
     }
 
     private void SelectUIElement(GameObject element)
