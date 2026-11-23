@@ -60,12 +60,14 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        defultFacingDirection = transform.localScale.x;
 
+        currentTarget = PathStart.position;
+        LookAtCurrentTarget();
         if (standGuard)
         {
             defultState = enemyState.guard;
             PathStartPosition = transform.position;
+           
         }
         else
         {
@@ -80,6 +82,8 @@ public class EnemyController : MonoBehaviour
             PathStartPosition = PathStart.position;
         }
         currentTarget = PathStartPosition;
+        LookAtCurrentTarget();
+        defultFacingDirection = transform.localScale.x;
         ChangeState(defultState);
     }
 
