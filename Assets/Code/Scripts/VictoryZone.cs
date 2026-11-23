@@ -20,7 +20,7 @@ public class VictoryZone : MonoBehaviour
     {
         if (other.CompareTag("Player") && objectiveCompleted)
         {
-            SceneManager.LoadScene(nextArea);
+            SceneLoader.Instance.LoadScene(nextArea);
         }
     }
 
