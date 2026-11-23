@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.LightTransport;
 
 public class ECHOBehaviour : MonoBehaviour
 {
@@ -27,6 +28,14 @@ public class ECHOBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject arrow_prefab;
     private Dictionary<ConnectionPoint, GameObject> arrows = new();
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource move_audio_source;
+    [SerializeField] private AudioSource hack_audio_source;
+    [SerializeField] private AudioClip move_sound;
+    [SerializeField] private AudioClip hack_success_sound;
+    [SerializeField] private AudioClip hack_fail_sound;
+    
 
     private void Awake() {
         controls = new InputSystem_Actions();
@@ -97,7 +106,12 @@ public class ECHOBehaviour : MonoBehaviour
 
     private void OnInteract() {
         if (on_node) {
-            current_node.GetComponent<EchoNode>().DoHack();
+            if (current_node.GetComponent<EchoNode>().DoHack()) {
+                hack_audio_source.PlayOneShot(hack_success_sound);
+            }
+            else {
+                hack_audio_source.PlayOneShot(hack_fail_sound);
+            }
         }
         else if (DoInputBuffer()) {
             hack_buffered = true;
@@ -111,6 +125,9 @@ public class ECHOBehaviour : MonoBehaviour
 
         current_node = new_node;
         on_node = false;
+
+        move_audio_source.pitch = Random.Range(0.95f, 1.05f);
+        move_audio_source.PlayOneShot(move_sound);
 
         UnsetArrows();
 

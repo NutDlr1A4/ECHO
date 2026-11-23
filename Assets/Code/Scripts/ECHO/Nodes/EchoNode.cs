@@ -59,14 +59,17 @@ public class EchoNode : MonoBehaviour
         effect.transform.position = gameObject.transform.position;
     }
 
-    public void DoHack() {
+    public bool DoHack() {
         var hackable = GetComponentInParent<IHackable>();
 
         if (hackable != null) {
             if (hackable.OnHack()) {
                 SpawnEffectOnNode();
+                return true;
             }
         }
+
+        return false;
     }
 
     public void SetState(NodeState new_state) {
