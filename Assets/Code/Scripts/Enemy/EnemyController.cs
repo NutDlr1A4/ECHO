@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -17,20 +18,17 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject Bullet;
     [SerializeField] private Transform BulletOrigin;
 
-    //[SerializeField] private bool debugMode = true;
-
-    private float defultFacingDirection;
-
-
     private Rigidbody2D rb;
     private EnemyAnimation enemyAnimation;
     private SpriteRenderer spriteRenderer;
+    private EnemySFX enemySFX;
 
     private Vector2 PathStartPosition;
     private Vector2 PathEndPosition;
     private Vector2 currentTarget;
     private Vector2 patrolReturnTarget;
 
+    private float defultFacingDirection;
     private float jumpForce = 0.5f;
     private float stuckTimer;
 
@@ -60,6 +58,7 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        enemySFX = GetComponentInChildren<EnemySFX>();
 
         currentTarget = PathStart.position;
         LookAtCurrentTarget();
@@ -134,6 +133,10 @@ public class EnemyController : MonoBehaviour
                 // Interact logic would go here
                 break;
             case enemyState.regular:
+                if(currentState == enemyState.victory)
+                {
+                    return;
+                }
                 previousState = currentState;
                 UpdateCurrentTarget(PathStartPosition);
                 GoToCurrentTarget();
@@ -151,6 +154,7 @@ public class EnemyController : MonoBehaviour
     {
         if (isAlive)
         {
+            Debug.Log(newState);
             currentState = newState;
             CancelInvoke();
         }
@@ -274,6 +278,7 @@ public class EnemyController : MonoBehaviour
             Debug.LogError("Bullet or BulletOrigin is not assigned.");
             return;
         }
+        enemySFX.PlaySoundShoot();
         LookAtCurrentTarget();
         GameObject newBullet = Instantiate(Bullet, BulletOrigin.position, BulletOrigin.rotation);
         newBullet.SetActive(true);
@@ -295,7 +300,6 @@ public class EnemyController : MonoBehaviour
         detectionBar.SetActive(false);
         detectionFill.SetActive(false);
 
-        //BoxCollider2D hitbox = GetComponent<BoxCollider2D>();
         CapsuleCollider2D hitbox = GetComponent<CapsuleCollider2D>();
         fallHeight = hitbox.bounds.size.y / 2f;
         rb.gravityScale = 0f;
@@ -312,6 +316,7 @@ public class EnemyController : MonoBehaviour
 
     void DeathFall()
     {
+        enemySFX.PlaySoundDeath();
         transform.position += Vector3.down * fallHeight;
         transform.Rotate(0f, 0f, fallRotates);
 
@@ -365,6 +370,7 @@ public class EnemyController : MonoBehaviour
     {
         patrolReturnTarget = currentTarget;
         currentTarget = position;
+        enemySFX.PlaySoundAlert();
         ChangeState(enemyState.investigate);
     }
     public void LookPosition(Vector2 position)
@@ -403,6 +409,10 @@ public class EnemyController : MonoBehaviour
         return isHostile;
     }
 
+    public bool IsMoving()
+    {
+        return isMoving;
+    }
 
     public void Die()
     {
