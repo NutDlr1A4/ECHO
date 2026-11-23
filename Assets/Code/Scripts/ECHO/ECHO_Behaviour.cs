@@ -29,14 +29,6 @@ public class ECHOBehaviour : MonoBehaviour
     [SerializeField] private GameObject arrow_prefab;
     private Dictionary<ConnectionPoint, GameObject> arrows = new();
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource move_audio_source;
-    [SerializeField] private AudioSource hack_audio_source;
-    [SerializeField] private AudioClip move_sound;
-    [SerializeField] private AudioClip hack_success_sound;
-    [SerializeField] private AudioClip hack_fail_sound;
-    
-
     private void Awake() {
         controls = new InputSystem_Actions();
         controls.Player.Move.performed += OnMove;
@@ -107,10 +99,10 @@ public class ECHOBehaviour : MonoBehaviour
     private void OnInteract() {
         if (on_node) {
             if (current_node.GetComponent<EchoNode>().DoHack()) {
-                hack_audio_source.PlayOneShot(hack_success_sound);
+                mode_man.GetComponent<ModeManager>().PlaySound("echo_hack_success");
             }
             else {
-                hack_audio_source.PlayOneShot(hack_fail_sound);
+                mode_man.GetComponent<ModeManager>().PlaySound("echo_hack_fail");
             }
         }
         else if (DoInputBuffer()) {
@@ -126,8 +118,7 @@ public class ECHOBehaviour : MonoBehaviour
         current_node = new_node;
         on_node = false;
 
-        move_audio_source.pitch = Random.Range(0.95f, 1.05f);
-        move_audio_source.PlayOneShot(move_sound);
+        mode_man.GetComponent<ModeManager>().PlaySound("echo_move");
 
         UnsetArrows();
 
