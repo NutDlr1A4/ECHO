@@ -55,11 +55,10 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
     public bool IsOpen() { return open; }
 
     private void SetState(bool state) {
-        if (state != open) {
-            animator.SetBool("IsOpen", !animator.GetBool("IsOpen"));
-        }
         open = state; // This? State? Hit the road dude
 
+        animator.SetBool("IsOpen", open);
+        
         if (open) {
             my_node.SetState(NodeState.NEUTRAL_INACTIVE);
         }
