@@ -1,17 +1,12 @@
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 public class VictoryZone : MonoBehaviour
 {
     public bool objectiveCompleted = false;
 
-#if UNITY_EDITOR
-    public SceneAsset nextArea;
-#endif
+    public string nextArea;
 
     private GameObject Indicator;
 
@@ -25,9 +20,7 @@ public class VictoryZone : MonoBehaviour
     {
         if (other.CompareTag("Player") && objectiveCompleted)
         {
-#if UNITY_EDITOR
-            SceneManager.LoadScene(nextArea.name);
-#endif
+            SceneManager.LoadScene(nextArea);
         }
     }
 
