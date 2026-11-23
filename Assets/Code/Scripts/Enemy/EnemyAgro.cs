@@ -61,6 +61,10 @@ public class EnemyAgro : MonoBehaviour
             targetCollider = null;
             return;
         }
+        if (isHostile)
+        {
+            enemyController.UpdateCurrentTarget(newCollider.transform.position);
+        }
         lastKnowLocation = newCollider.transform;
         lastDetectionTime = Time.time;
         targetCollider = newCollider;
@@ -73,8 +77,8 @@ public class EnemyAgro : MonoBehaviour
             lastKnowLocation.position
         );
         distance *= 1/visionConeLength;
-        float distanceModifier = Mathf.Exp(-distance/DetectionSpeed);
-        Debug.Log($"DistanceModifier speed: {distanceModifier}");
+        float distanceModifier = Mathf.Exp(-Mathf.Pow(distance / DetectionSpeed, 2f));
+        //Debug.Log($"DistanceModifier speed: {distanceModifier}");
         UpdateDetectionProgress(Time.deltaTime * distanceModifier);
     }
     private void UpdateDetectionProgress(float amount)
@@ -91,7 +95,7 @@ public class EnemyAgro : MonoBehaviour
             Debug.Log("Enemy has lost track of the player!");
             isHostile = false;
             lastKnowLocation = null;
-            enemyController.ChangeState(enemyState.regular);
+            enemyController.LoseHostile();
         }
         else if(detectionProgress <= 0.5f && !isHostile)
         {
@@ -107,8 +111,12 @@ public class EnemyAgro : MonoBehaviour
         {
             Debug.Log("Enemy has fully detected the player, ennemy is hostile!");
             isHostile = true;
-            enemyController.ChangeState(enemyState.attack);
+            enemyController.BecomeHostile();
         }
     }
-    
+    public void BecomeHostile()
+    {
+        isHostile = true;
+        UpdateDetectionProgress(10);
+    }
 }

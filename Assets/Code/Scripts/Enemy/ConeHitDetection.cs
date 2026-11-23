@@ -1,39 +1,71 @@
-using System;
 using UnityEngine;
 
 public class EnemyDetectionCone : MonoBehaviour
 {
-    private Collider2D seenObject = null;
+    private Collider2D seenObject;
     private EnemyAgro enemyAgro;
+
     private void Awake()
     {
-        enemyAgro = transform.root.GetComponentInChildren<EnemyAgro>(true);
+        enemyAgro =
+            transform.root.GetComponentInChildren<EnemyAgro>(true);
+
         if (enemyAgro == null)
         {
-            Debug.LogError("EnemyAgro not found in parent.");
+            Debug.LogError(
+                "EnemyAgro was not found in the enemy hierarchy.",
+                gameObject
+            );
+
+            enabled = false;
         }
     }
 
     private void Update()
     {
         enemyAgro.updateSuspisionCollider2d(seenObject);
-        //if(seenObject != null)
-        //{
-        //    enemyAgro.updateSuspisionCollider2d(seenObject);
-        //}
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player entered the detection cone.");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other == seenObject)
+        if (!other.CompareTag("Player"))
         {
             return;
         }
-        else if (other.CompareTag("Player"))
+
+        RaycastHit2D[] hits = Physics2D.LinecastAll(
+            transform.position,
+            other.transform.position
+        );
+
+        foreach (RaycastHit2D hit in hits)
         {
-            seenObject = other;
-            Debug.Log("Player detected in the enemy's detection cone!");
+            if (hit.transform.IsChildOf(transform.root))
+            {
+                continue;
+            }
+
+            if (hit.collider.CompareTag("Player"))
+            {
+                seenObject = other;
+            }
+            else
+            {
+                seenObject = null;
+            }
+
+            return;
         }
+
+        seenObject = null;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -41,7 +73,8 @@ public class EnemyDetectionCone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             seenObject = null;
-            Debug.Log("Player left the enemy's detection cone!");
+
+            Debug.Log("Player left the detection cone.");
         }
     }
 }
