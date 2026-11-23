@@ -10,6 +10,7 @@ public class ObjectiveTerminal : MonoBehaviour, IInteractable
     [Header("Audio")]
     [SerializeField] private AudioSource audio_source;
     [SerializeField] private AudioClip hack_sound;
+    [SerializeField, Range(0f, 1f)] private float hack_sound_volume = 0.5f;
 
     private bool hacked = false;
 
@@ -18,7 +19,7 @@ public class ObjectiveTerminal : MonoBehaviour, IInteractable
         if (!hacked) {
             label.GetComponent<TextMeshProUGUI>().SetText("I'm in!");
             transform.Find("Indicator").GetComponent<ObjectiveIndicator>().gameObject.SetActive(false);
-            audio_source.PlayOneShot(hack_sound);
+            audio_source.PlayOneShot(hack_sound, hack_sound_volume);
             hacked = true;
 
             victory_zone.GetComponent<VictoryZone>().objectiveCompleted = true;

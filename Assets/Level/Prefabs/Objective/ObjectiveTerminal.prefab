@@ -321,9 +321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0608093a51ef9b3df8ae98d639ddcf1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveTerminal
+  victory_zone: {fileID: 0}
   label: {fileID: 3175384517898930912}
   audio_source: {fileID: 7322047045179090196}
   hack_sound: {fileID: 8300000, guid: 785c859910547c80cb13904a88e1e724, type: 3}
+  hack_sound_volume: 0.25
 --- !u!82 &7322047045179090196
 AudioSource:
   m_ObjectHideFlags: 0
