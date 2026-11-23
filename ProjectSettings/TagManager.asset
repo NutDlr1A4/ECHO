@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -39,8 +40,23 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: backdrop
+    uniqueID: 2810875355
+    locked: 0
+  - name: background
+    uniqueID: 1686901417
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: physical
+    uniqueID: 977101411
+    locked: 0
+  - name: overlay
+    uniqueID: 180406213
+    locked: 0
+  - name: digital
+    uniqueID: 2099421165
     locked: 0
   m_RenderingLayers:
   - Default

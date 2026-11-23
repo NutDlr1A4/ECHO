@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class ECHOBehaviour : MonoBehaviour
 {
+    [SerializeField] private GameObject mode_man;
+    [SerializeField] private GameObject ghost;
+
     [SerializeField] private EchoNodeManager node_man;
 
     [SerializeField] private GameObject initial_node;
@@ -12,8 +15,9 @@ public class ECHOBehaviour : MonoBehaviour
 
     [SerializeField] private float move_speed = 30f;
 
-    [SerializeField] private float move_buffer_time = 0.2f;
-    private float last_buffer_time = 0.0f;
+    [SerializeField] private float input_buffer_time = 0.2f;
+    private float last_move_buffer_time = 0.0f;
+    private bool hack_buffered = false;
     private GameObject queued_node;
 
     private bool on_node;
@@ -26,18 +30,23 @@ public class ECHOBehaviour : MonoBehaviour
 
     private void Awake() {
         controls = new InputSystem_Actions();
-    }
-
-    private void OnEnable() {
-        controls.Enable();
         controls.Player.Move.performed += OnMove;
         controls.Player.Move.canceled += OnMove;
     }
 
+    private void OnEnable() {
+        gameObject.transform.position = ghost.transform.position;
+        controls.Enable();
+    }
+
     private void OnDisable() {
-        controls.Player.Move.performed -= OnMove;
-        controls.Player.Move.canceled -= OnMove;
         controls.Disable();
+    }
+
+    public void SetNewNode(GameObject new_node) {
+        current_node = new_node;
+        on_node = true;
+        queued_node = null;
     }
 
     private float DistToTarget() {
@@ -45,7 +54,7 @@ public class ECHOBehaviour : MonoBehaviour
     }
 
     private bool DoInputBuffer() {
-        return DistToTarget() <= (move_speed * move_buffer_time); 
+        return DistToTarget() <= (move_speed * input_buffer_time); 
     }
 
     private GameObject GetNodeFromMovementInput(Vector2 move_input) {
@@ -77,8 +86,7 @@ public class ECHOBehaviour : MonoBehaviour
         if (!on_node) {
             if (DoInputBuffer()) {
                 queued_node = GetNodeFromMovementInput(moveInput);
-                last_buffer_time = 0.0f;
-                Debug.Log("Buffered input!");
+                last_move_buffer_time = 0.0f;
             }
             return;
         }
@@ -87,13 +95,19 @@ public class ECHOBehaviour : MonoBehaviour
         TryMoveTo(node);
     }
 
+    private void OnInteract() {
+        if (on_node) {
+            current_node.GetComponent<EchoNode>().DoHack();
+        }
+        else if (DoInputBuffer()) {
+            hack_buffered = true;
+        }
+    }
+
     private bool TryMoveTo(GameObject new_node) {
         if (new_node == null) {
-            Debug.Log("Can't move: No node in that direction!");
             return false;
         }
-
-        Debug.Log("Moving to" + new_node.name);
 
         current_node = new_node;
         on_node = false;
@@ -126,23 +140,36 @@ public class ECHOBehaviour : MonoBehaviour
     }
 
     void Start() {
-        gameObject.transform.position = initial_node.transform.position;
-        current_node = initial_node;
-        on_node = true;
+        gameObject.transform.position = ghost.transform.position;
+
+        if (initial_node != null) {
+            gameObject.transform.position = initial_node.transform.position;
+            current_node = initial_node;
+            on_node = true;   
+        }
 
         foreach (ConnectionPoint key in System.Enum.GetValues(typeof(ConnectionPoint))) {
             arrows.Add(key, Instantiate(arrow_prefab, gameObject.transform));
         }
 
-        SetArrows();
+        if (initial_node != null) SetArrows();
     }
 
     void Update() {
+        if (controls.Player.ECHO.WasPressedThisFrame()) {
+            mode_man.GetComponent<ModeManager>().ExitECHOMode();
+            return;
+        }
+
+        if (controls.Player.Interact.WasPressedThisFrame()) {
+            OnInteract();
+        }
+
         if (on_node) {
             gameObject.transform.position = current_node.transform.position;
         }
         else {
-            last_buffer_time += Time.deltaTime;
+            last_move_buffer_time += Time.deltaTime;
         
             Vector2 delta = current_node.transform.position - gameObject.transform.position;
             Vector2 move_distance = delta.normalized * move_speed * Time.deltaTime;
@@ -150,8 +177,13 @@ public class ECHOBehaviour : MonoBehaviour
             if (move_distance.sqrMagnitude >= delta.sqrMagnitude) {
                 gameObject.transform.position = current_node.transform.position;
                 on_node = true;
+                
+                if (hack_buffered) {
+                    current_node.GetComponent<EchoNode>().DoHack();
+                    hack_buffered = false;
+                }
 
-                if (last_buffer_time <= move_buffer_time) {
+                if (last_move_buffer_time <= input_buffer_time) {
                     if (!TryMoveTo(queued_node)) SetArrows();
                     queued_node = null;
                 }
@@ -165,5 +197,11 @@ public class ECHOBehaviour : MonoBehaviour
         }
 
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -1);
+    }
+
+    private void OnDestroy()
+    {
+        controls.Player.Disable();
+        controls.UI.Disable();
     }
 }
