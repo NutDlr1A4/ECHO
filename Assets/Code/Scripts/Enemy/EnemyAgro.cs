@@ -4,10 +4,13 @@ using static EnemyController;
 
 public class EnemyAgro : MonoBehaviour
 {
-    [SerializeField] private float DetectionSpeed = 1f;
+    [SerializeField] private float detectionSpeed = 1f;
+    [SerializeField] private float detectionCrouchModifier = 0.5f;
+    [SerializeField] private float detectionRunModifier = 1.5f;
     [SerializeField] private float detectionTimeout = 2f;
     [SerializeField] private Transform detectionFill;
     private EnemyController enemyController;
+    private GhostMovement ghostMovement;
     private Collider2D targetCollider = null;
     private Transform lastKnowLocation = null;
     private float detectionProgress = 0f;
@@ -16,15 +19,21 @@ public class EnemyAgro : MonoBehaviour
     private bool isHostile = false;
     private void Awake()
     {
-        if(DetectionSpeed == 0f)
+        if(detectionSpeed == 0f)
         {
-            DetectionSpeed = 0.00001f;
+            detectionSpeed = 0.00001f;
         }
         enemyController =
             transform.root.GetComponentInChildren<EnemyController>(true);
         if (enemyController == null)
         {
             Debug.LogError("EnemyController not found in parent.");
+        }
+        GameObject ghost = GameObject.FindGameObjectWithTag("Player");
+
+        if (ghost != null)
+        {
+            ghostMovement = ghost.GetComponent<GhostMovement>();
         }
         detectionFill.localScale = new Vector3(
             0,
@@ -77,13 +86,22 @@ public class EnemyAgro : MonoBehaviour
             lastKnowLocation.position
         );
         distance *= 1/visionConeLength;
-        float distanceModifier = Mathf.Exp(-Mathf.Pow(distance / DetectionSpeed, 2f));
+        float distanceModifier = Mathf.Exp(-Mathf.Pow(distance / detectionSpeed, 2f));
         //Debug.Log($"DistanceModifier speed: {distanceModifier}");
         UpdateDetectionProgress(Time.deltaTime * distanceModifier);
     }
     private void UpdateDetectionProgress(float amount)
     {
-        detectionProgress += amount;
+        if (ghostMovement.IsRunning())
+        {
+            amount *= detectionRunModifier;
+        }
+        else if (ghostMovement.IsCrouching())
+        {
+            amount *= detectionCrouchModifier;
+        }
+
+       detectionProgress += amount;
         detectionProgress = Mathf.Clamp01(detectionProgress);
         detectionFill.localScale = new Vector3(
             detectionProgress,
@@ -96,6 +114,7 @@ public class EnemyAgro : MonoBehaviour
             isHostile = false;
             lastKnowLocation = null;
             enemyController.LoseHostile();
+            enemyController.LoseInvestigate();
         }
         else if(detectionProgress <= 0.5f && !isHostile)
         {
