@@ -43,7 +43,7 @@ public class EchoNode : MonoBehaviour
         { NodeState.NEUTRAL_INACTIVE, new VisualsInfo{ 
             node_color = new Color(120f/255f, 120f/255f, 120f/255f), 
             light_color = new Color(1f, 1f, 1f), 
-            light_intensity = 0.1f } 
+            light_intensity = 0.05f } 
         },
         { NodeState.HOSTILE, new VisualsInfo{ 
             node_color = new Color(1f, 0f, 0f), 
