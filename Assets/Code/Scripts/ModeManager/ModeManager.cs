@@ -11,9 +11,14 @@ public class ModeManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource echo_move_audio_source;
     [SerializeField] private AudioSource echo_hack_audio_source;
+
     [SerializeField] private AudioClip echo_move_sound;
+    [SerializeField, Range(0f, 1f)] private float echo_move_volume = 0.5f;
+
     [SerializeField] private AudioClip echo_hack_success_sound;
+    [SerializeField, Range(0f, 1f)] private float echo_success_volume = 0.5f;
     [SerializeField] private AudioClip echo_hack_fail_sound;
+    [SerializeField, Range(0f, 1f)] private float echo_fail_volume = 0.5f;
 
     private bool in_echo_mode = false;
     private GameObject used_terminal_node;
@@ -23,13 +28,13 @@ public class ModeManager : MonoBehaviour
     public void PlaySound(string sound_name) {
         if (sound_name == "echo_move") {
             echo_move_audio_source.pitch = Random.Range(0.95f, 1.05f);
-            echo_move_audio_source.PlayOneShot(echo_move_sound);
+            echo_move_audio_source.PlayOneShot(echo_move_sound, echo_move_volume);
         }
         else if (sound_name == "echo_hack_success") {
-            echo_hack_audio_source.PlayOneShot(echo_hack_success_sound);
+            echo_hack_audio_source.PlayOneShot(echo_hack_success_sound, echo_success_volume);
         }
         else if (sound_name == "echo_hack_fail") {
-            echo_hack_audio_source.PlayOneShot(echo_hack_fail_sound);
+            echo_hack_audio_source.PlayOneShot(echo_hack_fail_sound, echo_fail_volume);
         }
     }
 

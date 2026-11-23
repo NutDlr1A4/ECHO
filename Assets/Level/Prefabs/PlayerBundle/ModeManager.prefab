@@ -54,8 +54,11 @@ MonoBehaviour:
   echo_move_audio_source: {fileID: 1888527147355537660}
   echo_hack_audio_source: {fileID: 5255348979788005512}
   echo_move_sound: {fileID: 8300000, guid: 5f0f18bd8557636768b22babec49a343, type: 3}
+  echo_move_volume: 0.4
   echo_hack_success_sound: {fileID: 8300000, guid: 785c859910547c80cb13904a88e1e724, type: 3}
+  echo_success_volume: 0.25
   echo_hack_fail_sound: {fileID: 8300000, guid: 4ecc8e0e419f1b52fb8047e0bd1780ee, type: 3}
+  echo_fail_volume: 0.25
 --- !u!82 &1888527147355537660
 AudioSource:
   m_ObjectHideFlags: 0
