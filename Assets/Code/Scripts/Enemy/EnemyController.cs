@@ -81,8 +81,8 @@ public class EnemyController : MonoBehaviour
             PathEndPosition = PathEnd.position;
             PathStartPosition = PathStart.position;
         }
-        currentTarget = PathStartPosition;
         LookAtCurrentTarget();
+        currentTarget = PathStartPosition;
         defultFacingDirection = transform.localScale.x;
         ChangeState(defultState);
     }
