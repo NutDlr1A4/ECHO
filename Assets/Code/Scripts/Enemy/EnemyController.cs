@@ -33,6 +33,7 @@ public class EnemyController : MonoBehaviour
     private float stuckTimer;
 
     private bool isHostile = false;
+    private bool isinvestigateing = false;
     private bool isMoving = false;
     private bool isAlive = true;
     public enum enemyState
@@ -133,10 +134,6 @@ public class EnemyController : MonoBehaviour
                 // Interact logic would go here
                 break;
             case enemyState.regular:
-                if(currentState == enemyState.victory)
-                {
-                    return;
-                }
                 previousState = currentState;
                 UpdateCurrentTarget(PathStartPosition);
                 GoToCurrentTarget();
@@ -152,6 +149,10 @@ public class EnemyController : MonoBehaviour
 
     public void ChangeState(enemyState newState)
     {
+        if (currentState == enemyState.victory)
+        {
+            return;
+        }
         if (isAlive)
         {
             Debug.Log(newState);
@@ -370,7 +371,11 @@ public class EnemyController : MonoBehaviour
     {
         patrolReturnTarget = currentTarget;
         currentTarget = position;
-        enemySFX.PlaySoundAlert();
+        if (!isinvestigateing)
+        {
+            enemySFX.PlaySoundAlert();
+            isinvestigateing = true;
+        }
         ChangeState(enemyState.investigate);
     }
     public void LookPosition(Vector2 position)
@@ -404,6 +409,10 @@ public class EnemyController : MonoBehaviour
         isHostile = false;
         ChangeState(enemyState.regular);
     }
+    public void LoseInvestigate()
+    {
+        isinvestigateing = false;
+    }
     public bool IsHostile()
     {
         return isHostile;
@@ -424,8 +433,12 @@ public class EnemyController : MonoBehaviour
         if (Mathf.Abs(rb.linearVelocity.x) < 0.1f)
         {
             stuckTimer += Time.fixedDeltaTime;
-
-            if (stuckTimer >= 1f)
+            if(currentState == enemyState.patrol)
+            {
+                StopWalk();
+                Invoke(nameof(ChangePatrolTarget), turnDelay);
+            }
+            else if (stuckTimer >= 1f)
             {
                 Debug.Log("UnStick jump triggerd");
                 rb.linearVelocity = new Vector2(
