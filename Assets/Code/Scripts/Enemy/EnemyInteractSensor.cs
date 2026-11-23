@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyInteractSensor : MonoBehaviour
+public class EnemyInteractSensor : MonoBehaviour, IInteractable
 {
     private EnemyController enemyController;
     void Start()
@@ -11,14 +11,27 @@ public class EnemyInteractSensor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            KYS();
-        }
+      
     }
 
     void KYS()
     {
         enemyController.Die();
+    }
+
+    void IInteractable.OnInteractTargetEnter()
+    {
+       
+    }
+
+    void IInteractable.OnInteractTargetExit()
+    {
+        
+    }
+
+    bool IInteractable.OnInteract()
+    {
+        enemyController.Die();
+        return true;
     }
 }

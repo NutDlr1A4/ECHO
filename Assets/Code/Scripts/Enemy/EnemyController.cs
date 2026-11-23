@@ -1,11 +1,14 @@
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private bool standGuard = false;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float walkSpeed = 3f;
+    [SerializeField] private float runSpeed = 5f;
+    private float currentSpeed;
     [SerializeField] private float turnDelay = 2f;
     [SerializeField] private float attackDelay = 1f;
     [SerializeField] private float burstDelay = 0.01f;
@@ -61,27 +64,27 @@ public class EnemyController : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         enemySFX = GetComponentInChildren<EnemySFX>();
 
+        currentSpeed = walkSpeed;
+
+        if (PathEnd == null || PathStart == null)
+        {
+            Debug.LogError("Path Start or Path End was not found.");
+            enabled = false;
+            return;
+        }
         currentTarget = PathStart.position;
         LookAtCurrentTarget();
         if (standGuard)
         {
             defultState = enemyState.guard;
             PathStartPosition = transform.position;
-           
         }
         else
         {
             defultState = enemyState.patrol;
-            if (PathEnd == null || PathStart == null)
-            {
-                Debug.LogError("Path Start or Path End was not found.");
-                enabled = false;
-                return;
-            }
             PathEndPosition = PathEnd.position;
             PathStartPosition = PathStart.position;
         }
-        LookAtCurrentTarget();
         currentTarget = PathStartPosition;
         defultFacingDirection = transform.localScale.x;
         ChangeState(defultState);
@@ -167,7 +170,7 @@ public class EnemyController : MonoBehaviour
             currentTarget
         );
         float stoppingDistance =
-            waypointSize + speed * Time.fixedDeltaTime;
+            waypointSize + walkSpeed * Time.fixedDeltaTime;
         if (distance > stoppingDistance)
         {
             GoToCurrentTarget();
@@ -191,7 +194,7 @@ public class EnemyController : MonoBehaviour
             currentTarget
         );
         float stoppingDistance =
-            waypointSize + speed * Time.fixedDeltaTime;
+            waypointSize + walkSpeed * Time.fixedDeltaTime;
         if (distance > stoppingDistance)
         {
             GoToCurrentTarget();
@@ -229,7 +232,7 @@ public class EnemyController : MonoBehaviour
        (currentTarget - rb.position).normalized;
 
         rb.linearVelocity = new Vector2(
-            direction.x * speed,
+            direction.x * currentSpeed,
             rb.linearVelocity.y
         );
     }
@@ -257,10 +260,14 @@ public class EnemyController : MonoBehaviour
         {
             GoToCurrentTarget();
         }
-        else if (!IsInvoking(nameof(Attack)))
+        else
         {
-            Invoke(nameof(Attack), attackDelay);
-        }
+            StopWalk();
+            if (!IsInvoking(nameof(Attack)))
+            {
+                Invoke(nameof(Attack), attackDelay);
+            }
+        } 
     }
     void Attack()
     {
@@ -297,14 +304,17 @@ public class EnemyController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         spriteRenderer.color = Color.gray;
         GameObject detectionBar = transform.Find("Visuals/DetectionBar").gameObject;
-        GameObject detectionFill = transform.Find("Visuals/DetectionFill").gameObject;
         detectionBar.SetActive(false);
+        GameObject detectionFill = transform.Find("Visuals/DetectionFill").gameObject;
         detectionFill.SetActive(false);
+        GameObject sensors = transform.Find("Sensors").gameObject;
+        sensors.SetActive(false);
 
         CapsuleCollider2D hitbox = GetComponent<CapsuleCollider2D>();
         fallHeight = hitbox.bounds.size.y / 2f;
         rb.gravityScale = 0f;
         hitbox.enabled = false;
+        enemySFX.PlaySoundDeath();
         enemyAnimation.PlayDeath();
 
         fallStep = 0;
@@ -317,7 +327,6 @@ public class EnemyController : MonoBehaviour
 
     void DeathFall()
     {
-        enemySFX.PlaySoundDeath();
         transform.position += Vector3.down * fallHeight;
         transform.Rotate(0f, 0f, fallRotates);
 
@@ -333,9 +342,11 @@ public class EnemyController : MonoBehaviour
     {
         spriteRenderer.color = Color.gray;
         GameObject detectionBar = transform.Find("Visuals/DetectionBar").gameObject;
-        GameObject detectionFill = transform.Find("Visuals/DetectionFill").gameObject;
         detectionBar.SetActive(false);
+        GameObject detectionFill = transform.Find("Visuals/DetectionFill").gameObject;
         detectionFill.SetActive(false);
+        GameObject sensors = transform.Find("Sensors").gameObject;
+        sensors.SetActive(false);
         rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
         enemyAnimation.PlayRun();
 
@@ -396,16 +407,14 @@ public class EnemyController : MonoBehaviour
             return;
         }
         Debug.Log("BecomeHostile() Sucsess");
+        currentSpeed = runSpeed;
         isHostile = true;
         LookAtCurrentTarget();
         ChangeState(enemyState.chase);
     }
     public void LoseHostile()
     {
-        if (!isHostile)
-        {
-            return;
-        }
+        currentSpeed = walkSpeed;
         isHostile = false;
         ChangeState(enemyState.regular);
     }
@@ -425,7 +434,11 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        ChangeState(enemyState.dead);
+        if (isAlive)
+        {
+            Debug.Log("Die() called");
+            ChangeState(enemyState.dead);
+        }
     }
 
     private void CheckIfStuck()
