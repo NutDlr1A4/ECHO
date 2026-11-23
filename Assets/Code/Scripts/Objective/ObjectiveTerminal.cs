@@ -1,8 +1,10 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectiveTerminal : MonoBehaviour, IInteractable
 {
+    [SerializeField] private GameObject victory_zone;
     [SerializeField] private GameObject label;
 
     [Header("Audio")]
@@ -19,7 +21,7 @@ public class ObjectiveTerminal : MonoBehaviour, IInteractable
             audio_source.PlayOneShot(hack_sound);
             hacked = true;
 
-            // Set victory condition to true here!
+            victory_zone.GetComponent<VictoryZone>().objectiveCompleted = true;
 
             return true;
         }
