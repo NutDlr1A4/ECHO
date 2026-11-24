@@ -1,8 +1,4 @@
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class EnemyController : MonoBehaviour, IHackable
 {
