@@ -10,7 +10,8 @@ public enum NodeState {
     CONTROLED,
     NEUTRAL_ACTIVE,
     NEUTRAL_INACTIVE,
-    HOSTILE
+    HOSTILE,
+    SPECIAL
 }
 
 public class EchoNode : MonoBehaviour
@@ -49,6 +50,11 @@ public class EchoNode : MonoBehaviour
             node_color = new Color(1f, 0f, 0f), 
             light_color = new Color(1f, 0f, 0f), 
             light_intensity = 10.0f }
+        },
+        { NodeState.SPECIAL, new VisualsInfo{ 
+            node_color = new Color(1f, 0.5f, 0f), 
+            light_color = new Color(1f, 0.5f, 0f), 
+            light_intensity = 2.0f }
         }
     };
 
@@ -59,14 +65,17 @@ public class EchoNode : MonoBehaviour
         effect.transform.position = gameObject.transform.position;
     }
 
-    public void DoHack() {
+    public bool DoHack() {
         var hackable = GetComponentInParent<IHackable>();
 
         if (hackable != null) {
             if (hackable.OnHack()) {
                 SpawnEffectOnNode();
+                return true;
             }
         }
+
+        return false;
     }
 
     public void SetState(NodeState new_state) {

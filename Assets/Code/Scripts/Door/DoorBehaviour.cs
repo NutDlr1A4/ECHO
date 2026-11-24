@@ -55,11 +55,12 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
     public bool IsOpen() { return open; }
 
     private void SetState(bool state) {
-        if (state != open) {
-            animator.SetBool("IsOpen", !animator.GetBool("IsOpen"));
-        }
         open = state; // This? State? Hit the road dude
 
+        animator.SetBool("IsOpen", open);
+        
+        if (my_node == null) return;
+        
         if (open) {
             my_node.SetState(NodeState.NEUTRAL_INACTIVE);
         }
@@ -71,7 +72,15 @@ public class DoorBehaviour : MonoBehaviour, IInteractable, IHackable
     void Awake()
     {
         animator = GetComponent<Animator>();
-        my_node = gameObject.transform.Find("Node").GetComponent<EchoNode>();
+
+        Transform node_trans = gameObject.transform.Find("Node");
+        if (node_trans != null) {
+            my_node = node_trans.gameObject.GetComponent<EchoNode>();
+        }
+        else {
+            my_node = null;
+        }
+        
         SetState(open);
     }
 

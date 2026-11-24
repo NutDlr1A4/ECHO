@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.LightTransport;
 
 public class ECHOBehaviour : MonoBehaviour
 {
@@ -97,7 +98,12 @@ public class ECHOBehaviour : MonoBehaviour
 
     private void OnInteract() {
         if (on_node) {
-            current_node.GetComponent<EchoNode>().DoHack();
+            if (current_node.GetComponent<EchoNode>().DoHack()) {
+                mode_man.GetComponent<ModeManager>().PlaySound("echo_hack_success");
+            }
+            else {
+                mode_man.GetComponent<ModeManager>().PlaySound("echo_hack_fail");
+            }
         }
         else if (DoInputBuffer()) {
             hack_buffered = true;
@@ -111,6 +117,8 @@ public class ECHOBehaviour : MonoBehaviour
 
         current_node = new_node;
         on_node = false;
+
+        mode_man.GetComponent<ModeManager>().PlaySound("echo_move");
 
         UnsetArrows();
 

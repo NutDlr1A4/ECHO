@@ -74,6 +74,21 @@ public class GhostMovement : MonoBehaviour
         isInteracting = false;
     }
 
+    public void FinishDeath()
+    {
+        FindFirstObjectByType<SceneFader>().RestartLevel();
+    }
+
+    public bool IsCrouching()
+    {
+        return isCrouching;
+    }
+
+    public bool IsRunning()
+    {
+        return isRunning;
+    }
+
     public void PlayFootstep()
     {
         if (isDead || isEchoMode || isCrouching || isInteracting)
