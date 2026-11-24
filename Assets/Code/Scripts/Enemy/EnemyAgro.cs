@@ -77,7 +77,8 @@ public class EnemyAgro : MonoBehaviour
         float strengthModifier)
     {
         if (target == null ||
-            sensorLength <= 0)
+            sensorLength <= 0 ||
+            enemyController.IsHacked())
         {
             return;
         }
