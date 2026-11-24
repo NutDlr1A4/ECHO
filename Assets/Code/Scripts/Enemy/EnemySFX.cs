@@ -63,7 +63,7 @@ public class EnemySFX : MonoBehaviour
     }
     public void PlaySoundAlert()
     {
-        audioSource.PlayOneShot(alertSound);
+        audioSource.PlayOneShot(alertSound,4);
         Debug.Log("AlertSound");
     }
 }

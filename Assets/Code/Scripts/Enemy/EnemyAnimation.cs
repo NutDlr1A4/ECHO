@@ -14,10 +14,19 @@ public class EnemyAnimation : MonoBehaviour
         }
     }
 
-    public void isHostile(bool hostile)
+    public void IsHostile(bool hostile)
     {
-        if (animator.GetBool("isHostile") != hostile)
         animator.SetBool("isHostile", hostile);
+        if (hostile)
+        {
+            animator.ResetTrigger("Holster");
+            animator.SetTrigger("Draw");
+        }
+        else
+        {
+            animator.ResetTrigger("Draw");
+            animator.SetTrigger("Holster");
+        }
     }
     public void PlayIdle()
     {
@@ -26,7 +35,7 @@ public class EnemyAnimation : MonoBehaviour
     public void PlayAttack()
     {
         animator.SetBool("isRunning", false);
-        animator.SetTrigger("isHostile");
+        animator.SetBool("IsHostile", true);
     }
     public void PlayRun()
     {

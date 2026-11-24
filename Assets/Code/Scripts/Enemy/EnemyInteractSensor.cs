@@ -31,6 +31,7 @@ public class EnemyInteractSensor : MonoBehaviour, IInteractable
 
     bool IInteractable.OnInteract()
     {
+        Debug.Log("Enemy Interact death called");
         enemyController.Die();
         return true;
     }

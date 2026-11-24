@@ -1,14 +1,19 @@
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IHackable
 {
     [SerializeField] private bool standGuard = false;
     [SerializeField] private float walkSpeed = 3f;
     [SerializeField] private float runSpeed = 5f;
     private float currentSpeed;
+    [SerializeField] private float hackedDuration = 2;
+    [SerializeField] private float hackCooldown = 5;
+    private float lastHackedTime = 0;
+    private bool isHacked = false;
     [SerializeField] private float turnDelay = 2f;
     [SerializeField] private float attackDelay = 1f;
     [SerializeField] private float burstDelay = 0.01f;
@@ -39,6 +44,7 @@ public class EnemyController : MonoBehaviour
     private bool isinvestigateing = false;
     private bool isMoving = false;
     private bool isAlive = true;
+    private bool deathCall = false;
     public enum enemyState
     {
         idle,
@@ -92,7 +98,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!isAlive)
+        if (!isAlive || isHacked)
         {
             return;
         }
@@ -143,7 +149,7 @@ public class EnemyController : MonoBehaviour
                 ChangeState(defultState);
                 break;
             case enemyState.victory:
-                if (!IsInvoking(nameof(VictoryDance))){
+                if (!IsInvoking(nameof(VictoryDance))) {
                     Invoke(nameof(VictoryDance), 0.25f);
                 }
                 break;
@@ -152,11 +158,16 @@ public class EnemyController : MonoBehaviour
 
     public void ChangeState(enemyState newState)
     {
-        if (currentState == enemyState.victory)
+        if (deathCall && isAlive)
+        {
+            currentState = enemyState.dead;
+        }
+        else if (currentState == enemyState.victory ||
+            isHacked)
         {
             return;
         }
-        if (isAlive)
+        else if (isAlive)
         {
             Debug.Log(newState);
             currentState = newState;
@@ -175,7 +186,7 @@ public class EnemyController : MonoBehaviour
         {
             GoToCurrentTarget();
         }
-        else if(transform.localScale.x !=
+        else if (transform.localScale.x !=
             defultFacingDirection)
         {
             Vector3 scale = transform.localScale;
@@ -267,7 +278,7 @@ public class EnemyController : MonoBehaviour
             {
                 Invoke(nameof(Attack), attackDelay);
             }
-        } 
+        }
     }
     void Attack()
     {
@@ -300,6 +311,7 @@ public class EnemyController : MonoBehaviour
     private float fallHeight;
     void DeathBehavior()
     {
+        if (!isAlive) { return; }
         isAlive = false;
         rb.linearVelocity = Vector2.zero;
         spriteRenderer.color = Color.gray;
@@ -409,13 +421,16 @@ public class EnemyController : MonoBehaviour
         Debug.Log("BecomeHostile() Sucsess");
         currentSpeed = runSpeed;
         isHostile = true;
+        enemyAnimation.IsHostile(true);
         LookAtCurrentTarget();
         ChangeState(enemyState.chase);
     }
     public void LoseHostile()
     {
+        if (!isHostile) { return; }
         currentSpeed = walkSpeed;
         isHostile = false;
+        enemyAnimation.IsHostile(false);
         ChangeState(enemyState.regular);
     }
     public void LoseInvestigate()
@@ -436,9 +451,34 @@ public class EnemyController : MonoBehaviour
     {
         if (isAlive)
         {
-            Debug.Log("Die() called");
-            ChangeState(enemyState.dead);
+            Debug.Log("Death called");
+            DeathBehavior();
         }
+    }
+
+    bool IHackable.OnHack()
+    {
+        if (Time.time - lastHackedTime < hackCooldown)
+        {
+            return false;
+        }
+
+        lastHackedTime = Time.time;
+        HackedBehavior();
+        return true;
+    }
+
+    private void HackedBehavior()
+    {
+        isHacked = true;
+
+        CancelInvoke(nameof(EndHack));
+        Invoke(nameof(EndHack), hackedDuration);
+    }
+
+    private void EndHack()
+    {
+        isHacked = false;
     }
 
     private void CheckIfStuck()
