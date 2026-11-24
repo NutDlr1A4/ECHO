@@ -13,6 +13,7 @@ public class GhostMovement : MonoBehaviour
     private bool isCrouching;
     private bool isRunning;
     private bool isInteracting;
+    private bool isAttacking;
     private bool isDead;
     private bool isEchoMode;
 
@@ -284,6 +285,18 @@ public class GhostMovement : MonoBehaviour
         && !isCrouching
         && !isInteracting)
         {
+            isInteracting = true;
+            animator.SetTrigger("Interact");
+        }
+
+        if (controls.Player.Attack.WasPressedThisFrame()
+        && !isCrouching
+        && !isInteracting)
+        {
+            // TODO: This needs to be implemented when Samuelussy is done with his amazing sprites
+            //isAttacking = true;
+            //animator.setTrigger("Attack");
+
             isInteracting = true;
             animator.SetTrigger("Interact");
         }
