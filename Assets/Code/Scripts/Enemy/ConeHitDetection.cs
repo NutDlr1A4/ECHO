@@ -4,6 +4,7 @@ public class EnemyDetectionCone : MonoBehaviour
 {
     private Collider2D seenObject;
     private EnemyAgro enemyAgro;
+    private EnemyRaycastLogic raycastLogic;
     PolygonCollider2D ownCollider2D;
 
     private void Awake()
@@ -20,8 +21,18 @@ public class EnemyDetectionCone : MonoBehaviour
 
             enabled = false;
         }
-        
-        ownCollider2D = GetComponent<PolygonCollider2D>();
+        raycastLogic =
+            GetComponentInParent<EnemyRaycastLogic>();
+
+        if (raycastLogic == null)
+        {
+            Debug.LogError(
+                "EnemyRaycastLogic was not found.",
+                gameObject
+            );
+
+            ownCollider2D = GetComponent<PolygonCollider2D>();
+        }
     }
 
     private void Update()
@@ -40,6 +51,40 @@ public class EnemyDetectionCone : MonoBehaviour
         }
     }
 
+    //private void OnTriggerStay2D(Collider2D other)
+    //{
+    //    if (!other.CompareTag("Player"))
+    //    {
+    //        return;
+    //    }
+
+    //    RaycastHit2D[] hits = Physics2D.LinecastAll(
+    //        transform.position,
+    //        other.transform.position
+    //    );
+
+    //    foreach (RaycastHit2D hit in hits)
+    //    {
+    //        if (hit.transform.IsChildOf(transform.root))
+    //        {
+    //            continue;
+    //        }
+
+    //        if (hit.collider.CompareTag("Player"))
+    //        {
+    //            seenObject = other;
+    //        }
+    //        else
+    //        {
+    //            seenObject = null;
+    //        }
+
+    //        return;
+    //    }
+
+    //    seenObject = null;
+    //}
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!other.CompareTag("Player"))
@@ -47,31 +92,16 @@ public class EnemyDetectionCone : MonoBehaviour
             return;
         }
 
-        RaycastHit2D[] hits = Physics2D.LinecastAll(
+        if (raycastLogic.CanDetect(
             transform.position,
-            other.transform.position
-        );
-
-        foreach (RaycastHit2D hit in hits)
+            other))
         {
-            if (hit.transform.IsChildOf(transform.root))
-            {
-                continue;
-            }
-
-            if (hit.collider.CompareTag("Player"))
-            {
-                seenObject = other;
-            }
-            else
-            {
-                seenObject = null;
-            }
-
-            return;
+            seenObject = other;
         }
-
-        seenObject = null;
+        else
+        {
+            seenObject = null;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

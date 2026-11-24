@@ -33,6 +33,11 @@ public class BulletBehavior : MonoBehaviour
             return;
         }
 
+        if (other.transform.root.CompareTag("Enemy"))
+        {
+            return;
+        }
+
         if (other.CompareTag("Player"))
         {
             GhostMovement player =

@@ -5,6 +5,7 @@ public class EnemySoundSensorTest : MonoBehaviour
     private Collider2D seenObject;
     private EnemyAgro enemyAgro;
     private GhostMovement ghostMovement;
+    private EnemyRaycastLogic raycastLogic;
     private CircleCollider2D ownCollider2D;
 
     private void Awake()
@@ -21,37 +22,29 @@ public class EnemySoundSensorTest : MonoBehaviour
                 ghost.GetComponent<GhostMovement>();
         }
 
+        raycastLogic =
+            GetComponentInParent<EnemyRaycastLogic>();
+
         ownCollider2D =
             GetComponent<CircleCollider2D>();
     }
 
     private void Update()
     {
-        if (seenObject == null ||
-        ghostMovement == null ||
-        !ghostMovement.IsRunning())
         {
-            return;
-        }
-
-        RaycastHit2D[] hits = Physics2D.LinecastAll(
-            transform.position,
-            seenObject.transform.position
-        );
-
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (hit.transform.IsChildOf(transform.root))
+            if (seenObject == null ||
+                ghostMovement == null ||
+                !ghostMovement.IsRunning())
             {
-                continue;
+                return;
             }
 
-            if (hit.collider.CompareTag("Player"))
+            if (raycastLogic.CanDetect(
+                transform.position,
+                seenObject))
             {
                 enemyAgro.SoundDetection(seenObject);
             }
-
-            return;
         }
     }
 
