@@ -58,6 +58,10 @@ public class GhostMovement : MonoBehaviour
     [SerializeField] private AudioClip interactClip;
     [SerializeField, Range(0f, 1f)] private float interactVolume = 0.4f;
 
+    [Header("Attack Audio")]
+    [SerializeField] private AudioClip attackClip;
+    [SerializeField, Range(0f, 1f)] private float attackVolume = 0.4f;
+
     void Awake()
     {
         controls = new InputSystem_Actions();
@@ -145,6 +149,15 @@ public class GhostMovement : MonoBehaviour
 
         footstepSource.pitch = 1f;
         footstepSource.PlayOneShot(interactClip, interactVolume);
+    }
+
+    public void PlayAttackSound()
+    {
+        if (isDead || isEchoMode) return;
+        if (footstepSource == null || attackClip == null) return;
+
+        footstepSource.pitch = 1f;
+        footstepSource.PlayOneShot(attackClip, attackVolume);
     }
 
     public void Die()
