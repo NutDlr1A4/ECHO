@@ -461,6 +461,11 @@ public class EnemyController : MonoBehaviour, IHackable
         return isHostile;
     }
 
+    public bool Isinvestigateing()
+    {
+        return isinvestigateing;
+    }
+
     public bool IsMoving()
     {
         return isMoving;
