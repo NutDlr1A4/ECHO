@@ -23,6 +23,8 @@ public class ModeManager : MonoBehaviour
     private bool in_echo_mode = false;
     private GameObject used_terminal_node;
 
+    [SerializeField] private bool is_enabled = true;
+
     // Plays sounds here so they don't get interupted if exiting ECHO
     // THis should maybe be moved into its own "sound manager", but I'm lazy
     public void PlaySound(string sound_name) {
@@ -46,6 +48,8 @@ public class ModeManager : MonoBehaviour
     }
 
     public void EnterECHOMode(GameObject start_node) {
+        if (!is_enabled) return;
+
         Debug.Log("Entering ECHO mode");
 
         used_terminal_node = start_node;
@@ -96,6 +100,10 @@ public class ModeManager : MonoBehaviour
 
     public bool IsInECHOMode() {
         return in_echo_mode;
+    }
+
+    public void Disable() {
+        is_enabled = false;
     }
 
     void Start() {

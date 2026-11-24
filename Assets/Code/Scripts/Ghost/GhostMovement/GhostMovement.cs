@@ -5,6 +5,7 @@ using UnityEngine.Rendering.Universal;
 public class GhostMovement : MonoBehaviour
 {
     private InputSystem_Actions controls;
+    [SerializeField] private GameObject mode_man;
 
     public float moveSpeed = 3f;
     public float runSpeed = 5f;
@@ -89,6 +90,11 @@ public class GhostMovement : MonoBehaviour
         return isRunning;
     }
 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     public void PlayFootstep()
     {
         if (isDead || isEchoMode || isCrouching || isInteracting)
@@ -163,6 +169,12 @@ public class GhostMovement : MonoBehaviour
         animator.SetBool("IsRunning", false);
         animator.SetBool("IsCrouching", false);
         animator.SetTrigger("Die");
+
+        ModeManager mode_man_component = mode_man.GetComponent<ModeManager>();
+        if (mode_man_component.IsInECHOMode()) mode_man_component.ExitECHOMode();
+        mode_man_component.Disable();
+
+        gameObject.GetComponent<GhostInteractBehaviour>().Disable();
     }
 
     public void EnterEchoMode()

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3289226213319055460}
   - component: {fileID: 8257079626540393763}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveIndicator
   float_offset: 0.4
+  float_rate: 1
 --- !u!1 &8379150778936262363
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7424936898740847358}
   - component: {fileID: 7251909678058892842}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,6 +150,10 @@ PrefabInstance:
     - target: {fileID: 5716042478144915709, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_Name
       value: Light_2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716042478144915709, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6174139230870821234, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_LocalPosition.x
