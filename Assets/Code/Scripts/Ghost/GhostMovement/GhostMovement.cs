@@ -80,6 +80,11 @@ public class GhostMovement : MonoBehaviour
         isInteracting = false;
     }
 
+    public void FinishAttack()
+    {
+        isAttacking = false;
+    }
+
     public void FinishDeath()
     {
         FindFirstObjectByType<SceneFader>().RestartLevel();
@@ -93,6 +98,16 @@ public class GhostMovement : MonoBehaviour
     public bool IsRunning()
     {
         return isRunning;
+    }
+
+    public bool IsInteracting()
+    {
+        return isInteracting;
+    }
+
+    public bool IsAttacking()
+    {
+        return isAttacking;
     }
 
     public bool IsDead()
@@ -193,7 +208,7 @@ public class GhostMovement : MonoBehaviour
 
     public void EnterEchoMode()
     {
-        if (isDead || isEchoMode || isCrouching || isInteracting)
+        if (isDead || isEchoMode || isCrouching || isInteracting || isAttacking)
             return;
 
         isEchoMode = true;
@@ -206,6 +221,7 @@ public class GhostMovement : MonoBehaviour
 
         eyeLight.enabled = false;
         isInteracting = false;
+        isAttacking = false;
 
         horizontalInput = 0f;
         isRunning = false;
@@ -296,7 +312,8 @@ public class GhostMovement : MonoBehaviour
 
         if (controls.Player.Interact.WasPressedThisFrame()
         && !isCrouching
-        && !isInteracting)
+        && !isInteracting
+        && !isAttacking)
         {
             isInteracting = true;
             animator.SetTrigger("Interact");
@@ -304,14 +321,11 @@ public class GhostMovement : MonoBehaviour
 
         if (controls.Player.Attack.WasPressedThisFrame()
         && !isCrouching
-        && !isInteracting)
+        && !isInteracting
+        && !isAttacking)
         {
-            // TODO: This needs to be implemented when Samuelussy is done with his amazing sprites
-            //isAttacking = true;
-            //animator.setTrigger("Attack");
-
-            isInteracting = true;
-            animator.SetTrigger("Interact");
+            isAttacking = true;
+            animator.SetTrigger("Attack");
         }
 
         // Update Animator parameters based on player input
@@ -338,7 +352,7 @@ public class GhostMovement : MonoBehaviour
             return;
         }
 
-        if (isCrouching || isInteracting)
+        if (isCrouching || isInteracting || isAttacking)
         {
             rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
         }
