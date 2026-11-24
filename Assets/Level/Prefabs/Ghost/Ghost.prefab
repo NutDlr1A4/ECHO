@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0d3bd5c171e7b5e9354151360e4d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostMovement
-  moveSpeed: 3
-  runSpeed: 5
+  moveSpeed: 4
+  runSpeed: 6
   eyeLight: {fileID: 877637443509341753}
   footstepSource: {fileID: 6378505654521804189}
   footstepClip: {fileID: 8300000, guid: b3d6fc0190f4a16f880e03f1d5798168, type: 3}
