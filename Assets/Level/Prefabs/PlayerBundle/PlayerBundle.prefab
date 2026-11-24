@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4371594901209934029, guid: d03ede9513ee370f4947452cc3ff5262, type: 3}
+      propertyPath: mode_man
+      value: 
+      objectReference: {fileID: 3218574718109572220}
     - target: {fileID: 8851415386821054257, guid: d03ede9513ee370f4947452cc3ff5262, type: 3}
       propertyPath: m_SortingLayer
       value: 1
