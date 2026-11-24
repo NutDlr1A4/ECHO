@@ -11,6 +11,7 @@ public enum NodeState {
     NEUTRAL_ACTIVE,
     NEUTRAL_INACTIVE,
     HOSTILE,
+    HOSTILE_DISABLED,
     SPECIAL
 }
 
@@ -42,7 +43,7 @@ public class EchoNode : MonoBehaviour
             light_intensity = 1.0f } 
         },
         { NodeState.NEUTRAL_INACTIVE, new VisualsInfo{ 
-            node_color = new Color(120f/255f, 120f/255f, 120f/255f), 
+            node_color = new Color(120f/255f, 120f/255f, 120f/255f),
             light_color = new Color(1f, 1f, 1f), 
             light_intensity = 0.05f } 
         },
@@ -50,6 +51,11 @@ public class EchoNode : MonoBehaviour
             node_color = new Color(1f, 0f, 0f), 
             light_color = new Color(1f, 0f, 0f), 
             light_intensity = 10.0f }
+        },
+        { NodeState.HOSTILE_DISABLED, new VisualsInfo{ 
+            node_color = new Color(0.5f, 0f, 0f), 
+            light_color = new Color(1f, 0f, 0f), 
+            light_intensity = 1.0f }
         },
         { NodeState.SPECIAL, new VisualsInfo{ 
             node_color = new Color(1f, 0.5f, 0f), 
