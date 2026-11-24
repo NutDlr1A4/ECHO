@@ -59,6 +59,7 @@ MonoBehaviour:
   echo_success_volume: 0.25
   echo_hack_fail_sound: {fileID: 8300000, guid: 4ecc8e0e419f1b52fb8047e0bd1780ee, type: 3}
   echo_fail_volume: 0.25
+  is_enabled: 1
 --- !u!82 &1888527147355537660
 AudioSource:
   m_ObjectHideFlags: 0
@@ -335,7 +336,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 0.9019608}
+  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 0.6862745}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
