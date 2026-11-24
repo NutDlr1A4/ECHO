@@ -11,6 +11,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject resumeButton;
     [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject masterVolumeSlider;
+    [SerializeField] private GameObject controlsPanel;
+    [SerializeField] private GameObject controlsButton;
+    [SerializeField] private GameObject controlsBackButton;
 
     [SerializeField] private string mainMenu;
 
@@ -24,6 +27,7 @@ public class PauseMenu : MonoBehaviour
 
         pausePanel.SetActive(true);
         settingsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
         pauseMenuContent.SetActive(false);
     }
 
@@ -36,6 +40,8 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             else if (settingsPanel.activeSelf)
                 CloseSettings();
+            else if (controlsPanel.activeSelf)
+                CloseControls();
             else
                 Resume();
         }
@@ -53,6 +59,7 @@ public class PauseMenu : MonoBehaviour
 
         pausePanel.SetActive(true);
         settingsPanel.SetActive(false);
+        controlsPanel.SetActive(false);
         pauseMenuContent.SetActive(true);
 
         SelectUIElement(resumeButton);
@@ -90,6 +97,22 @@ public class PauseMenu : MonoBehaviour
     {
         IsPaused = false;
         SceneLoader.Instance.LoadScene(mainMenu);
+    }
+
+    public void OpenControls()
+    {
+        pausePanel.SetActive(false);
+        controlsPanel.SetActive(true);
+
+        SelectUIElement(controlsBackButton);
+    }
+
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+        pausePanel.SetActive(true);
+
+        SelectUIElement(controlsButton);
     }
 
     private void SelectUIElement(GameObject element)
