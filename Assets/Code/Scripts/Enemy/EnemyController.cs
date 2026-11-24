@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour, IHackable
     private float currentSpeed;
     [SerializeField] private float hackedDuration = 2;
     [SerializeField] private float hackCooldown = 5;
-    private float lastHackedTime = 0;
+    private float lastHackedTime = float.NegativeInfinity;
     private bool isHacked = false;
     [SerializeField] private float turnDelay = 2f;
     [SerializeField] private float attackDelay = 1f;
@@ -281,7 +281,7 @@ public class EnemyController : MonoBehaviour, IHackable
     }
     void Attack()
     {
-        if (!isAlive) { return; }
+        if (!isAlive || isHacked) { return; }
         StopWalk();
         for (int i = 0; i < 3; i++)
         {
@@ -297,6 +297,7 @@ public class EnemyController : MonoBehaviour, IHackable
             Debug.LogError("Bullet or BulletOrigin is not assigned.");
             return;
         }
+        if (isHacked) { return; }
         enemySFX.PlaySoundShoot();
         LookAtCurrentTarget();
         GameObject newBullet = Instantiate(Bullet, BulletOrigin.position, BulletOrigin.rotation);
@@ -453,6 +454,11 @@ public class EnemyController : MonoBehaviour, IHackable
         return isMoving;
     }
 
+    public bool IsHacked()
+    {
+        return isHacked;
+    }
+
     public void Die()
     {
         if (isAlive)
@@ -491,7 +497,7 @@ public class EnemyController : MonoBehaviour, IHackable
     {
         if (Mathf.Abs(rb.linearVelocity.x) < 0.1f)
         {
-            stuckTimer += Time.fixedDeltaTime;
+            stuckTimer += Time.deltaTime;
             if(currentState == enemyState.patrol)
             {
                 StopWalk();

@@ -51,39 +51,6 @@ public class EnemyDetectionCone : MonoBehaviour
         }
     }
 
-    //private void OnTriggerStay2D(Collider2D other)
-    //{
-    //    if (!other.CompareTag("Player"))
-    //    {
-    //        return;
-    //    }
-
-    //    RaycastHit2D[] hits = Physics2D.LinecastAll(
-    //        transform.position,
-    //        other.transform.position
-    //    );
-
-    //    foreach (RaycastHit2D hit in hits)
-    //    {
-    //        if (hit.transform.IsChildOf(transform.root))
-    //        {
-    //            continue;
-    //        }
-
-    //        if (hit.collider.CompareTag("Player"))
-    //        {
-    //            seenObject = other;
-    //        }
-    //        else
-    //        {
-    //            seenObject = null;
-    //        }
-
-    //        return;
-    //    }
-
-    //    seenObject = null;
-    //}
 
     private void OnTriggerStay2D(Collider2D other)
     {

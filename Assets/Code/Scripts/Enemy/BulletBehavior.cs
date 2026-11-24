@@ -33,7 +33,9 @@ public class BulletBehavior : MonoBehaviour
             return;
         }
 
-        if (other.transform.root.CompareTag("Enemy"))
+        if (other.transform.root.CompareTag("Enemy") ||
+            other.transform.gameObject.layer ==
+            LayerMask.NameToLayer("Ignore Raycast"))
         {
             return;
         }
