@@ -23,7 +23,7 @@ public class EnemyTouchSensor : MonoBehaviour
             !enemyController.IsHostile() &&
             !enemyController.Isinvestigateing())
         {
-            enemyController.UpdateCurrentTarget(ghost.transform.position);
+            enemyController.InvestigatePosition(ghost.transform.position);
         }
     }
 }

@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 4737238564478860789}
   m_Layer: 2
   m_Name: InteractSensor
-  m_TagString: Interactable
+  m_TagString: Killable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
