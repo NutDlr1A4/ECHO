@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 4240399998796376904}
   m_Layer: 2
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
   hackCooldown: 7
   attackDelay: 1
   burstDelay: 0.1
-  maxAttackDistance: 5
+  maxAttackDistance: 8
   waypointSize: 0.5
   PathStart: {fileID: 3585624270104815779}
   PathEnd: {fileID: 4234572423974137835}

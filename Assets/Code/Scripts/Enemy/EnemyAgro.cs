@@ -88,6 +88,11 @@ public class EnemyAgro : MonoBehaviour
             return;
         }
 
+        if (isHostile)
+        {
+            enemyController.UpdateCurrentTarget(target.transform.position);
+        }
+
         activelyDetecting = true;
         lastDetectionTime = Time.time;
         lastKnowLocation = target.transform;
