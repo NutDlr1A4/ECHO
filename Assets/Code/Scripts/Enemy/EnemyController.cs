@@ -9,14 +9,15 @@ public class EnemyController : MonoBehaviour, IHackable
     [SerializeField] private bool standGuard = false;
     [SerializeField] private float walkSpeed = 3f;
     [SerializeField] private float runSpeed = 5f;
+    [SerializeField] private float turnDelay = 2f;
     private float currentSpeed;
     [SerializeField] private float hackedDuration = 2;
     [SerializeField] private float hackCooldown = 5;
     private float lastHackedTime = float.NegativeInfinity;
     private bool isHacked = false;
-    [SerializeField] private float turnDelay = 2f;
     [SerializeField] private float attackDelay = 1f;
     [SerializeField] private float burstDelay = 0.01f;
+    [SerializeField] private float maxAttackDistance = 8;
 
     [SerializeField] private float waypointSize = 0.5f;
 
@@ -37,7 +38,7 @@ public class EnemyController : MonoBehaviour, IHackable
     private Vector2 patrolReturnTarget;
 
     private float defultFacingDirection;
-    private float jumpForce = 0.5f;
+    private float jumpForce = 1f;
     private float stuckTimer;
 
     private bool isHostile = false;
@@ -263,12 +264,20 @@ public class EnemyController : MonoBehaviour, IHackable
     }
     void ChaseBehavior()
     {
+        if (!isHostile)
+        {
+            ChangeState(enemyState.regular);
+            CancelInvoke();
+            return;
+        }
         float distance = Vector2.Distance(
             transform.position,
             currentTarget);
-        if (distance >= 12f)
+        if (distance >= maxAttackDistance)
         {
             GoToCurrentTarget();
+            CancelInvoke(nameof(Attack));
+            CancelInvoke(nameof(Shoot));
         }
         else
         {
@@ -281,7 +290,7 @@ public class EnemyController : MonoBehaviour, IHackable
     }
     void Attack()
     {
-        if (!isAlive || isHacked) { return; }
+        if (!isAlive || isHacked || !isHostile) { return; }
         StopWalk();
         for (int i = 0; i < 3; i++)
         {
@@ -292,12 +301,12 @@ public class EnemyController : MonoBehaviour, IHackable
 
     void Shoot()
     {
+        if (!isAlive || isHacked || !isHostile) { return; }
         if (Bullet == null || BulletOrigin == null)
         {
             Debug.LogError("Bullet or BulletOrigin is not assigned.");
             return;
         }
-        if (isHacked) { return; }
         enemySFX.PlaySoundShoot();
         LookAtCurrentTarget();
         GameObject newBullet = Instantiate(Bullet, BulletOrigin.position, BulletOrigin.rotation);
@@ -314,7 +323,8 @@ public class EnemyController : MonoBehaviour, IHackable
     {
         if (!isAlive) { return; }
         isAlive = false;
-        rb.linearVelocity = Vector2.zero;
+        StopWalk();
+        //rb.linearVelocity = Vector2.zero;
         spriteRenderer.color = Color.gray;
         CancelInvoke();
         GameObject detectionBar = transform.Find("Visuals/DetectionBar").gameObject;
@@ -325,6 +335,8 @@ public class EnemyController : MonoBehaviour, IHackable
         sensors.SetActive(false);
         GameObject attack = transform.Find("Attack").gameObject;
         attack.SetActive(false);
+        //GameObject sfx = transform.Find("SFX").gameObject;
+        //sfx.SetActive(false);
 
         CapsuleCollider2D hitbox = GetComponent<CapsuleCollider2D>();
         fallHeight = hitbox.bounds.size.y / 3f;
@@ -483,13 +495,17 @@ public class EnemyController : MonoBehaviour, IHackable
     private void HackedBehavior()
     {
         isHacked = true;
-
-        CancelInvoke(nameof(EndHack));
+        StopWalk();
+        //rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        //CancelInvoke(nameof(EndHack));
+        CancelInvoke();
+        spriteRenderer.color = Color.cyan;
         Invoke(nameof(EndHack), hackedDuration);
     }
 
     private void EndHack()
     {
+        spriteRenderer.color = Color.white;
         isHacked = false;
     }
 

@@ -48,6 +48,11 @@ public class EnemyAgro : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (enemyController.IsHacked()) {
+            activelyDetecting = false;
+            sightPriority = false;
+            return; 
+        }
         if (!activelyDetecting &&
         Time.time - lastDetectionTime >= detectionTimeout)
         {
@@ -122,6 +127,8 @@ public class EnemyAgro : MonoBehaviour
             1f,
             1f
         );
+
+        if (enemyController.IsHacked()) { return; }
 
         if (detectionProgress >= 1f && !isHostile)
         {
