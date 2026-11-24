@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyInteractSensor : MonoBehaviour, IInteractable
+public class EnemyInteractSensor : MonoBehaviour, IKillable
 {
     private EnemyController enemyController;
     void Start()
@@ -19,17 +19,7 @@ public class EnemyInteractSensor : MonoBehaviour, IInteractable
         enemyController.Die();
     }
 
-    void IInteractable.OnInteractTargetEnter()
-    {
-       
-    }
-
-    void IInteractable.OnInteractTargetExit()
-    {
-        
-    }
-
-    bool IInteractable.OnInteract()
+    bool IKillable.OnKill()
     {
         Debug.Log("Enemy Interact death called");
         enemyController.Die();

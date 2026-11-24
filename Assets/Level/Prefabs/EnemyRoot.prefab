@@ -818,7 +818,7 @@ MonoBehaviour:
   hackCooldown: 7
   attackDelay: 1
   burstDelay: 0.1
-  maxAttackDistance: 5
+  maxAttackDistance: 20
   waypointSize: 0.5
   PathStart: {fileID: 3585624270104815779}
   PathEnd: {fileID: 4234572423974137835}
@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 4737238564478860789}
   m_Layer: 2
   m_Name: InteractSensor
-  m_TagString: Interactable
+  m_TagString: Killable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
