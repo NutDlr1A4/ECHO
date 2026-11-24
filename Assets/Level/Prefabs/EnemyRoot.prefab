@@ -813,7 +813,7 @@ MonoBehaviour:
   standGuard: 1
   walkSpeed: 3
   runSpeed: 5
-  hackedDuration: 2
+  hackedDuration: 7
   hackCooldown: 5
   turnDelay: 2
   attackDelay: 1
