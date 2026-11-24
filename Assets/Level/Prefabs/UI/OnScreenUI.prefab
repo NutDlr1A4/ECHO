@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -15, y: 27}
+  m_AnchoredPosition: {x: -35, y: 27}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8818684638672296843
@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u2022 Press Q to exit ECHO"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0a77ee8ca2e959e61bdd2435bba9a23f, type: 2}
+  m_sharedMaterial: {fileID: -2004000194935322116, guid: 0a77ee8ca2e959e61bdd2435bba9a23f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -34.464355, w: 0}
+  m_margin: {x: 0, y: 0, z: -91.50598, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -290,7 +290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114.8, y: -65.491486}
+  m_AnchoredPosition: {x: 114.1, y: -65.491486}
   m_SizeDelta: {x: 34.0618, y: 46.983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5792751196200573010
@@ -323,8 +323,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u2022 Current Objective: Hack the server"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0a77ee8ca2e959e61bdd2435bba9a23f, type: 2}
+  m_sharedMaterial: {fileID: -2004000194935322116, guid: 0a77ee8ca2e959e61bdd2435bba9a23f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -342.8452, w: 0}
+  m_margin: {x: 0, y: 0, z: -498.66754, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -460,8 +460,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u2022 Current Objective: Leave the area"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0a77ee8ca2e959e61bdd2435bba9a23f, type: 2}
+  m_sharedMaterial: {fileID: -2004000194935322116, guid: 0a77ee8ca2e959e61bdd2435bba9a23f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -188.78387, w: 0}
+  m_margin: {x: 0, y: 0, z: -279.77893, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
