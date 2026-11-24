@@ -251,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 220794264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 20.11, y: -1.33, z: 0}
+  m_LocalPosition: {x: 23.71, y: 3.79, z: 0}
   m_LocalScale: {x: 5, y: 0.82457995, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -711,14 +711,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3585624270104815779, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3585624270104815779, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3740572850938014279, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.05
@@ -762,10 +754,6 @@ PrefabInstance:
     - target: {fileID: 3746868779177952094, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
       propertyPath: m_Name
       value: EnemyRoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 8822931654192501197, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
-      propertyPath: standGuard
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
