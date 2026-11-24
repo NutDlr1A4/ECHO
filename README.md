@@ -1,4 +1,4 @@
-![ECHO logo](Assets/Art/UI%20Art/MainMenu/Background/echo%20logo.png)
+<img src="Assets/Art/UI%20Art/MainMenu/Background/echo%20logo.png" alt="ECHO logo">
 
 # About
 
@@ -7,10 +7,15 @@ This repository contains the game prototype of group 1 for the  Game Development
 E.C.H.O is presented as a 2D side-view stealth-adventure game with a pixel-art visual style inspired by cyberpunk and neo-futuristic environments. The gameplay combines stealth mechanics, environmental interaction, and puzzle-solving via an alternate “hacking”-mode.
 
 ## Group Members
-- Lars-Martin Hardang Lonar 
-- Samuel Tobias Olsson Dahl
-- Stian Aasen Skryten
-- Lukas Andersen
+- Lars-Martin Hardang Lonar (Lonis15)
+- Samuel Tobias Olsson Dahl (SamuelODahl)
+- Stian Aasen Skryten (Woliks)
+- Lukas Andersen (NutDlr1A4)
 
+<br>
 
-![ECHO logo](Assets/Art/Models/PlayerCharacters/GHOST/Pics/Ghost%20PNG.png)
+- - -
+
+<img src="Assets/Art/Models/PlayerCharacters/GHOST/Gifs/GHOST_IDLE.gif" alt="Ghost sprite" height="200">
+
+<img src="Assets/Art/Models/PlayerCharacters/Echo%20BALL/ECHO%20ball.gif" alt="ECHO sprite" height="200">
