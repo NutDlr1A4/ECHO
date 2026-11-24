@@ -4,6 +4,7 @@ public class EnemyDetectionCone : MonoBehaviour
 {
     private Collider2D seenObject;
     private EnemyAgro enemyAgro;
+    PolygonCollider2D ownCollider2D;
 
     private void Awake()
     {
@@ -19,11 +20,16 @@ public class EnemyDetectionCone : MonoBehaviour
 
             enabled = false;
         }
+        
+        ownCollider2D = GetComponent<PolygonCollider2D>();
     }
 
     private void Update()
     {
-        enemyAgro.updateSuspisionCollider2d(seenObject);
+        if (seenObject != null)
+        {
+            enemyAgro.VisionDetection(seenObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

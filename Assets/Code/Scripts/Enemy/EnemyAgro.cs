@@ -1,6 +1,4 @@
-using UnityEditor.Rendering;
 using UnityEngine;
-using static EnemyController;
 
 public class EnemyAgro : MonoBehaviour
 {
@@ -11,15 +9,25 @@ public class EnemyAgro : MonoBehaviour
     [SerializeField] private Transform detectionFill;
     private EnemyController enemyController;
     private GhostMovement ghostMovement;
-    private Collider2D targetCollider = null;
     private Transform lastKnowLocation = null;
     private float detectionProgress = 0f;
     private float lastDetectionTime = 0f;
-    float visionConeLength;
+    //float maxRange;
+    [SerializeField] private PolygonCollider2D visionCone;
+    [SerializeField] private CircleCollider2D hearingSphere;
+    private float visionConeLength;
+    private float hearingSphereLength;
+    //private int detectionStage = 0;
     private bool isHostile = false;
+    private bool isNormal = true;
+    private bool sightPriority = false;
+    private bool activelyDetecting = false;
     private void Awake()
     {
-        if(detectionSpeed == 0f)
+        visionConeLength = visionCone.bounds.size.x;
+        hearingSphereLength = hearingSphere.bounds.size.x;
+
+        if (detectionSpeed == 0f)
         {
             detectionSpeed = 0.00001f;
         }
@@ -35,70 +43,75 @@ public class EnemyAgro : MonoBehaviour
         {
             ghostMovement = ghost.GetComponent<GhostMovement>();
         }
-        detectionFill.localScale = new Vector3(
-            0,
-            1f,
-            1f
-        );
-        visionConeLength = GetComponentInChildren<PolygonCollider2D>().bounds.size.x;
+        detectionFill.localScale = new Vector3(0, 1f, 1f);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        if (lastKnowLocation == null) { return; }
-        else if (targetCollider == null)
-        { 
-            if(Time.time - lastDetectionTime > detectionTimeout)
-            {
-                UpdateDetectionProgress(-Time.deltaTime);
-            }   
-            return;
-        }
-        else if (lastKnowLocation != null)
+        if (!activelyDetecting &&
+        Time.time - lastDetectionTime >= detectionTimeout)
         {
-            DetectionCalculation();
+            UpdateDetectionProgress(-Time.deltaTime);
         }
-        else
+        activelyDetecting = false;
+        sightPriority = false;
+    }
+
+    public void VisionDetection(Collider2D target)
+    {
+        sightPriority = true;
+        SubmitDetection(target,visionConeLength, 1f);
+    }
+
+    public void SoundDetection(Collider2D target)
+    {
+        if (!sightPriority)
         {
-            Debug.LogWarning("Unknown state in EnemyAgro.Update.");
+            SubmitDetection(target, hearingSphereLength, 0.5f);
         }
     }
-    public void updateSuspisionCollider2d(Collider2D newCollider)
+
+    public void SubmitDetection(
+        Collider2D target,
+        float sensorLength,
+        float strengthModifier)
     {
-        if (newCollider == null)
+        if (target == null ||
+            sensorLength <= 0)
         {
-            targetCollider = null;
             return;
         }
-        if (isHostile)
-        {
-            enemyController.UpdateCurrentTarget(newCollider.transform.position);
-        }
-        lastKnowLocation = newCollider.transform;
+
+        activelyDetecting = true;
         lastDetectionTime = Time.time;
-        targetCollider = newCollider;
-        
-    }
-    private void DetectionCalculation()
-    {
+        lastKnowLocation = target.transform;
+
         float distance = Vector2.Distance(
             enemyController.transform.position,
-            lastKnowLocation.position
-        );
-        distance *= 1/visionConeLength;
-        float distanceModifier = Mathf.Exp(-Mathf.Pow(distance / detectionSpeed, 2f));
-        //Debug.Log($"DistanceModifier speed: {distanceModifier}");
-        UpdateDetectionProgress(Time.deltaTime * distanceModifier);
+            target.transform.position);
+        
+        distance *= 1 / sensorLength;
+        float strength = 
+            Mathf.Exp(-Mathf.Pow(distance / detectionSpeed, 2f));
+
+
+        strength *= strengthModifier;
+
+        UpdateDetectionProgress(Time.deltaTime * strength);
     }
+
     private void UpdateDetectionProgress(float amount)
     {
-        if (ghostMovement.IsRunning())
+        if(amount > 0)
         {
-            amount *= detectionRunModifier;
-        }
-        else if (ghostMovement.IsCrouching())
-        {
-            amount *= detectionCrouchModifier;
+            if (ghostMovement.IsRunning())
+            {
+                amount *= detectionRunModifier;
+            }
+            else if (ghostMovement.IsCrouching())
+            {
+                amount *= detectionCrouchModifier;
+            }
         }
 
        detectionProgress += amount;
@@ -108,29 +121,35 @@ public class EnemyAgro : MonoBehaviour
             1f,
             1f
         );
-        if (detectionProgress == 0f)
-        {
-            Debug.Log("Enemy has lost track of the player!");
-            isHostile = false;
-            lastKnowLocation = null;
-            enemyController.LoseHostile();
-            enemyController.LoseInvestigate();
-        }
-        else if(detectionProgress <= 0.5f && !isHostile)
-        {
-            Debug.Log("Detection at 30%, enemy is looking!");
-            enemyController.LookPosition(lastKnowLocation.position);
-        }
-        else if (detectionProgress <= 0.99f && !isHostile)
-        {
-            Debug.Log("Detection at 60%, enemy is investigating!");
-            enemyController.InvestigatePosition(lastKnowLocation.position);
-        }
-        else if(detectionProgress >= 1f && !isHostile)
+
+        if (detectionProgress >= 1f && !isHostile)
         {
             Debug.Log("Enemy has fully detected the player, ennemy is hostile!");
             isHostile = true;
+            isNormal = true;
             enemyController.BecomeHostile();
+        }
+        else if (detectionProgress >= 0.66f && !isHostile)
+        {
+            isNormal = true;
+            Debug.Log("Detection, enemy is investigating!");
+            enemyController.InvestigatePosition(lastKnowLocation.position);
+        }
+        else if (detectionProgress >= 0.33f &&
+            !isHostile)
+        {
+            Debug.Log("Detection, enemy is looking!");
+            isNormal = true;
+            enemyController.LookPosition(lastKnowLocation.position);
+        }
+        else if (detectionProgress == 0f && isNormal)
+        {
+            Debug.Log("Enemy has lost track of the player!");
+            isHostile = false;
+            isNormal = false;
+            lastKnowLocation = null;
+            enemyController.LoseHostile();
+            enemyController.LoseInvestigate();
         }
     }
     public void BecomeHostile()
