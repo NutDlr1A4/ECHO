@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5129813722614202319}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1040529580246543066}
   - component: {fileID: 1010794465060978535}
   - component: {fileID: 7870495770123390515}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter (W)
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0a77ee8ca2e959e61bdd2435bba9a23f, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 87.111496, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4753628772303295442
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689819080135775094}
   - component: {fileID: 1554041647748151686}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door 7_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 152871754837646685}
   - component: {fileID: 300664413901272048}
   - component: {fileID: 8730853416639967649}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DoorTeleporter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 7688969102524278566}
   - component: {fileID: 3638289786430317440}
   - component: {fileID: 667260719979397327}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
