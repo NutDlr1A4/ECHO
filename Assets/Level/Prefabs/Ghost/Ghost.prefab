@@ -218,6 +218,8 @@ MonoBehaviour:
   echoVolume: 0.06
   interactClip: {fileID: 8300000, guid: e2ee586c76e026cfb9dc0b8aacf780db, type: 3}
   interactVolume: 1
+  attackClip: {fileID: 8300000, guid: 7d807eea033ee3d79b0798a6a87e485d, type: 3}
+  attackVolume: 0.4
 --- !u!114 &-3308841432790884285
 MonoBehaviour:
   m_ObjectHideFlags: 0

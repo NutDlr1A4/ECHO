@@ -62,6 +62,8 @@ public class GhostKAttackBehaviour : MonoBehaviour
             return;
         }
 
+        if (gameObject.GetComponent<GhostMovement>().IsInteracting()) return;
+
         FindNewKillTarget();
 
         if (controls.Player.Attack.WasPressedThisFrame()) {
