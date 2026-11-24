@@ -906,6 +906,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7218922645133245783, guid: b55cdec2a0798a3fc853341ce1a94e07, type: 3}
+      propertyPath: runSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218922645133245783, guid: b55cdec2a0798a3fc853341ce1a94e07, type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7766932643760691101, guid: b55cdec2a0798a3fc853341ce1a94e07, type: 3}
       propertyPath: m_Name
       value: PlayerBundle
@@ -953,11 +961,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3740572850938014279, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.05
+      value: 15.35
       objectReference: {fileID: 0}
     - target: {fileID: 3740572850938014279, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.94
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: 3740572850938014279, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
       propertyPath: m_LocalPosition.z
@@ -994,10 +1002,6 @@ PrefabInstance:
     - target: {fileID: 3746868779177952094, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
       propertyPath: m_Name
       value: EnemyRoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 8822931654192501197, guid: 553f08bf43f37b4438da6e12bcda5258, type: 3}
-      propertyPath: hackedDuration
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
