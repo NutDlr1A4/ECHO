@@ -13,6 +13,7 @@ public class GhostMovement : MonoBehaviour
     private bool isCrouching;
     private bool isRunning;
     private bool isInteracting;
+    private bool isAttacking;
     private bool isDead;
     private bool isEchoMode;
 
@@ -57,6 +58,10 @@ public class GhostMovement : MonoBehaviour
     [Header("Interaction Audio")]
     [SerializeField] private AudioClip interactClip;
     [SerializeField, Range(0f, 1f)] private float interactVolume = 0.4f;
+
+    [Header("Attack Audio")]
+    [SerializeField] private AudioClip attackClip;
+    [SerializeField, Range(0f, 1f)] private float attackVolume = 0.4f;
 
     void Awake()
     {
@@ -145,6 +150,15 @@ public class GhostMovement : MonoBehaviour
 
         footstepSource.pitch = 1f;
         footstepSource.PlayOneShot(interactClip, interactVolume);
+    }
+
+    public void PlayAttackSound()
+    {
+        if (isDead || isEchoMode) return;
+        if (footstepSource == null || attackClip == null) return;
+
+        footstepSource.pitch = 1f;
+        footstepSource.PlayOneShot(attackClip, attackVolume);
     }
 
     public void Die()
@@ -284,6 +298,18 @@ public class GhostMovement : MonoBehaviour
         && !isCrouching
         && !isInteracting)
         {
+            isInteracting = true;
+            animator.SetTrigger("Interact");
+        }
+
+        if (controls.Player.Attack.WasPressedThisFrame()
+        && !isCrouching
+        && !isInteracting)
+        {
+            // TODO: This needs to be implemented when Samuelussy is done with his amazing sprites
+            //isAttacking = true;
+            //animator.setTrigger("Attack");
+
             isInteracting = true;
             animator.SetTrigger("Interact");
         }

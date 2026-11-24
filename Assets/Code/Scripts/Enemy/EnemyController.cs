@@ -482,6 +482,7 @@ public class EnemyController : MonoBehaviour, IHackable
         {
             Debug.Log("Death called");
             DeathBehavior();
+            transform.Find("Node").GetComponent<EchoNode>().SetState(NodeState.HOSTILE_DISABLED);
         }
     }
 
