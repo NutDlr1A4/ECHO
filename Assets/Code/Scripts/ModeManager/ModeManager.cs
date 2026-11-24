@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
 
 public class ModeManager : MonoBehaviour
