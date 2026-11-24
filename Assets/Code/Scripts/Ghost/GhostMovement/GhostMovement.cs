@@ -90,6 +90,11 @@ public class GhostMovement : MonoBehaviour
         return isRunning;
     }
 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     public void PlayFootstep()
     {
         if (isDead || isEchoMode || isCrouching || isInteracting)
@@ -168,6 +173,8 @@ public class GhostMovement : MonoBehaviour
         ModeManager mode_man_component = mode_man.GetComponent<ModeManager>();
         if (mode_man_component.IsInECHOMode()) mode_man_component.ExitECHOMode();
         mode_man_component.Disable();
+
+        gameObject.GetComponent<GhostInteractBehaviour>().Disable();
     }
 
     public void EnterEchoMode()

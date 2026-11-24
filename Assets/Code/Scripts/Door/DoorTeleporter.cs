@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -40,6 +41,8 @@ public class DoorTeleporter : MonoBehaviour
     {
         if (!playerInside || player == null)
             return;
+
+        if (player.gameObject.GetComponent<GhostMovement>().IsDead()) return;
 
         if (Keyboard.current != null &&
             Keyboard.current.wKey.wasPressedThisFrame)
