@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2501448178726514244}
   - component: {fileID: 99469342048823109}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1598776624787082459}
   - component: {fileID: 5150257299414075344}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 6843221667429990939}
   - component: {fileID: 6238299118646027420}
   - component: {fileID: 571773244990040384}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4663044389333011291}
   - component: {fileID: 7799599524172262254}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TerrminalWall
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 4156288225471027778}
   - component: {fileID: 2042194146434876150}
   - component: {fileID: 6707413001237479868}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,6 +483,10 @@ PrefabInstance:
     - target: {fileID: 5716042478144915709, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_Name
       value: Light_2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716042478144915709, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6174139230870821234, guid: 71087ba407214e2dd9c895be90c0d75e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -633,6 +637,14 @@ PrefabInstance:
     - target: {fileID: 1214245664638498265, guid: b3162312a1313ea7f871f5ae646a1336, type: 3}
       propertyPath: m_Name
       value: Node
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214245664638498265, guid: b3162312a1313ea7f871f5ae646a1336, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248436917572493866, guid: b3162312a1313ea7f871f5ae646a1336, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
