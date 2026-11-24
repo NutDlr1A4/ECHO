@@ -218,7 +218,6 @@ public class EnemyController : MonoBehaviour, IHackable
     }
     void ChangePatrolTarget()
     {
-
         if (currentTarget == PathStartPosition)
         {
             currentTarget = PathEndPosition;
@@ -282,6 +281,7 @@ public class EnemyController : MonoBehaviour, IHackable
     }
     void Attack()
     {
+        if (!isAlive) { return; }
         StopWalk();
         for (int i = 0; i < 3; i++)
         {
@@ -315,15 +315,18 @@ public class EnemyController : MonoBehaviour, IHackable
         isAlive = false;
         rb.linearVelocity = Vector2.zero;
         spriteRenderer.color = Color.gray;
+        CancelInvoke();
         GameObject detectionBar = transform.Find("Visuals/DetectionBar").gameObject;
         detectionBar.SetActive(false);
         GameObject detectionFill = transform.Find("Visuals/DetectionFill").gameObject;
         detectionFill.SetActive(false);
         GameObject sensors = transform.Find("Sensors").gameObject;
         sensors.SetActive(false);
+        GameObject attack = transform.Find("Attack").gameObject;
+        attack.SetActive(false);
 
         CapsuleCollider2D hitbox = GetComponent<CapsuleCollider2D>();
-        fallHeight = hitbox.bounds.size.y / 2f;
+        fallHeight = hitbox.bounds.size.y / 3f;
         rb.gravityScale = 0f;
         hitbox.enabled = false;
         enemySFX.PlaySoundDeath();
@@ -405,6 +408,7 @@ public class EnemyController : MonoBehaviour, IHackable
     {
         patrolReturnTarget = currentTarget;
         currentTarget = position;
+        StopWalk();
         ChangeState(enemyState.look);
     }
     public void UpdateCurrentTarget(Vector2 newTarget)
@@ -436,6 +440,8 @@ public class EnemyController : MonoBehaviour, IHackable
     public void LoseInvestigate()
     {
         isinvestigateing = false;
+        ChangeState(enemyState.regular);
+
     }
     public bool IsHostile()
     {
