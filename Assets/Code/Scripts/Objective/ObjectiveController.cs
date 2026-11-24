@@ -2,10 +2,15 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ObjectiveTerminal : MonoBehaviour, IInteractable
+public class ObjectiveController : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject victory_zone;
     [SerializeField] private GameObject label;
+
+    [SerializeField] private string unhacked_label;
+    [SerializeField] private string hacked_label;
+
+    [SerializeField] private bool indicator_visible = true;
 
     [Header("Audio")]
     [SerializeField] private AudioSource audio_source;
@@ -17,9 +22,11 @@ public class ObjectiveTerminal : MonoBehaviour, IInteractable
     public bool OnInteract()
     {
         if (!hacked) {
-            label.GetComponent<TextMeshProUGUI>().SetText("I'm in!");
+            label.GetComponent<TextMeshProUGUI>().SetText(hacked_label);
             transform.Find("Indicator").GetComponent<ObjectiveIndicator>().gameObject.SetActive(false);
-            audio_source.PlayOneShot(hack_sound, hack_sound_volume);
+            if (audio_source != null && hack_sound != null) {
+                audio_source.PlayOneShot(hack_sound, hack_sound_volume);
+            }
             hacked = true;
 
             victory_zone.GetComponent<VictoryZone>().objectiveCompleted = true;
@@ -44,7 +51,8 @@ public class ObjectiveTerminal : MonoBehaviour, IInteractable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        transform.Find("Indicator").GetComponent<ObjectiveIndicator>().gameObject.SetActive(indicator_visible);
+        label.GetComponent<TextMeshProUGUI>().SetText(unhacked_label);
     }
 
     // Update is called once per frame
