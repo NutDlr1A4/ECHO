@@ -103,7 +103,7 @@ public class EnemyAgro : MonoBehaviour
         
         distance *= 1 / sensorLength;
         float strength = 
-            Mathf.Exp(-Mathf.Pow(distance / detectionSpeed, 2f));
+            Mathf.Exp(-Mathf.Pow(distance / detectionSpeed, 3f));
 
 
         strength *= strengthModifier;

@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour, IHackable
     [SerializeField] private float hackCooldown = 5;
     private float lastHackedTime = float.NegativeInfinity;
     private bool isHacked = false;
-    [SerializeField] private float attackDelay = 1f;
+    [SerializeField] private float attackDelay = 0.3f;
     [SerializeField] private float burstDelay = 0.01f;
     [SerializeField] private float maxAttackDistance = 8;
 
@@ -324,8 +324,7 @@ public class EnemyController : MonoBehaviour, IHackable
         if (!isAlive) { return; }
         isAlive = false;
         StopWalk();
-        //rb.linearVelocity = Vector2.zero;
-        spriteRenderer.color = Color.gray;
+        
         CancelInvoke();
         GameObject detectionBar = transform.Find("Visuals/DetectionBar").gameObject;
         detectionBar.SetActive(false);
@@ -342,19 +341,26 @@ public class EnemyController : MonoBehaviour, IHackable
         fallHeight = hitbox.bounds.size.y / 3f;
         rb.gravityScale = 0f;
         hitbox.enabled = false;
-        enemySFX.PlaySoundDeath();
-        enemyAnimation.PlayDeath();
-
+        
         fallStep = 0;
         fallSteps = 10;
         fallRotates = 90 / fallSteps;
         fallHeight = fallHeight / fallSteps;
 
+        Invoke(nameof(DeathVisuals),0.3f);
+    }
+
+    void DeathVisuals()
+    {
+        enemySFX.PlaySoundDeath();
+        enemyAnimation.PlayDeath();
+        spriteRenderer.color = Color.gray;
         DeathFall();
     }
 
     void DeathFall()
     {
+
         transform.position += Vector3.down * fallHeight;
         transform.Rotate(0f, 0f, fallRotates);
 
