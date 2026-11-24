@@ -1,5 +1,6 @@
 using System;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GhostInteractBehaviour : MonoBehaviour
@@ -9,6 +10,8 @@ public class GhostInteractBehaviour : MonoBehaviour
     private InputSystem_Actions controls;
     [SerializeField] private float max_interact_distance = 2.0f;
     [SerializeField] private GameObject current_interact_target = null;
+
+    [SerializeField] private bool is_enabled = true;
 
     private float DistBetweenGameObjectsSqr(GameObject obj1, GameObject obj2) {
         return (obj2.transform.position - obj1.transform.position).sqrMagnitude;
@@ -46,6 +49,10 @@ public class GhostInteractBehaviour : MonoBehaviour
         }
     }
 
+    public void Disable() {
+        is_enabled = false;
+    }
+
     void Start()
     {
         controls = new InputSystem_Actions();
@@ -55,6 +62,8 @@ public class GhostInteractBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!is_enabled) return;
+        
         if (mode_man.GetComponent<ModeManager>().IsInECHOMode()) {
             if (current_interact_target != null) {
                 current_interact_target.GetComponent<IInteractable>()?.OnInteractTargetExit();
