@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,7 +10,21 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private GameObject settingsButton;
     [SerializeField] private GameObject firstSettingsSelected;
+    [SerializeField] private GameObject controlsPanel;
+    [SerializeField] private GameObject controlsButton;
+    [SerializeField] private GameObject controlsBackButton;
 
+    private void Update()
+    {
+        if (Keyboard.current != null &&
+            Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            if (settingsPanel.activeSelf)
+                CloseSettings();
+            else if (controlsPanel.activeSelf)
+                CloseControls();
+        }
+    }
     public void PlayGame()
     {
         SceneLoader.Instance.LoadScene(firstLevel);
@@ -34,5 +49,21 @@ public class MainMenu : MonoBehaviour
         mainButtons.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(settingsButton);
+    }
+
+    public void OpenControls()
+    {
+        mainButtons.SetActive(false);
+        controlsPanel.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(controlsBackButton);
+    }
+
+    public void CloseControls() 
+    {
+        controlsPanel.SetActive(false);
+        mainButtons.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(controlsButton);
     }
 }
