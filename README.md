@@ -8,7 +8,7 @@ E.C.H.O is presented as a 2D side-view stealth-adventure game with a pixel-art v
 
 ## Group Members
 - Lars-Martin Hardang Lonar (Lonis15)
-- Samuel Tobias Olsson Dahl (SamuelODahl)
+- Samuel Tobias Olsson Dahl (Shalai)
 - Stian Aasen Skryten (Woliks)
 - Lukas Andersen (NutDlr1A4)
 
